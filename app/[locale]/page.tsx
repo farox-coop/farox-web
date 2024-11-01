@@ -8,6 +8,8 @@ import AboutSection from '@/components/Layout/AboutSection/AboutSection';
 import XSVG from '@/components/SVG/XSVG';
 import Header from '@/components/Layout/Header/Header';
 import IntroModal from '@/components/Features/IntroModal/IntroModal';
+import { GetStaticPropsContext } from 'next';
+
 
 export default function HomePage() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -76,4 +78,21 @@ export default function HomePage() {
       </main>
     );
   }
+}
+
+export async function generateStaticParams() {
+  return [
+    { locale: 'es' },
+    { locale: 'en' },
+  ];
+}
+
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  const locale = params?.locale as string;
+  const messages = await import(`../../messages/${locale}.json`);
+  return {
+    props: {
+      messages: messages.default,
+    },
+  };
 }

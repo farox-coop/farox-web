@@ -8,7 +8,6 @@ import AboutSection from '@/components/Layout/AboutSection/AboutSection';
 import XSVG from '@/components/SVG/XSVG';
 import Header from '@/components/Layout/Header/Header';
 import IntroModal from '@/components/Features/IntroModal/IntroModal';
-import { GetStaticPropsContext } from 'next';
 
 
 export default function HomePage() {
@@ -87,8 +86,8 @@ export async function generateStaticParams() {
   ];
 }
 
-export async function getStaticProps({ params }: GetStaticPropsContext) {
-  const locale = params?.locale as string;
+export async function generateMetadata({ params }: { params: { locale: string } }) {
+  const locale = params.locale;
   const messages = await import(`../../messages/${locale}.json`);
   return {
     props: {

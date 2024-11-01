@@ -13,3 +13,11 @@ export const routing = defineRouting({
 // that will consider the routing configuration
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation(routing);
+
+// Generate static parameters for locales
+export async function generateStaticParams() {
+  return [
+    { locale: 'es' },
+    { locale: 'en' },
+  ];
+}

@@ -1,0 +1,18 @@
+{
+  "HomeSection": {
+    "title_1": "Creamos",
+    "title_2": "SOLUCIONES",
+    "title_3": "TECNOLÓGICAS",
+    "about": "Somos un Estudio Cooperativo de software.",
+    "about_2": "Desarrollamos tecnologías eficientes y de calidad desde hace más de diez años.",
+    "construction": "Nos estamos renovando y pronto lanzaremos nuestro nuevo sitio. Mientras tanto conocé nuestros servicios."
+  },
+  "ContactSection": {
+    "title": "Somos expertos en software, somos el aliado técnico que tu negocio necesita.",
+    "description": "Hablemos sobre soluciones a la medida para tu empresa"
+  },
+  "Header": {
+    "home": "Inicio",
+    "contact": "Contacto"
+  }
+}

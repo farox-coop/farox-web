@@ -1,0 +1,18 @@
+{
+  "HomeSection": {
+    "title_1": "We create",
+    "title_2": "TECH",
+    "title_3": "SOLUTIONS",
+    "about": "We are a Cooperative Software Studio.",
+    "about_2": "We have been crafting efficient and high-quality technologies for over 14 years.",
+    "construction": "We are renewing our brand and will soon be launching our new website. In the meantime, check out our services."
+  },
+  "ContactSection": {
+    "title": "We are software experts, the technical ally your business needs.",
+    "description": "Let's talk about tailored solutions for your company"
+  },
+  "Header": {
+    "home": "Home",
+    "contact": "Contact"
+  }
+}

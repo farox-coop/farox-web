@@ -1,0 +1,18 @@
+@keyframes bounce-custom {
+  0% {
+    transform: translateY(0); /* Comienza en su posición original */
+  }
+  50% {
+    transform: translateY(30%); /* Baja más de lo que lo hacía antes */
+    animation-timing-function: ease-in; /* Baja suavemente */
+  }
+  100% {
+    transform: translateY(0); /* Regresa a su posición original */
+    animation-timing-function: ease-out; /* Sube suavemente */
+  }
+}
+
+.animate-bounce-once {
+  animation: bounce-custom 1.5s ease-in-out;
+  animation-iteration-count: 1;
+}

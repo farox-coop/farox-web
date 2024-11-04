@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     'Somos una cooperativa de desarrollo de software especializada en brindar servicios profesionales relacionados a tecnologías tales como Data Science, Machine Learning, Sistemas de alta concurrencia y Full-Stack',
   icons: {
-    icon: '/favicon.svg',
+    icon: 'favicon.svg',
   },
   metadataBase: new URL('https://farox.coop/'),
 };

@@ -59,7 +59,7 @@ export default function MainContent() {
     return (
       <main
         className="flex justify-center items-center w-full h-full bg-cover bg-no-repeat bg-center px-8"
-        style={{ backgroundImage: "url('/assets/1920.webp')" }}
+        style={{ backgroundImage: "url('assets/1920.webp')" }}
       >
         <section className="flex flex-col w-full max-w-[1920px]">
           <Header />

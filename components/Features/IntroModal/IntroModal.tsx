@@ -10,6 +10,7 @@ function IntroModal() {
         fill
         className="object-contain"
         priority
+        unoptimized={true}
       />
     </div>
   );

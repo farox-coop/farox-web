@@ -1,5 +1,0 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/opengraph-image.jpg/route": "app/opengraph-image.jpg/route.js",
-  "/[locale]/page": "app/[locale]/page.js"
-}

@@ -30,4 +30,4 @@ jobs:
       - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm run export && npx gh-pages -d out
+        run: npx gh-pages -d out

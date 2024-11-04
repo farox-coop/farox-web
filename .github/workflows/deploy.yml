@@ -3,24 +3,20 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's not 'main'
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+      - main  # Deploy when pushing to the main branch
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '18.17.0'  # Update to Node.js v18.17.0 or higher
+          node-version: '18'
 
       - name: Install pnpm
         run: npm install -g pnpm
@@ -28,11 +24,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build the project
-        run: pnpm build
+      - name: Build project
+        run: pnpm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm run export && npx gh-pages -d out

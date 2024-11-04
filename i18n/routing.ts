@@ -5,6 +5,10 @@ export const routing = defineRouting({
   // A list of all locales that are supported
   locales: ['es', 'en'],
 
+  // https://next-intl-docs.vercel.app/docs/routing/middleware#usage-without-middleware-static-export
+  localePrefix: 'always',
+  localeDetection: false,
+
   // Used when no locale matches
   defaultLocale: 'es',
 });

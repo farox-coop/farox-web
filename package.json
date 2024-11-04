@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "serve-dev": "NODE_ENV=dev next build && serve out",
     "dev": "next dev",
     "build": "next build",
     "deploy": "gh-pages -d out",

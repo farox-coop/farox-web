@@ -1,0 +1,255 @@
+{
+  "HomeSection": {
+    "Hero": {
+      "title_1": "EL CAMINO,",
+      "title_2": "ESCRIBÍ EL FUTURO",
+      "line_1": "Desarrollá la tecnología de tu organización con nosotrxs",
+      "text_button": "Hablemos",
+      "contact": "Contacto"
+    },
+    "WeDo": {
+      "title_1": "QUÉ",
+      "title_2": "HACEMOS",
+      "card_1": {
+        "title": "Desarrollo de producto",
+        "description": "Gestionamos todo el proceso de desarrollo de tecnología, tomando  decisiones estratégicas, para alinear las soluciones con los objetivos de negocio de manera de asegurar el éxito del proyecto."
+      },
+      "card_2": {
+        "title": "Consultoría de software",
+        "description": "Ofrecemos consultorías técnicas para diagnosticar problemas y diseñar soluciones, además de capacitaciones internas para que el conocimiento quede en la organización que nos contrata."
+      },
+      "card_3": {
+        "title": "Ampliación de equipo",
+        "description": "Incorporamos especialistas a tu equipo para trabajar en sintonía con las dinámicas de tu organización y garantizar una integración con altos estándares de calidad y eficiencia en las soluciones tecnológicas."
+      }
+    },
+    "WeUse": {
+      "title_1": "QUÉ",
+      "title_2": "USAMOS",
+      "button": "Servicios"
+    },
+    "WeCreateSolutions": {
+      "title_1": "SOMOS",
+      "white_text_1": "CREADORES",
+      "white_text_2": "EXPERTXS",
+      "white_text_3": "TU PARTNER",
+      "color_text_1": "DE SOLUCIONES",
+      "color_text_2": "EN INNOVACIÓN",
+      "color_text_3": "TECNOLÓGICO"
+    },
+    "WeBelieveCaseStudies": {
+      "title_1": "CREAMOS",
+      "title_2": "ELLOS CONFÍAN",
+      "card_1": {
+        "title": "BETTEREZ",
+        "description": "Construimos una plataforma para una empresa canadiense que permite a los usuarios reservar billetes para viajes, paquetes y eventos.",
+        "url": "https://www.betterez.com/"
+      },
+      "card_2": {
+        "title": "NIVA",
+        "description": "Automatizamos procesos de recolección y validación de información de organizaciones aplicando conocimientos de Machine Learning.",
+        "url": "https://www.niva.co/"
+      },
+      "card_3": {
+        "title": "AdTech",
+        "description": "Formamos un equipo de expertos en Erlang y ciencia de datos/aprendizaje automático para enfrentar desafíos en la industria del marketing.",
+        "url": "https://www.nextroll.com/"
+      },
+      "button": "Casos de Estudios"
+    },
+    "WeAreTheTech": {
+      "title": "Somos el impulso tecnológico que potencia el éxito de tu negocio.",
+      "description_1": "¿Sabés qué es la experiencia?",
+      "description_2": "Haber fallado mil veces para que vos no tengas que hacerlo.",
+      "button": "Diseñemos tu equipo"
+    },
+    "OwnCode": {
+      "title_1": "NUESTRO",
+      "title_2": "CÓDIGO",
+      "title_3": "Somos una familia cooperativa de programadores y desarrolladores.",
+      "line_1": "Fundamos hace 13 años un espacio de trabajo horizontal y de calidad, que fue evolucionando hasta convertirnos en líderes tecnológicos en el sector cooperativo.",
+      "line_2": "Creemos que el cooperativismo ofrece una alternativa a los modelos de negocio tradicionales.",
+      "text_button": "Cultura"
+    },
+    "ReadyToStart": {
+      "title_1": "EMPECEMOS",
+      "title_2": "",
+      "line_1": "Hablemos de soluciones",
+      "line_2": "a la medida para tu empresa.",
+      "text_button": "Contactanos"
+    },
+    "BePart": {
+      "title_1": "SÉ PARTE DE",
+      "title_2": "LA SOLUCIÓN",
+      "line_1": "Sumate a explorar nuevos horizontes cooperativos.",
+      "line_2": "Compartamos experiencias, nuestro viaje",
+      "line_3": "puede guiar el tuyo.",
+      "text_button": "Hablemos de cooperativismo",
+      "titleMobile_1": "SE PARTE",
+      "titleMobile_2": "DE",
+      "titleMobile_3": "LA",
+      "titleMobile_4": "SOLUCIÓN"
+    }
+  },
+  "Header": {
+    "home": "Inicio test",
+    "contact": "Contacto",
+    "services": "Servicios",
+    "case studies": "Casos de Estudios",
+    "culture": "Cultura"
+  },
+  "FooterSection": {
+    "line_1": "©2024_ Farox todos los derechos reservados."
+  },
+  "ContactPage": {
+    "title_1": "HABLEMOS",
+    "title_2": "AHORA",
+    "subtitle": "Estamos listos para tu próximo proyecto",
+    "contact": "Contacto",
+    "label_1": "Nombre",
+    "label_2": "Apellido",
+    "label_3": "Correo electrónico",
+    "label_4": "Mensaje",
+    "placeholder_1": "Ingresá tu nombre*",
+    "placeholder_2": "Ingresá tu apellido*",
+    "placeholder_3": "Ingresá tu correo electrónico*",
+    "placeholder_4": "escribí tu mensaje*",
+    "button": "Enviar"
+  },
+  "ServicesPage": {
+    "HeroSection": {
+      "title_1": "Creamos equipos personalizados para garantizar el éxito de tu proyecto.",
+      "button": "Hablemos",
+      "contact": "CONTACTO"
+    },
+    "OurServices": {
+      "title_1": "NUESTROS SERVICIOS"
+    },
+    "InfoProduct": {
+      "title_1": "DESARROLLO",
+      "title_2": "DE PRODUCTO",
+      "line_1": "Nos encargamos de la planificación técnica y la ejecución de tu proyecto",
+      "line_2": ", asegurándonos de que cada etapa esté alineada con tus objetivos y expectativas. Nuestro enfoque incluye la gestión eficiente de las estructuras de trabajo, la optimización de los flujos y la promoción de la colaboración para maximizar el rendimiento.",
+      "line_3": "Al abordar los desafíos de manera proactiva y mantener un enfoque constante en la calidad, entregamos soluciones que cumplen con los objetivos de tu proyecto. Desde la estrategia inicial hasta la implementación final, garantizamos un proceso fluido que impulsa el éxito y genera valor para tu negocio.",
+      "button": "Desarrollemos"
+    },
+    "InfoSoftware": {
+      "title_1": "CONSULTORÍA",
+      "title_2": "DE SOFTWARE",
+      "line_1": "Entendemos las necesidades de nuestrxs clientes ",
+      "line_2": "para ofrecer resultados completos y funcionales, desde la concepción hasta la implementación, optimizando procesos tecnológicos y capacitando equipos. Nuestros servicios de consultoría se centran en identificar oportunidades de mejora y diseñar soluciones a medida para abordar desafíos específicos.",
+      "line_3": "Combinando experiencia técnica con un enfoque colaborativo, empoderamos a los equipos para adoptar y dominar nuevas herramientas de manera efectiva. Desde la planificación estratégica hasta la orientación práctica, aseguramos que tu tecnología se alinee con tus objetivos empresariales, impulsando la innovación y mejorando la eficiencia operativa.",
+      "button": "Potenciemos"
+    },
+    "InfoTeam": {
+      "title_1": "AMPLIACIÓN",
+      "title_2": "DE EQUIPO",
+      "line_1": "Fortalecemos tu equipo con especialistas de primer nivel, ",
+      "line_2": "asegurando una integración fluida y un crecimiento ágil sin comprometer la calidad ni la eficiencia. Nuestra metodología se centra en alinearnos con la cultura y los objetivos de tu proyecto, seleccionando profesionales que aporten tanto excelencia técnica como adaptabilidad.",
+      "line_3": "Ya sea para cubrir brechas de habilidades o ampliar capacidades, ofrecemos un apoyo a medida para responder a tus necesidades en constante evolución. Con nuestrxs profesionales experimentados a tu lado, tu equipo estará preparado para enfrentar desafíos de manera eficiente y alcanzar resultados excepcionales.",
+      "button": "Unamos Fuerzas"
+    },
+    "FeaturedProjects": {
+      "title_1": "PROYECTOS DESTACADOS",
+      "button": "Más Proyectos"
+    }
+  },
+  "CaseStudiesPage": {
+    "HeroSection": {
+      "title_1": "Ofrecemos soluciones a medida que generan un impacto real.",
+      "button": "Hablemos",
+      "contact": "CONTACTO"
+    },
+    "WeThrive": {
+      "title_1": "QUÉ",
+      "title_2": "CREAMOS",
+      "description_1": "Farox proudly contributes to Open Source projects, fostering innovation and collaboration. We believe in sharing knowledge to empower communities and create impactful solutions for everyone.",
+      "button_filter_1": "SOFTWARE LIBRE"
+    }
+  },
+  "CulturePage": {
+    "HeroSection": {
+      "title_2_up": "Somos cooperativistas, ",
+      "title_2_down": "somos desarrolladorxs.",
+      "contact": "CONTACTO"
+    },
+    "WeAre": {
+      "title_1": "SOMOS",
+      "description": "Nuestra cultura se basa en la confianza y la colaboración. Abordamos cada proyecto con integridad para ofrecer soluciones a medida. Creamos sociedades duraderas para generar un impacto real.",
+      "transparent": "Transparencia.",
+      "transparent_description": "Sabemos que para generar confianza la honestidad es la clave que determina el éxito de cada etapa.",
+      "reliable": "Fiabilidad.",
+      "reliable_description": "Entregamos soluciones de alta calidad, adaptadas a tus necesidades.",
+      "innovative": "Innovación.",
+      "innovative_description": "Afrontamos desafíos con creatividad, diseñando soluciones que desafían los límites.",
+      "collaborative": "Colaboración.",
+      "collaborative_description": "Escalamos tu equipo, asegurando alineación, desarrollo y éxito compartido."
+    },
+    "WeValue": {
+      "title_1": "NUESTROS VALORES",
+      "cooperativism": "Cooperativismo",
+      "cooperativism_description": "Somos más que un equipo, somos un colectivo unido por valores compartidos y respeto mutuo. El cooperativismo nos impulsa a fomentar la colaboración, priorizar el bienestar colectivo y garantizar la participación equitativa en la toma de decisiones. Al promover la inclusión y la solidaridad, creamos una cultura donde cada voz cuenta y cada aporte es importante, permitiéndonos alcanzar resultados extraordinarios.",
+      "federalism": "Federalismo",
+      "federalism_description": "Nuestra estructura refleja un compromiso con la flexibilidad y la adaptación, permitiendo que cada persona viva y trabaje según sus necesidades. Esta visión federal nos permite expandir nuestro trabajo colectivo en los territorios que habitamos, promoviendo un crecimiento sostenible e inclusivo.",
+      "trust": "Confianza",
+      "trust_description": "Nos esforzamos por ganarnos la confianza de nuestrxs clientes entregando soluciones confiables y de alta calidad, manteniendo una comunicación transparente en cada proyecto. Al cumplir y superar expectativas, construimos alianzas duraderas basadas en el respeto mutuo y el éxito compartido. La confianza está en el centro de todo lo que hacemos. ",
+      "respect": "Respeto",
+      "respect_description": "El respeto es la base de nuestra cultura de trabajo y de nuestra forma de vincularnos con lxs clientes. Significa valorar perspectivas diversas, fomentar la colaboración productiva y honrar la confianza depositada en nosotrxs. A través de un firme compromiso con el profesionalismo, nos aseguramos de que nuestras acciones reflejen el respeto que sentimos por nuestra organización, nuestrxs clientes y los resultados alcanzados."
+    },
+    "WeBelieve": {
+      "title_up": "CREEMOS",
+      "title_down": "",
+      "description": "En el poder transformador de la colaboración y en la fortaleza que surge al unirnos con otras organizaciones. Nuestra participación activa en FACTTIC y PATIO refleja nuestro compromiso con estos principios."
+    },
+    "FactTic": {
+      "description": "Es una plataforma de colaboración de cooperativas de nuestro sector. Su objetivo principal es fortalecer a sus miembros y fomentar un enfoque cooperativo en el trabajo y la tecnología."
+    },
+    "DataValues": {
+      "provinces": "Provincias",
+      "cooperatives": "Cooperativas",
+      "professionals": "Profesionales",
+      "co_operators": "Co.Operadorxs",
+      "digital_services": "Servicios Digitales"
+    },
+    "PatioCoop": {
+      "description": "Es una red internacional de cooperativas tecnológicas dedicadas a democratizar el sector digital. Con más de 80 cooperativas en más de 24 países, PATIO se especializa en tecnología digital, comunicación y diseño."
+    },
+    "WeCollaborate": {
+      "title_up": "COLABORAMOS",
+      "title_down": "",
+      "description": "Mirá algunos ejemplos de proyectos colaborativos que desarrollamos con otras cooperativas."
+    },
+    "Summary": {
+      "description": "Al unirnos a FACTTIC y PATIO, reafirmamos nuestra convicción de que el modelo cooperativo es un motor de innovación, inclusión y crecimiento sostenible. Estas alianzas fortalecen nuestra capacidad para ofrecer soluciones de alta calidad, basadas en principios de confianza, respeto y éxito compartido."
+    },
+    "WeCoop": {
+      "title_1": "COOPERAMOS",
+      "title_2_up": "Súmate a explorar el camino",
+      "title_2_down": "del cooperativismo.",
+      "name": "Nombre:",
+      "email": "Tu Email:",
+      "text": "Mensaje:",
+      "placeholder_name": "Escribe tu nombre*",
+      "placeholder_email": "Escribe tu email*",
+      "placeholder_text": "escribe tu mensaje*",
+      "button": "Enviar"
+    }
+  },
+  "Blog": {
+    "BlogPage": {
+      "title": "Blog",
+      "readMore": "Leer más",
+      "loading": "Cargando...",
+      "noPostsAvailable": "No hay entradas de blog disponibles.",
+      "postNotFound": "No se encontró la entrada de blog.",
+      "backToBlog": "Volver",
+      "button": "Volver a Casos de Estudio",
+      "error_message": "La página que buscas no existe o el enlace es incorrecto."
+    },
+    "FoundThisHelpful": {
+      "title": "¿Te resultó útil?",
+      "description": " Nos encantaría saber de vos y hablar sobre tus próximos pasos.",
+      "text_button": "Contactanos"
+    }
+  }
+}

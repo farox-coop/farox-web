@@ -1,0 +1,259 @@
+{
+  "HomeSection": {
+    "Hero": {
+      "title_1": "THE FUTURE,",
+      "title_2": "LIGHT THE PATH",
+      "line_1": "Code the tech journey for your business with our dev experts.",
+      "text_button": "Let's Talk",
+      "contact": "Contact"
+    },
+    "WeDo": {
+      "title_1": "WE",
+      "title_2": "DO",
+      "card_1": {
+        "title": "Product Development",
+        "description": "We manage tech development with strategic decisions, aligning solutions with business goals and leading expert teams for optimized project success."
+      },
+      "card_2": {
+        "title": "Software Consultancy",
+        "description": "We provide customized software support: tailored features, technical advice and training, ensuring agile and effective solutions aligned with customer needs."
+      },
+      "card_3": {
+        "title": "Team Extension",
+        "description": "We integrate specialists into client teams, ensuring a perfect cultural fit and fast scalability without sacrificing the quality and speed of technology solutions."
+      }
+    },
+    "WeUse": {
+      "title_1": "WE",
+      "title_2": "USE",
+      "button": "Services"
+    },
+    "WeCreateSolutions": {
+      "title_1": "WE",
+      "white_text_1": "CREATE",
+      "white_text_2": "EMBRACE",
+      "white_text_3": "ARE YOUR",
+      "white_text_3_mobile": "TECH",
+      "color_text_1": "SOLUTIONS",
+      "color_text_2": "CHALLENGES",
+      "color_text_3": "TECH ALLY",
+      "color_text_3_mobile": "ALLY"
+    },
+    "WeBelieveCaseStudies": {
+      "title_1": "WE BELIEVE",
+      "title_2": "THEY TRUST",
+      "card_1": {
+        "title": "BETTEREZ",
+        "description": "We have built a platform for a Canadian company that allows users to book tickets for travels, packages and events.",
+        "url": "https://www.betterez.com/"
+      },
+      "card_2": {
+        "title": "NIVA",
+        "description": "We automate data collection and validation processes for organisations by applying our Machine Learning skills.",
+        "url": "https://www.niva.co/"
+      },
+      "card_3": {
+        "title": "AdTech",
+        "description": "We built a team of Erlang and data science/machine learning experts to tackle challenges in the marketing industry.",
+        "url": "https://www.nextroll.com/"
+      },
+      "button": "Case Studies"
+    },
+    "WeAreTheTech": {
+      "title": "We are the tech partner that allows your brand to hit success.",
+      "description_1": "What's experience?",
+      "description_2": "To fail a thousand times so you don't have to.",
+      "button": "Let's Team Up"
+    },
+    "OwnCode": {
+      "title_1": "OWN",
+      "title_2": "CODE",
+      "subtitle_desktop_1": "We are developers, we are coders,",
+      "subtitle_desktop_2": " we are a cooperative family.",
+      "title_3": "We are developers, we are coders, we are a cooperative family.",
+      "line_1": "Founded 13 years ago, we built a horizontal, high-quality workspace, evolving to become a tech leader",
+      "line_2": "in the cooperative sector. Guided by collaboration, we believe cooperatives offer an alternative to traditional business models.",
+      "text_button": "Culture"
+    },
+    "ReadyToStart": {
+      "title_1": "READY",
+      "title_2": "TO START",
+      "line_1": "Let's talk about tailored ",
+      "line_2": "solutions for your company.",
+      "text_button": "Get in Touch"
+    },
+    "BePart": {
+      "title_1": "BE PART OF",
+      "title_2": "THE SOLUTION",
+      "line_1": "Join us to exploring new cooperative horizons.",
+      "line_2": "Whether you're a person or company, let's share",
+      "line_3": "experiences-our journey might guide yours.",
+      "text_button": "Let's coop",
+      "titleMobile_1": "BE PART",
+      "titleMobile_2": "OF",
+      "titleMobile_3": "THE",
+      "titleMobile_4": "SOLUTION"
+    }
+  },
+  "Header": {
+    "home": "Home",
+    "contact": "Contact",
+    "services": "Services",
+    "case studies": "Case Studies",
+    "culture": "Culture"
+  },
+  "FooterSection": {
+    "line_1": "© 2025_ Farox all rights reserved."
+  },
+  "ContactPage": {
+    "title_1": "LET'S",
+    "title_2": "TALK",
+    "subtitle": "We are ready for your new project",
+    "contact": "Contact",
+    "label_1": "First Name",
+    "label_2": "Last Name",
+    "label_3": "Email Address",
+    "label_4": "Text",
+    "placeholder_1": "Your first name*",
+    "placeholder_2": "Your last name*",
+    "placeholder_3": "Your email address*",
+    "placeholder_4": "write your message*",
+    "button": "Send"
+  },
+  "ServicesPage": {
+    "HeroSection": {
+      "title_1": "We build custom teams to ensure your project's success.",
+      "button": "Let's Talk",
+      "contact": "CONTACT"
+    },
+    "OurServices": {
+      "title_1": "OUR SERVICES"
+    },
+    "InfoProduct": {
+      "title_1": "PRODUCT",
+      "title_2": "DEVELOPMENT",
+      "line_1": "We take charge of the technical planning and execution of your project",
+      "line_2": ", ensuring that every step aligns with your goals and expectations. Our approach includes the effective management of team structures, streamlining workflows, and fostering collaboration to optimize perfomance.",
+      "line_3": "By addressing challenges proactively and maintaining a strong focus on quality, we deliver solutions that meet your project’s objectives. From initial strategy to final implementation, we ensure a seamless process that drives success and creates value for your business.",
+      "button": "Let's Build"
+    },
+    "InfoSoftware": {
+      "title_1": "SOFTWARE",
+      "title_2": "CONSULTANCY",
+      "line_1": "We understand client needs ",
+      "line_2": "to deliver complete, functional results from concept to implementation, optimizing tech processes and training teams. Our consultancy services focus on identifying opportunities for improvement and tailoring solutions to address unique challenges.",
+      "line_3": "By combining technical expertise with a collaborative approach, we empower teams to adopt and master new tools effectively. From strategic planning to hands-on guidance, we ensure your technology aligns with your business objectives, driving innovation and enhancing operational efficiency.",
+      "button": "Let's Get Better"
+    },
+    "InfoTeam": {
+      "title_1": "TEAM",
+      "title_2": "EXTENSION",
+      "line_1": "We enhance your team with top specialists, ",
+      "line_2": "ensuring seamless integration and fast scaling without compromising quality or agility. Our approach prioritizes aligning with your project's culture and goals, selecting experts who bring both technical excellence and adaptability.",
+      "line_3": "Whether you need to bridge skill gaps or expand capacity, we provide tailored support to meet your evolving demands. With our experienced professionals on board, your team is equipped to tackle challenges efficiently and deliver outstanding results.",
+      "button": "Let's Team Up"
+    },
+    "FeaturedProjects": {
+      "title_1": "FEATURED PROJECTS",
+      "button": "More Projects"
+    }
+  },
+  "CaseStudiesPage": {
+    "HeroSection": {
+      "title_1": "We deliver custom solutions that drive real impact for our partners.",
+      "button": "Let's Talk",
+      "contact": "CONTACT"
+    },
+    "WeThrive": {
+      "title_1": "WE",
+      "title_2": "THRIVE",
+      "description_1": "Farox proudly contributes to Open Source projects, fostering innovation and collaboration. We believe in sharing knowledge to empower communities and create impactful solutions for everyone.",
+      "button_filter_1": "FREE SOFTWARE"
+    }
+  },
+  "CulturePage": {
+    "HeroSection": {
+      "title_2_up": "We are cooperativists, we are developers, ",
+      "title_2_down": "we work building our own code.",
+      "contact": "CONTACT"
+    },
+    "WeAre": {
+      "title_1": "WE ARE",
+      "description": "At Farox, our culture is grounded in trust and collaboration. We approach every project with integrity, blending transparency and innovation to deliver tailored solutions. Together, we create lasting partnerships and impactful results.",
+      "transparent": "Transparent.",
+      "transparent_description": "We communicate openly, building trust through clarity and honesty at every stage.",
+      "reliable": "Reliable.",
+      "reliable_description": "Our clients count on us to deliver consistent, high-quality solutions tailored to their needs.",
+      "innovative": "Innovative.",
+      "innovative_description": "We embrace challenges with creativity, designing solutions that push boundaries.",
+      "collaborative": "Collaborative.",
+      "collaborative_description": "We work as an extension of your team, ensuring alignment and shared success."
+    },
+    "WeValue": {
+      "title_1": "WE VALUE",
+      "cooperativism": "Cooperativism",
+      "cooperativism_description": "We are more than just a team; we are a collective of individuals bound by shared values and mutual respect. Cooperativism drives us to foster collaboration, prioritize collective well-being, and ensure equitable participation in all decision -making processes. By championing inclusivity and solidarity, we create a culture where every voice is valued and every contribution matters, enabling us to achieve remarkable results together.",
+      "federalism": "Federalism",
+      "federalism_description": "Our structure reflects a commitment to flexibility and adaptability, empowering individuals to live and work in ways that suit their personal needs. This federal approach allows us to extend our collective work into the territories we inhabit, ensuring sustainable and inclusive growth for all.",
+      "trust": "Trust",
+      "trust_description": "Trust is at the heart of everything we do. We work hard to earn our clients' confidence by delivering reliable, high-quality solutions and maintaining transparent communication throughout every project. By consistently meeting expectations and exceeding standards, we build long-lasting partnerships based on mutual respect and shared success.",
+      "respect": "Respect",
+      "respect_description": "We cultivate respect as the foundation of our workplace culture and client relationships. Respect means valuing diverse perspectives, fostering productive collaboration, and honoring the trust placed in us. Through meticulous work and a steadfast commitment to professionalism, we ensure that our actions reflect the respect we hold for our organization, our clients, and the results we deliver together."
+    },
+    "WeBelieve": {
+      "title_up": "WE",
+      "title_down": "BELIEVE",
+      "description": "In the transformative power of collaboration and the strength that emerges from uniting with like-minded organizations. Our active participation in FACTTIC and PATIO reflects our commitment to these principles."
+    },
+    "FactTic": {
+      "description": "Serves as a collaborative platform for cooperatives in our sector. Its primary goal is to strengthen its members and promote a cooperative approach to work and technology."
+    },
+    "DataValues": {
+      "provinces": "Provinces",
+      "cooperatives": "Cooperatives",
+      "professionals": "Professionals",
+      "co_operators": "Co-Operators",
+      "digital_services": "Digital Services"
+    },
+    "PatioCoop": {
+      "description": "Is a dynamic international community of technology cooperatives dedicated to democratizing the tech sector. Comprising over 80 cooperatives across more than 24 countries, PATIO specializes in digital technology, communication, and design."
+    },
+    "WeCollaborate": {
+      "title_up": "WE",
+      "title_down": "COLLABORATE",
+      "description": "Take a look at some real examples of collaborative projects we have developed with other cooperatives."
+    },
+    "Summary": {
+      "description": "By aligning with FACTTIC and PATIO, we reaffirm our belief in the cooperative model as a catalyst for innovation, inclusivity, and sustainable growth. These partnerships enhance our ability to deliver high-quality solutions to our clients, grounded in principles of trust, respect, and shared success."
+    },
+    "WeCoop": {
+      "title_1": "WE COOP",
+      "title_2_up": "Join us to explore the path",
+      "title_2_down": "of cooperativism.",
+      "name": "First Name:",
+      "email": "Your Email Address:",
+      "text": "Text:",
+      "placeholder_name": "Your first name*",
+      "placeholder_email": "Your email address*",
+      "placeholder_text": "write your message*",
+      "button": "Send"
+    }
+  },
+  "Blog": {
+    "BlogPage": {
+      "title": "Blog",
+      "readMore": "Read more",
+      "loading": "Loading...",
+      "noPostsAvailable": "No blog posts available.",
+      "postNotFound": "Blog post not found.",
+      "backToBlog": "Back",
+      "button": "Back to Case Studies",
+      "error_message": "The page you are looking for does not exist or the link is incorrect."
+    },
+    "FoundThisHelpful": {
+      "title": "Found this helpful?",
+      "description": "We'd love to hear from you and discuss your next steps.",
+      "text_button": "Get in Touch"
+    }
+  }
+}

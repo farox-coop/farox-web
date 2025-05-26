@@ -1,0 +1,103 @@
+.video {
+  object-fit: contain;
+  position: relative;
+  z-index: 40;
+  background: transparent;
+}
+
+.heroLine {
+  position: absolute;
+  top: 50%;
+  right: -200%;
+  transform: translateY(-50%);
+  height: 150px;
+  background-color: rgba(54, 4, 215, 0.75);
+  transition: right 1s ease-in-out, width 1s ease-in-out;
+  width: 0;
+  z-index: 1;
+}
+
+.heroLineES {
+  position: absolute;
+  top: 50%;
+  right: -200%;
+  transform: translateY(-30%);
+  height: 130px;
+  background-color: rgba(54, 4, 215, 0.75);
+  transition: right 1s ease-in-out, width 1s ease-in-out;
+  width: 0;
+  z-index: 1;
+}
+
+.heroLineAnimate {
+  width: 320%;
+}
+
+.heroLineAnimateES {
+  width: 310%;
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .video {
+    width: 390px;
+  }
+
+  .heroLine {
+    height: 90px;
+  }
+
+  .heroLineES {
+    height: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .video {
+    width: 350px;
+  }
+
+  .heroLine {
+    height: 50px;
+  }
+
+  .heroLineES {
+    height: 60px;
+  }
+}
+
+@media (min-width: 579px) and (max-width: 767px) {
+  .video {
+    width: 350px;
+  }
+
+  .heroLine {
+    height: 80px;
+  }
+
+  .heroLineES {
+    height: 48px;
+  }
+}
+
+@media (max-width: 578px) {
+  .video {
+    width: 271px;
+    height: 80px;
+  }
+
+  .heroLine {
+    height: 56px;
+  }
+
+  .heroLineES {
+    height: 44px;
+  }
+
+  .heroLineAnimate {
+    width: 300%;
+  }
+
+  .heroLineAnimateES {
+    width: 298%;
+  }
+}

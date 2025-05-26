@@ -1,0 +1,41 @@
+{
+  "name": "faroxweb",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "dev": "next dev --turbopack --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "framer-motion": "^12.12.1",
+    "gray-matter": "^4.0.3",
+    "motion": "^12.12.1",
+    "nanoid": "^5.1.5",
+    "next": "15.3.2",
+    "next-intl": "4.1.0",
+    "next-view-transitions": "^0.3.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-markdown": "^10.1.0",
+    "react-responsive": "^10.0.1",
+    "react-syntax-highlighter": "^15.6.1",
+    "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "22.13.17",
+    "@types/react": "19.1.5",
+    "@types/react-dom": "19.1.5",
+    "globals": "16.1.0",
+    "postcss": "8.5.3",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.7.2"
+  }
+}

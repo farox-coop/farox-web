@@ -126,7 +126,7 @@ Estas son las tecnologías disponibles:
 
 Ejemplo:
 ```
-Technologies: NodeSVG, ReactSVG, PythonSVG
+Technologies: NodeJS, React JS, Rust
 ```
 
 ## 7. Orden de los Casos

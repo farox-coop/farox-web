@@ -34,6 +34,19 @@ Cada blog debe tener su propio archivo `.md` (Markdown). Los nombres de los arch
 ### Contenido del Archivo
 
 El contenido del archivo Markdown debe estar estructurado de la siguiente manera:
+Metadatos Obligatorios
+Los metadatos son obligatorios y deben estar siempre presentes en cada archivo Markdown. Estos se utilizan para generar tarjetas de vista previa y ordenar los posts por fecha.
+title : El título del blog. Se mostrará en las tarjetas y en la página del blog.
+description : Una breve descripción del contenido del blog. Se usará en las tarjetas de vista previa.
+url_img : La URL de la imagen principal del blog. Esta imagen será la primera imagen del post y debe estar rodeada por el comentario <!-- IMAGE_BREAK -->. Las imágenes deben cargarse en la carpeta public/images/blog/ y referenciarse con una ruta relativa.
+date : Fecha de publicación del blog en formato YYYY-MM-DD. Esta fecha se usa para ordenar los posts, mostrando los más recientes primero.
+Cuerpo del Blog
+El cuerpo del blog debe seguir estas reglas:
+
+Primera Imagen del Post :
+La primera imagen del blog debe estar rodeada por el comentario <!-- IMAGE_BREAK -->. Este comentario indica que la imagen será usada como la imagen principal de la tarjeta.
+Bloques de Código :
+Puedes incluir bloques de código en tu blog utilizando tres comillas invertidas (```) seguidas del lenguaje de programación (opcional).
 
 ```markdown
 ---

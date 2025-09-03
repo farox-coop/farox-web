@@ -113,12 +113,14 @@
     "label_1": "First Name",
     "label_2": "Last Name",
     "label_3": "Email Address",
-    "label_4": "Text",
+    "label_4": "Message",
     "placeholder_1": "Your first name*",
     "placeholder_2": "Your last name*",
     "placeholder_3": "Your email address*",
     "placeholder_4": "write your message*",
-    "button": "Send"
+    "button": "Send",
+    "contact_form_success": "Thank you for reaching out! We'll get back to you soon.",
+    "contact_form_error": "There was an error sending the form. Please try again later."
   },
   "ServicesPage": {
     "HeroSection": {

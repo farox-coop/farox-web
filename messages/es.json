@@ -114,7 +114,9 @@
     "placeholder_2": "Ingresá tu apellido*",
     "placeholder_3": "Ingresá tu correo electrónico*",
     "placeholder_4": "escribí tu mensaje*",
-    "button": "Enviar"
+    "button": "Enviar",
+    "contact_form_success": "¡Gracias por contactarte! Nos pondremos en contacto pronto.",
+    "contact_form_error": "Hubo un error al enviar el formulario. Por favor, intentá nuevamente más tarde."
   },
   "ServicesPage": {
     "HeroSection": {

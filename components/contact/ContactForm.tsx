@@ -1,8 +1,13 @@
 "use client"
 import { useTranslations } from "next-intl"
+import { useState } from "react"
+
+const formspreeId = "mgvlpvaz"
 
 function ContactForm() {
   const t = useTranslations("ContactPage")
+  const [formError, setFormError] = useState(false)
+  const [formSuccess, setFormSuccess] = useState(false)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -15,17 +20,33 @@ function ContactForm() {
         Accept: "application/json",
       },
     }
-    fetch("https://formspree.io/f/xwpvkpwj", requestOptions)
+
+    setFormSuccess(false)
+    setFormError(false)
+
+    fetch(`https://formspree.io/f/${formspreeId}`, requestOptions)
       .then((response) => {
         if (response.ok) {
           form.reset()
+          setFormSuccess(true)
           return response.json()
         }
         throw new Error("Something went wrong")
       })
       .catch((error) => {
         console.error("Error:", error)
+        setFormError(true)
       })
+  }
+
+  if (formSuccess) {
+    return (
+      <div className="w-full mx-auto px-[20px] tablet:px-[40px] laptop:px-[250px] text-[18px] tablet:text-[20px] text-center">
+        <p className="text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-medium">
+          {t("contact_form_success")}
+        </p>
+      </div>
+    )
   }
 
   const clase = "px-9 tablet:px-11 py-[10px] placeholder:italic placeholder:text-[20px] placeholder:font-light"
@@ -81,6 +102,10 @@ function ContactForm() {
           required
         />
       </label>
+
+      {formError && (
+        <div className="mb-6 block bg-red-200">{t("contact_form_error")}</div>
+      )}
 
       <button
         type="submit"

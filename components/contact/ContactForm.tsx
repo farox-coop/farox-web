@@ -34,7 +34,7 @@ function ContactForm() {
         throw new Error("Something went wrong")
       })
       .catch((error) => {
-        console.error("Error:", error)
+        console.error(error)
         setFormError(true)
       })
   }

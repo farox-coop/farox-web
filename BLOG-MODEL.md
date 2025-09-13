@@ -1,7 +1,7 @@
 ---
 title: "La toma de decisión colectiva"
-description: "Fiqus al ser una cooperativa se organiza de manera democrática y horizontal: constantemente debatimos y nos ponemos de acuerdo entre 14 personas, ahora bien, ¿cómo tomamos las decisiones de manera colectiva?"
-url_img: "https://fiqus.coop/static/f79c27b2cead08cfa4bbabd49093debb/14b42/experiencia-de-intercooperacion-header.jpg"
+description: "Farox al ser una cooperativa se organiza de manera democrática y horizontal: constantemente debatimos y nos ponemos de acuerdo entre 14 personas, ahora bien, ¿cómo tomamos las decisiones de manera colectiva?"
+url_img: "https://farox.coop/static/f79c27b2cead08cfa4bbabd49093debb/14b42/experiencia-de-intercooperacion-header.jpg"
 date: "2025-05-14"
 ---
 
@@ -14,7 +14,7 @@ Comenzamos a probar Loomio entendiendo que es una herramienta que facilita el pr
 ¿Cómo incorporamos Loomio?
 Hace dos años y medio comenzamos a utilizar la plataforma para tomar decisiones colectivas. De esta manera, cuando hay que tomar una decisión, se crea una encuesta en la plataforma, se da un tiempo máximo para que todas las personas expresen sus opiniones y su voto. Al finalizar la votación, evaluamos el resultado. Si el resultado es por amplia mayoría, entonces se procede en la dirección en la que la mayoría se expresó, si se generó mucho debate y la votación está muy dividida, tenemos un nuevo debate y abrimos a posibles cambios en la propuesta para lograr una mayoría más representativa.
 
-![Imagen de ejemplo](https://fiqus.coop/static/873c7be2cac04823fb3fadaf98685d07/19de6/experiencia-de-intercooperacion-01.jpg)
+![Imagen de ejemplo](https://farox.coop/static/873c7be2cac04823fb3fadaf98685d07/19de6/experiencia-de-intercooperacion-01.jpg)
 
 Les detallamos algunas de las ventajas que podemos mencionar de haber elegido este camino:
 

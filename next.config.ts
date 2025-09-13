@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [new URL("https://fiqus.coop/**")],
+    remotePatterns: [new URL("https://farox.coop/**")],
   },
 }
 

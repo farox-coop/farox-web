@@ -1,3 +1,5 @@
+.PHONY: setup dev start
+
 setup:
 	@npm install
 	@npm run build

@@ -1,38 +1,25 @@
-# Web page Farox
+# Farox Website
 
-### Instalación y configuración
+Requiere `npm` y `nodejs 24.7`.
 
-Clonar el repositorio
-
+### Instalar dependencias y compilar el proyecto
 ```bash
-git clone "repositorio"
-cd faroxweb
-```
-
-Instalar dependencias
-```bash
-pnpm install
+asdf install
+make setup
 ```
 
 ### Iniciar el proyecto en producción
-Compilar el proyecto
 ```bash
-pnpm build
-```
-
-Iniciar el servidor
-```bash
-pnpm start
+make start
 ```
 
 ### Iniciar el proyecto en desarrollo
-Iniciar el servidor de desarrollo
 ```bash
-pnpm dev
+make dev
 ```
 
 ### Cambiar el contenido de la página
-Se debe modificar el archivo `es.json` y `en.json` en la carpeta `messages`
+Se deben modificar los archivos `es.json` y `en.json` en la carpeta `messages`.
 
 ### Tecnologías utilizadas
 

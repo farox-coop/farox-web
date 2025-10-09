@@ -6,8 +6,8 @@ import Summary from "@/components/layout/Culture/Summary"
 import WeAre from "@/components/layout/Culture/WeAre"
 import WeBelieve from "@/components/layout/Culture/WeBelieve"
 import WeCollaborate from "@/components/layout/Culture/WeCollaborate"
+import WeCoop from "@/components/layout/Culture/WeCoop"
 import WeValue from "@/components/layout/Culture/WeValue"
-import WeeCoop from "@/components/layout/Culture/WeeCoop"
 import Footer from "@/components/layout/Footer"
 import HeadersContainer from "@/components/layout/Header/HeadersContainer"
 import { useTranslations } from "next-intl"
@@ -48,7 +48,7 @@ function CulturePage() {
         <DataValues dataValues={dataValues2} />
         <WeCollaborate />
         <Summary />
-        <WeeCoop />
+        <WeCoop />
       </main>
       <Footer />
     </>

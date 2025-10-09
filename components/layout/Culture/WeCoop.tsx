@@ -4,7 +4,7 @@ import TriangleDown from "@/components/SVG/TriangleDown"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 
-const formspreeId = "mgvlpvaz"
+const formspreeId = "xjkaabab"
 
 function WeeCoop() {
   const t = useTranslations("CulturePage.WeCoop")
@@ -89,8 +89,8 @@ function WeeCoop() {
               <span className="block mb-2 pl-9 text-[22px] tablet:pl-11">{t("label_email")}</span>
               <input
                 type="email"
-                id="lastName"
-                name="lastName"
+                id="email"
+                name="email"
                 placeholder={t("placeholder_email")}
                 className={
                   "w-full rounded-full bg-[#eeeeee] placeholder:text-[22px] placeholder:font-light py-[15px] px-[30px]"

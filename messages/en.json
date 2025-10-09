@@ -110,17 +110,17 @@
     "title_2": "TALK",
     "subtitle": "We are ready for your new project",
     "contact": "Contact",
-    "label_1": "First Name",
-    "label_2": "Last Name",
-    "label_3": "Email Address",
-    "label_4": "Message",
-    "placeholder_1": "Your first name",
-    "placeholder_2": "Your last name",
-    "placeholder_3": "Your email address",
-    "placeholder_4": "Write your message",
-    "button": "Send",
-    "contact_form_success": "Thank you for reaching out! We'll get back to you soon.",
-    "contact_form_error": "There was an error sending the form. Please try again later."
+    "label_firstname": "First Name",
+    "label_lastname": "Last Name",
+    "label_email": "Email Address",
+    "label_message": "Message",
+    "placeholder_firstname": "Your first name",
+    "placeholder_lastname": "Your last name",
+    "placeholder_email": "Your email",
+    "placeholder_message": "Write your message",
+    "submit_button": "Send",
+    "form_success": "Thank you for reaching out! We'll get back to you soon.",
+    "form_error": "There was an error sending the form. Please try again in a few minutes."
   },
   "ServicesPage": {
     "HeroSection": {
@@ -232,13 +232,15 @@
       "title_1": "WE COOP",
       "title_2_up": "Join us to explore the path",
       "title_2_down": "of cooperativism.",
-      "name": "First Name:",
-      "email": "Your Email Address:",
-      "text": "Text:",
-      "placeholder_name": "Your first name*",
-      "placeholder_email": "Your email address*",
-      "placeholder_text": "write your message*",
-      "button": "Send"
+      "label_name": "Name",
+      "label_email": "Email Address",
+      "label_message": "Message",
+      "placeholder_name": "Your name",
+      "placeholder_email": "Your email",
+      "placeholder_message": "Write your message",
+      "submit_button": "Send",
+      "form_success": "Thank you for reaching out! We'll get back to you soon.",
+      "form_error": "There was an error sending the form. Please try again in a few minutes."
     }
   },
   "Blog": {

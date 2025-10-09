@@ -106,17 +106,17 @@
     "title_2": "AHORA",
     "subtitle": "Estamos listos para tu próximo proyecto",
     "contact": "Contacto",
-    "label_1": "Nombre",
-    "label_2": "Apellido",
-    "label_3": "Correo electrónico",
-    "label_4": "Mensaje",
-    "placeholder_1": "Ingresa tu nombre",
-    "placeholder_2": "Ingresa tu apellido",
-    "placeholder_3": "Ingresa tu correo electrónico",
-    "placeholder_4": "Escribe tu mensaje",
-    "button": "Enviar",
-    "contact_form_success": "¡Gracias por contactarte! Nos pondremos en contacto pronto.",
-    "contact_form_error": "Hubo un error al enviar el formulario. Por favor, intentá nuevamente más tarde."
+    "label_firstname": "Nombre",
+    "label_lastname": "Apellido",
+    "label_email": "Correo Electrónico",
+    "label_message": "Mensaje",
+    "placeholder_firstname": "Tu nombre",
+    "placeholder_lastname": "Tu apellido",
+    "placeholder_email": "Tu email",
+    "placeholder_message": "Escribe tu mensaje",
+    "submit_button": "Enviar",
+    "form_success": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto.",
+    "form_error": "Hubo un error al enviar el formulario. Por favor, intenta nuevamente en unos minutos."
   },
   "ServicesPage": {
     "HeroSection": {
@@ -228,13 +228,15 @@
       "title_1": "COOPERAMOS",
       "title_2_up": "Súmate a explorar el camino",
       "title_2_down": "del cooperativismo.",
-      "name": "Nombre:",
-      "email": "Tu Email:",
-      "text": "Mensaje:",
-      "placeholder_name": "Escribe tu nombre*",
-      "placeholder_email": "Escribe tu email*",
-      "placeholder_text": "escribe tu mensaje*",
-      "button": "Enviar"
+      "label_name": "Nombre",
+      "label_email": "Correo Electrónico",
+      "label_message": "Mensaje",
+      "placeholder_name": "Tu nombre",
+      "placeholder_email": "Tu email",
+      "placeholder_message": "Escribe tu mensaje",
+      "submit_button": "Enviar",
+      "form_success": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto.",
+      "form_error": "Hubo un error al enviar el formulario. Por favor, intenta nuevamente en unos minutos."
     }
   },
   "Blog": {

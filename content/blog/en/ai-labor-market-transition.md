@@ -6,8 +6,6 @@ date: "2025-11-20"
 ---
 
 <!-- IMAGE_BREAK -->
-![AI and Labor Market Transition](/images/blog/ai-labor-market-header.jpg)
-<!-- IMAGE_BREAK -->
 
 The rapid development of artificial intelligence (AI) and automation is transforming the labour market at a pace that many workers, organisations, and systems are not yet able to keep up with.
 
@@ -39,6 +37,9 @@ The scale of the shift requires revisiting public policies and labour models. De
 4. **Design multisectoral solutions**
 
 Involving key stakeholders from the outset—workers, companies, governments, and training institutions—is essential for coordinated action.
+
+
+
 
 ## Questions to Keep Reflecting On
 

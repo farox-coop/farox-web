@@ -6,8 +6,6 @@ date: "2025-11-20"
 ---
 
 <!-- IMAGE_BREAK -->
-![Impacto de la IA en el mercado laboral](/images/blog/ai-labor-market-header.jpg)
-<!-- IMAGE_BREAK -->
 
 El desarrollo acelerado de la inteligencia artificial (IA) y de la automatización está transformando el mercado laboral a un ritmo que muchos trabajadores, organizaciones y sistemas aún no pueden acompañar.
 
@@ -45,6 +43,9 @@ La magnitud del cambio exige revisar políticas públicas y modelos laborales. D
 4. **Diseñar soluciones multisectoriales**
 
 Involucrar a los actores clave desde el inicio, trabajadores, empresas, gobiernos y entidades formadoras deben colaborar de manera coordinada.
+
+
+
 
 ## Preguntas para seguir pensando
 

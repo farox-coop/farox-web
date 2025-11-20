@@ -6,7 +6,7 @@ date: "2025-11-20"
 ---
 
 <!-- IMAGE_BREAK -->
-![AI and Labor Market Transition](/public/images/blog/ai-labor-market-header.jpg)
+![AI and Labor Market Transition](/images/blog/ai-labor-market-header.jpg)
 <!-- IMAGE_BREAK -->
 
 The rapid development of artificial intelligence (AI) and automation is transforming the labour market at a pace that many workers, organisations, and systems are not yet able to keep up with.

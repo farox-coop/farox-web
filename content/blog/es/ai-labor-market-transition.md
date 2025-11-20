@@ -51,7 +51,7 @@ Involucrar a los actores clave desde el inicio, trabajadores, empresas, gobierno
 
 Este proceso abre interrogantes de manera constante y nos obliga a involucrarnos activamente en la configuración del futuro del trabajo. Hacer las preguntas correctas es el primer paso para diseñar respuestas que se ajusten a nuestro contexto.
 
-¿Como protegemos a quienes tienen experiencia valiosa en oficios, pero menos acceso a oportunidades de capacitación digital?
+¿Cómo protegemos a quienes tienen experiencia valiosa en oficios, pero menos acceso a oportunidades de capacitación digital?
 
 ¿Qué roles serán los más afectados por la IA y la automatización, y dónde deberíamos concentrar nuestros esfuerzos de adaptación?
 

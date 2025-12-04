@@ -1,0 +1,34 @@
+name: CI - Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "24.7.0"
+
+      - name: Run setup
+        run: make setup
+
+      - name: Deploy website
+        if: success()
+        run: |
+          echo "$SSH_PRIVATE_KEY" > farox-website.pem
+          chmod 600 farox-website.pem
+          ssh -i farox-website.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@farox.coop 'bash -lc "export TERM=xterm-256color; source ~/.nvm/nvm.sh; cd /var/www/farox-web && make update"'
+          rm farox-website.pem
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        shell: bash

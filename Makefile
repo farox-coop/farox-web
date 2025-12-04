@@ -11,6 +11,6 @@ start:
 	@npm start
 
 update:
-	@clear && git pull origin main
+	@git pull origin main
 	@${MAKE} setup
 	@pm2 restart farox

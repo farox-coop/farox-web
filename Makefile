@@ -1,4 +1,7 @@
-.PHONY: setup dev start update
+.PHONY: reset setup dev start update
+
+reset:
+	@rm -rf .next node_modules
 
 setup:
 	@npm install
@@ -12,5 +15,5 @@ start:
 
 update:
 	@git pull origin main
-	@${MAKE} setup
+	@${MAKE} reset setup
 	@pm2 restart farox

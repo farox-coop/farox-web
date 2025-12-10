@@ -15,5 +15,5 @@ start:
 
 update:
 	@git pull origin main
-	@${MAKE} reset setup
+	@${MAKE} setup
 	@pm2 restart farox

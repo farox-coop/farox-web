@@ -1,4 +1,7 @@
 {
+  "Common": {
+    "site_title": "Software Cooperative"
+  },
   "HomeSection": {
     "Hero": {
       "title_1": "THE FUTURE,",

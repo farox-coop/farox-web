@@ -1,4 +1,7 @@
 {
+  "Common": {
+    "site_title": "Cooperativa de Software"
+  },
   "HomeSection": {
     "Hero": {
       "title_1": "EL CAMINO,",

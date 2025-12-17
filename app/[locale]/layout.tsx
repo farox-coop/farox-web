@@ -1,11 +1,12 @@
 import { routing } from "@/i18n/routing"
 import type { Metadata } from "next"
 import { NextIntlClientProvider } from "next-intl"
-import { getMessages } from "next-intl/server"
+import { getMessages, getTranslations } from "next-intl/server"
+import { ViewTransitions } from "next-view-transitions"
 import { IBM_Plex_Sans } from "next/font/google"
+import { headers } from 'next/headers';
 import { notFound } from "next/navigation"
 import "../globals.css"
-import { ViewTransitions } from "next-view-transitions"
 
 const ibmPlexSans = IBM_Plex_Sans({
   weight: ["300", "400", "500", "700"],
@@ -17,16 +18,27 @@ export async function generateMetadata({ params, searchParams }: {
   searchParams?: { [key: string]: string | string[] | undefined }
 }): Promise<Metadata> {
   const { locale } = await params
+  // NOTE: I had to do `locale: locale?.startsWith("es") ? "es" : "en"` just to satisfy TS checks
+  const t = await getTranslations({ locale: locale?.startsWith("es") ? "es" : "en", namespace: 'Common' });
+  const headersList = await headers();
+  const host = headersList.get('host');
+  const metadataBase = new URL(`http${process.env.NODE_ENV === 'production' ? 's' : ''}://${host}`);
+  //const siteOrigin = "https://farox.coop"
 
+  const title = `FAROX | ${t("site_title")}`
   const common = {
+    metadataBase,
     icons: { icon: "/favicon.svg" },
     openGraph: {
-      url: "https://farox.coop.com",
-      siteName: "FAROX | COOP",
+      //url: siteOrigin,
+      url: "./",
+      siteName: title,
       images: [
-        { url: "https://farox.coop.com/images/og.png", width: 800, height: 600 },
+        //{ url: `${siteOrigin}/images/og.png`, width: 800, height: 600 },
+        { url: "/images/og.png", width: 800, height: 600 },
         {
-          url: "https://farox.coop.com/images/og-alt.png",
+          //url: `${siteOrigin}/images/og-alt.png`,
+          url: "/images/og-alt.png",
           width: 1800,
           height: 1600,
         },
@@ -35,22 +47,22 @@ export async function generateMetadata({ params, searchParams }: {
     },
   }
 
-  if (locale?.startsWith("en")) {
+  if (locale?.startsWith("es")) {
     return {
-      title: "FAROX | COOP",
+      title,
       description:
-        "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world.",
+        "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo.",
       ...common,
-      openGraph: { ...common.openGraph, locale: "en_US", title: "FAROX | COOP", description: "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world." },
+      openGraph: { ...common.openGraph, locale: "es_ES", title, description: "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo." },
     }
   }
 
   return {
-    title: "FAROX | COOP",
+    title,
     description:
-      "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo.",
+      "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world.",
     ...common,
-    openGraph: { ...common.openGraph, locale: "es_ES", title: "FAROX | COOP", description: "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo." },
+    openGraph: { ...common.openGraph, locale: "en_US", title, description: "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world." },
   }
 }
 

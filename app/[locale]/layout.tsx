@@ -12,14 +12,46 @@ const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
 })
 
-export const metadata: Metadata = {
-  title: "Farox Web",
-  description:
-    "Somos una cooperativa de desarrollo de software especializada en brindar servicios profesionales relacionados a tecnologías tales como Data Science, Machine Learning, Sistemas de alta concurrencia y Full-Stack",
-  icons: {
-    icon: "/favicon.svg",
-  },
-  metadataBase: new URL("https://farox.coop/"),
+export async function generateMetadata({ params, searchParams }: {
+  params: Promise<{ locale: string }>
+  searchParams?: { [key: string]: string | string[] | undefined }
+}): Promise<Metadata> {
+  const { locale } = await params
+
+  const common = {
+    icons: { icon: "/favicon.svg" },
+    openGraph: {
+      url: "https://farox.coop.com",
+      siteName: "FAROX | COOP",
+      images: [
+        { url: "https://farox.coop.com/images/og.png", width: 800, height: 600 },
+        {
+          url: "https://farox.coop.com/images/og-alt.png",
+          width: 1800,
+          height: 1600,
+        },
+      ],
+      type: "website",
+    },
+  }
+
+  if (locale?.startsWith("en")) {
+    return {
+      title: "FAROX | COOP",
+      description:
+        "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world.",
+      ...common,
+      openGraph: { ...common.openGraph, locale: "en_US", title: "FAROX | COOP", description: "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world." },
+    }
+  }
+
+  return {
+    title: "FAROX | COOP",
+    description:
+      "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo.",
+    ...common,
+    openGraph: { ...common.openGraph, locale: "es_ES", title: "FAROX | COOP", description: "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo." },
+  }
 }
 
 export default async function LocaleLayout({
@@ -33,7 +65,6 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as typeof routing.locales[number])) {
     notFound()
   }
-
   const messages = await getMessages()
 
   return (

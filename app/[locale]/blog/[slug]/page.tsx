@@ -2,9 +2,9 @@ import BlogPost from "@/components/layout/Blog/BlogPost"
 import FoundThisHelpful from "@/components/layout/Blog/FoundThisHelpful"
 import Footer from "@/components/layout/Footer"
 import HeadersContainer from "@/components/layout/Header/HeadersContainer"
+import { getBaseURL, getLocale } from "@/utils/helpers"
 import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
-import { headers } from 'next/headers';
 import { notFound } from "next/navigation"
 
 type PostMetadata = {
@@ -37,13 +37,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
   try {
-    const { slug, locale } = await params
-    // NOTE: I had to do `locale: locale?.startsWith("es") ? "es" : "en"` just to satisfy TS checks
-    const t = await getTranslations({ locale: locale?.startsWith("es") ? "es" : "en", namespace: 'Common' });
-    const headersList = await headers();
-    const host = headersList.get('host');
-    const metadataBase = new URL(`http${process.env.NODE_ENV === 'production' ? 's' : ''}://${host}`);
-    //const siteOrigin = "https://farox.coop"
+    const { slug, locale: l } = await params
+    const locale = getLocale(l)
+    const t = await getTranslations({ locale, namespace: 'Common' })
+    const metadataBase = await getBaseURL()
 
     const res = await fetch(`${metadataBase}/api/blog/${locale}`)
     if (!res.ok) {
@@ -53,24 +50,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const posts = (await res.json()) as PostMetadata[]
     const post = (posts || []).find((p) => p.slug === slug)
     if (!post) {
-      notFound()
+      return notFound()
     }
 
     const title = `FAROX | ${post.title || t("site_title")}`
     const description = post.description || ""
-    //const defaultOg = `${siteOrigin}/images/og.png`
-    const defaultOg = "/images/og.png"
-
-    //let url_img = post.url_img || ""
-    //if (url_img && !/^https?:\/\//i.test(url_img)) {
-    //  url_img = new URL(url_img.startsWith("/") ? url_img : `/${url_img}`, siteOrigin).toString()
-    //}
-    const url_img = post.url_img || ""
+    const postUrlImg = post.url_img || ""
     const ogImages = [
-      ...(url_img
+      ...(postUrlImg
         ? [
           {
-            url: url_img,
+            url: postUrlImg,
             width: 1024,
             height: 1024,
             alt: title,
@@ -78,20 +68,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         ]
         : []),
       {
-        url: defaultOg,
+        url: "/images/og.png",
         width: 1200,
         height: 630,
         alt: title,
       },
       {
-        //url: `${siteOrigin}/images/og.png`,
         url: "/images/og.png",
         width: 800,
         height: 600,
         alt: title,
       },
       {
-        //url: `${siteOrigin}/images/og-alt.png`,
         url: "/images/og-alt.png",
         width: 1800,
         height: 1600,
@@ -100,17 +88,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ]
 
     return {
-      metadataBase,
       title,
       description,
+      metadataBase,
       openGraph: {
+        url: `/${locale}/blog/${slug}`,
         title,
         description,
-        //url: `${siteOrigin}/${locale}/blog/${slug}`,
-        url: `/${locale}/blog/${slug}`,
+        locale,
         images: ogImages,
         type: "article",
-        locale: locale?.startsWith("es") ? "es_ES" : "en_US",
       },
     }
   } catch (error) {

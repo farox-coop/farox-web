@@ -1,4 +1,4 @@
-.PHONY: reset setup dev start update
+.PHONY: reset setup dev start update lint format
 
 reset:
 	@rm -rf .next node_modules
@@ -17,3 +17,9 @@ update:
 	@git pull origin main
 	@${MAKE} setup
 	@pm2 restart farox
+
+lint:
+	@npm run lint
+
+format:
+	@npm run format

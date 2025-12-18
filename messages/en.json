@@ -1,6 +1,7 @@
 {
   "Common": {
-    "site_title": "Software Cooperative"
+    "site_title": "Software Cooperative",
+    "site_description": "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world."
   },
   "HomeSection": {
     "Hero": {

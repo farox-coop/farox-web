@@ -1,10 +1,10 @@
 import { routing } from "@/i18n/routing"
+import { getBaseURL, getLocale } from "@/utils/helpers"
 import type { Metadata } from "next"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages, getTranslations } from "next-intl/server"
 import { ViewTransitions } from "next-view-transitions"
 import { IBM_Plex_Sans } from "next/font/google"
-import { headers } from 'next/headers';
 import { notFound } from "next/navigation"
 import "../globals.css"
 
@@ -13,56 +13,33 @@ const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
 })
 
-export async function generateMetadata({ params, searchParams }: {
-  params: Promise<{ locale: string }>
-  searchParams?: { [key: string]: string | string[] | undefined }
-}): Promise<Metadata> {
-  const { locale } = await params
-  // NOTE: I had to do `locale: locale?.startsWith("es") ? "es" : "en"` just to satisfy TS checks
-  const t = await getTranslations({ locale: locale?.startsWith("es") ? "es" : "en", namespace: 'Common' });
-  const headersList = await headers();
-  const host = headersList.get('host');
-  const metadataBase = new URL(`http${process.env.NODE_ENV === 'production' ? 's' : ''}://${host}`);
-  //const siteOrigin = "https://farox.coop"
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale: l } = await params
+  const locale = getLocale(l)
+  const t = await getTranslations({ locale, namespace: 'Common' })
+  const metadataBase = await getBaseURL()
 
   const title = `FAROX | ${t("site_title")}`
-  const common = {
-    metadataBase,
-    icons: { icon: "/favicon.svg" },
-    openGraph: {
-      //url: siteOrigin,
-      url: "./",
-      siteName: title,
-      images: [
-        //{ url: `${siteOrigin}/images/og.png`, width: 800, height: 600 },
-        { url: "/images/og.png", width: 800, height: 600 },
-        {
-          //url: `${siteOrigin}/images/og-alt.png`,
-          url: "/images/og-alt.png",
-          width: 1800,
-          height: 1600,
-        },
-      ],
-      type: "website",
-    },
-  }
+  const description = t("site_description")
 
-  if (locale?.startsWith("es")) {
-    return {
-      title,
-      description:
-        "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo.",
-      ...common,
-      openGraph: { ...common.openGraph, locale: "es_ES", title, description: "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo." },
-    }
-  }
 
   return {
     title,
-    description:
-      "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world.",
-    ...common,
-    openGraph: { ...common.openGraph, locale: "en_US", title, description: "We are a Cooperative Software Studio formed by a team of professionals in AI, Data Science, and Full-Stack Development. From Argentina, building networks around the world." },
+    description,
+    metadataBase,
+    icons: { icon: "/favicon.svg" },
+    openGraph: {
+      url: "./",
+      siteName: title,
+      title,
+      description,
+      locale,
+      images: [
+        { url: "/images/og.png", width: 800, height: 600 },
+        { url: "/images/og-alt.png", width: 1800, height: 1600 },
+      ],
+      type: "website",
+    },
   }
 }
 

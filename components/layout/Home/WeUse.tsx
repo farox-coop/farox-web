@@ -71,10 +71,10 @@ export default function WeUse() {
             <NodeSVG />
           </span>
           <span className="flex items-center justify-center w-[50px] tablet:w-[69px] laptop:w-[100px]">
-            <VueSVG width='135' height='115' />
+            <VueSVG width="135" height="115" />
           </span>
           <span className="flex items-center justify-center w-[50px] tablet:w-[69px] laptop:w-[100px]">
-            <ReactSVG width='75' height='75' />
+            <ReactSVG width="75" height="75" />
           </span>
           <span className="w-[50px] tablet:w-[69px] laptop:w-[114px]">
             <GoSVG />

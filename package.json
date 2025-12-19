@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "lint": "biome check .",
-    "format": "biome format --write .",
-    "dev": "next dev --turbopack --hostname 0.0.0.0",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dev": "next dev --turbopack --hostname 0.0.0.0",
+    "test": "",
+    "lint": "biome check .",
+    "format": "biome format --write ."
   },
   "dependencies": {
     "@types/react-syntax-highlighter": "^15.5.13",

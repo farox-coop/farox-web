@@ -45,7 +45,8 @@ export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
   if (notFound) {
     return (
       <article className="w-full min-h-screen mt-[82px] tablet:mt-[112px] laptop:mt-[160px] bg-white laptop:bg-[#f1f1f1] relative">
-        <div className="absolute z-0 w-full h-[640px] laptop:h-[600px] bg-[#7743DB]"
+        <div
+          className="absolute z-0 w-full h-[640px] laptop:h-[600px] bg-[#7743DB]"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 61%)" }}
         />
         <section className="max-w-screen-desktoplg mx-auto flex w-full flex-col items-center gap-[35px] laptop:h-auto z-20 laptop:pb-[100px] relative">
@@ -69,7 +70,8 @@ export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
   if (!caseStudy) {
     return (
       <article className="w-full min-h-screen mt-[82px] tablet:mt-[112px] laptop:mt-[160px] bg-white laptop:bg-[#f1f1f1] relative">
-        <div className="absolute z-0 w-full h-[640px] laptop:h-[600px] bg-[#7743DB]"
+        <div
+          className="absolute z-0 w-full h-[640px] laptop:h-[600px] bg-[#7743DB]"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 61%)" }}
         />
         <div className="flex flex-col items-center justify-center w-full">
@@ -157,13 +159,13 @@ export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
             <div className="flex gap-3 flex-wrap justify-center laptop:justify-start px-[40px] laptop:px-0 w-full uppercase">
               {caseStudy?.coop
                 ? caseStudy.coop.map((item) => {
-                  const uniqueKey = nanoid()
-                  return (
-                    <span key={`coop-item-${uniqueKey}`} className="text-base font-semibold">
-                      {item}
-                    </span>
-                  )
-                })
+                    const uniqueKey = nanoid()
+                    return (
+                      <span key={`coop-item-${uniqueKey}`} className="text-base font-semibold">
+                        {item}
+                      </span>
+                    )
+                  })
                 : null}
             </div>
             <div className="flex flex-col items-center laptop:flex-row laptopitems-start gap-4 pt-[50px] laptop:pt-0 pb-[100px] laptop:pb-0 laptop:gap-[58px]">
@@ -191,10 +193,7 @@ export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
               ) : null}
             </div>
           </article>
-          <article
-            className="laptop:flex-1 bg-black laptop:bg-opacity-84  relative z-30 "
-            style={{ flex: "0 0 60%" }}
-          >
+          <article className="laptop:flex-1 bg-black laptop:bg-opacity-84  relative z-30 " style={{ flex: "0 0 60%" }}>
             <div className="absolute h-[2px] w-[70%] tablet:h-[5px] laptop:w-[60%] bg-secondary  group-hover:bg-secondary transition-colors duration-300 -top-[1px] tablet:-top-[5px] left-[-5px] right-0  hidden-mobile" />
             <div className="absolute h-[90%] tablet:h-[10%] w-[2px] tablet:w-[5px] bg-secondary  group-hover:bg-secondary transition-colors duration-300 -left-[1px] tablet:-left-[5px] bottom-0 top-[-5px]  hidden-mobile" />
             {/* Contenido */}
@@ -242,13 +241,7 @@ export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
                   return (
                     <li key={`contribution-${uniqueKey}`} className="flex items-start gap-[20px]">
                       <div className="w-[29px] h-[29px] pt-[5px]">
-                        <svg
-                          width="31"
-                          height="31"
-                          viewBox="0 0 31 31"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M29.8098 0.870117H25.9898L15.2398 13.1001L4.4798 0.870117H0.649841L13.3298 15.2802L0.549805 29.8301L4.31982 29.9102L15.2498 17.4601L26.1998 29.9001H30.0298L17.1598 15.2802L29.8098 0.870117Z"
                             stroke="white"

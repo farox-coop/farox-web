@@ -35,6 +35,6 @@
     "globals": ["browser", "node"]
   },
   "files": {
-    "ignore": ["node_modules", ".next", "out", "coverage", ".idea"]
+    "ignore": ["node_modules", ".next", "out", "coverage", ".idea", "next-env.d.ts"]
   }
 }

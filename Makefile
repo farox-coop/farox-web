@@ -1,4 +1,4 @@
-.PHONY: reset setup dev start update lint format
+.PHONY: reset setup dev start update tests test lint format
 
 reset:
 	@rm -rf .next node_modules
@@ -17,6 +17,12 @@ update:
 	@git pull origin main
 	@${MAKE} setup
 	@pm2 restart farox
+
+tests: lint test
+	@echo "All checks and tests passed!"
+
+test:
+	@npm run test
 
 lint:
 	@npm run lint

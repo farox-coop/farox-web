@@ -35,11 +35,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   )
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
   try {
     const { slug, locale: l } = await params
     const locale = getLocale(l)
-    const t = await getTranslations({ locale, namespace: 'Common' })
+    const t = await getTranslations({ locale, namespace: "Common" })
     const metadataBase = await getBaseURL()
 
     const res = await fetch(`${metadataBase}/api/blog/${locale}`)
@@ -59,13 +61,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const ogImages = [
       ...(postUrlImg
         ? [
-          {
-            url: postUrlImg,
-            width: 1024,
-            height: 1024,
-            alt: title,
-          },
-        ]
+            {
+              url: postUrlImg,
+              width: 1024,
+              height: 1024,
+              alt: title,
+            },
+          ]
         : []),
       {
         url: "/images/og.png",

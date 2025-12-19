@@ -34,7 +34,7 @@ export default function BlogPost({ slug }: { slug: string }) {
       setPost(currentPost || null)
       setLoading(false)
     } else {
-      fetchPosts(locale, setLoading, () => { })
+      fetchPosts(locale, setLoading, () => {})
         .then(() => {
           if (!isMounted) {
             return
@@ -84,17 +84,19 @@ export default function BlogPost({ slug }: { slug: string }) {
   }
 
   return (
-    <main
-      className="flex flex-col justify-center items-center w-full relative h-full bg-custom-gradient-blog px-2"
-    >
+    <main className="flex flex-col justify-center items-center w-full relative h-full bg-custom-gradient-blog px-2">
       <div className="absolute -top-40 left-1/3 -translate-x-1/2 w-[2790px] pointer-events-none hidden tablet:block">
         <AHeroSVG />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-30% to-white" />
       <article className="flex flex-col justify-center items-center max-w-screen-2xl mx-auto rounded-lg px-4 z-10 pb-20">
         <header className="w-full max-w-screen-xl pt-36 tablet:pt-72 text-center">
-          <h1 className="text-3xl tablet:text-5xl laptop:text-7xl font-semibold text-gray-900 uppercase">{post.title}</h1>
-          <p className="text-lg tablet:text-3xl text-gray-600 text-center mt-10 tablet:mt-16 mb-10 tablet:mb-24">{post.description}</p>
+          <h1 className="text-3xl tablet:text-5xl laptop:text-7xl font-semibold text-gray-900 uppercase">
+            {post.title}
+          </h1>
+          <p className="text-lg tablet:text-3xl text-gray-600 text-center mt-10 tablet:mt-16 mb-10 tablet:mb-24">
+            {post.description}
+          </p>
         </header>
         <section className="relative">
           {/* Texto antes de la imagen */}

@@ -56,7 +56,6 @@ function BlogPage() {
             </section>
             <BlogList />
           </div>
-
         </div>
       </main>
       <FoundThisHelpful />
@@ -66,4 +65,3 @@ function BlogPage() {
 }
 
 export default BlogPage
-

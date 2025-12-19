@@ -16,12 +16,11 @@ const ibmPlexSans = IBM_Plex_Sans({
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: l } = await params
   const locale = getLocale(l)
-  const t = await getTranslations({ locale, namespace: 'Common' })
+  const t = await getTranslations({ locale, namespace: "Common" })
   const metadataBase = await getBaseURL()
 
   const title = `FAROX | ${t("site_title")}`
   const description = t("site_description")
-
 
   return {
     title,
@@ -51,7 +50,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound()
   }
   const messages = await getMessages()

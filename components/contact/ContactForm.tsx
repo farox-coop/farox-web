@@ -41,9 +41,7 @@ function ContactForm() {
   if (formSuccess) {
     return (
       <div className="w-full mx-auto px-[20px] tablet:px-[40px] laptop:px-[250px] text-[18px] tablet:text-[20px] text-center">
-        <p className="text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-medium">
-          {t("form_success")}
-        </p>
+        <p className="text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-medium">{t("form_success")}</p>
       </div>
     )
   }
@@ -102,9 +100,7 @@ function ContactForm() {
         />
       </label>
 
-      {formError && (
-        <div className="mb-6 block bg-red-200">{t("form_error")}</div>
-      )}
+      {formError && <div className="mb-6 block bg-red-200">{t("form_error")}</div>}
 
       <button
         type="submit"

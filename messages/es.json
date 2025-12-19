@@ -1,4 +1,8 @@
 {
+  "Common": {
+    "site_title": "Cooperativa de Software",
+    "site_description": "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo."
+  },
   "HomeSection": {
     "Hero": {
       "title_1": "EL CAMINO,",

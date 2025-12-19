@@ -1,5 +1,5 @@
-import AHeroSVG from '@/components/SVG/AHeroSVG'
-import LogoFaroxBackground from '@/components/SVG/LogoFaroxBackground'
+import AHeroSVG from "@/components/SVG/AHeroSVG"
+import LogoFaroxBackground from "@/components/SVG/LogoFaroxBackground"
 import TriangleDown from "@/components/SVG/TriangleDown"
 import BlogList from "@/components/layout/Blog/BlogList"
 import FoundThisHelpful from "@/components/layout/Blog/FoundThisHelpful"

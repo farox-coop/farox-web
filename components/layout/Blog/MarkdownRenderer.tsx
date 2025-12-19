@@ -24,7 +24,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
               {String(children).replace(/\n$/, "")}
             </SyntaxHighlighter>
           ) : (
-            <code className={`${className ? `${className} ` : ''}mb-2`} {...props}>
+            <code className={`${className ? `${className} ` : ""}mb-2`} {...props}>
               {children}
             </code>
           )

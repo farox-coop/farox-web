@@ -45,9 +45,7 @@ function WeeCoop() {
       <article className="w-full bg-white relative px-8" id="we-coop" data-scroll-section>
         <section className="max-w-screen-desktoplg relative mx-auto my-[95px] flex w-full flex-col items-center">
           <div className="w-full mx-auto px-[20px] tablet:px-[40px] laptop:px-[250px] text-[18px] tablet:text-[20px] text-center">
-            <p className="text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-medium">
-              {t("form_success")}
-            </p>
+            <p className="text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-medium">{t("form_success")}</p>
           </div>
         </section>
       </article>
@@ -111,9 +109,7 @@ function WeeCoop() {
             />
           </label>
 
-          {formError && (
-            <div className="mb-6 block bg-red-200">{t("form_error")}</div>
-          )}
+          {formError && <div className="mb-6 block bg-red-200">{t("form_error")}</div>}
 
           <button
             type="submit"

@@ -7,8 +7,6 @@ date: "2025-12-18"
 
 <!-- IMAGE_BREAK -->
 
-# Cooperation Beyond Borders
-
 About six years ago, we began an international cooperative journey that, without us fully realizing it at the time, would change the way we see the world. It showed us that technological cooperativism is alive (and beating strongly) in many corners of the planet.
 
 Because yes, there are different languages, impossible time zones, and customs that can feel confusing at first. But beneath all that, when cooperativists meet, a shared language emerges. A simple, almost obvious, yet deeply powerful idea: **no one is saved alone**. And from that idea comes an immediate response: if we want to grow stronger, **the best strategy is to get organized and collaborate**.

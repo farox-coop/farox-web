@@ -61,7 +61,6 @@ La cooperación no solo nos llevó a compartir proyectos y generar amistades, si
 
 En un mundo donde lo distinto suele separar, ese gesto es un mensaje **tan rotundamente político como profundamente hermoso**.
 
-
 ## Barcelona: eventos, comunidad y un lugar que nos inspiró
 
 De Bulgaria viajamos a **Barcelona**, donde participamos de dos eventos increíbles. Pero no fuimos solos: se sumaron compañerxs de **Camplight** y **Nayra**. Y ahí pasó algo que nos encanta: el viaje dejó de ser “nuestro” y se volvió, otra vez, un trayecto compartido.

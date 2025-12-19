@@ -7,8 +7,6 @@ date: "2025-12-18"
 
 <!-- IMAGE_BREAK -->
 
-# Cooperación que no entiende de fronteras
-
 Hace ya unos seis años empezamos un viaje cooperativo internacional que, sin darnos cuenta, nos iba a cambiar la forma de mirar el mundo: nos mostraría que el cooperativismo tecnológico vive (y late fuerte) en diferentes rincones del planeta.
 
 Porque sí, hay idiomas distintos, husos horarios imposibles, costumbres que al principio desconciertan pero, en el fondo, cuando nos encontramos entre cooperativistas aparece un lenguaje común. Un razonamiento simple, casi obvio, pero muy poderoso: **nadie se salva solo**.
@@ -62,8 +60,6 @@ Todo esto puede intentarse describir con palabras, pero hay cosas que solo termi
 La cooperación no solo nos llevó a compartir proyectos y generar amistades, sino también a **compartir cultura** con personas que la abrazaron como propia, aunque fuera por algunas horas.
 
 En un mundo donde lo distinto suele separar, ese gesto es un mensaje **tan rotundamente político como profundamente hermoso**.
-
----
 
 ## Barcelona: eventos, comunidad y un lugar que nos inspiró
 

@@ -1,7 +1,9 @@
 "use client"
 import AHeroSVG from "@/components/SVG/AHeroSVG"
+import ArrowCardSVG from "@/components/SVG/ArrowCardSVG"
 import Spinner from "@/components/SVG/Spinner"
 import { useStorePost } from "@/store/usePostStore"
+import type { BlogPostType } from "@/types/blogpost.type"
 import { fetchPosts } from "@/utils/fetchPost"
 import { useLocale, useTranslations } from "next-intl"
 import Image from "next/image"
@@ -9,28 +11,18 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import MarkdownRenderer from "./MarkdownRenderer"
 
-interface BlogPost {
-  slug: string
-  title: string
-  description: string
-  url_img: string
-  content: string
-  markdownContent: string
-}
-
 export default function BlogPost({ slug }: { slug: string }) {
-  const [post, setPost] = useState<BlogPost | null>(null)
+  const [post, setPost] = useState<BlogPostType | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const locale = useLocale()
   const t = useTranslations("Blog.BlogPage")
-  const [beforeImg, afterImg] = post?.markdownContent?.split("<!-- IMAGE_BREAK -->") || ["", ""]
   const { allPosts, allPostsEN } = useStorePost()
 
   useEffect(() => {
     let isMounted = true
     const postsArr = locale === "es" ? allPosts : allPostsEN
     if (postsArr.length > 0) {
-      const currentPost = postsArr.find((p: BlogPost) => p.slug === slug)
+      const currentPost = postsArr.find((p: BlogPostType) => p.slug === slug)
       setPost(currentPost || null)
       setLoading(false)
     } else {
@@ -41,7 +33,7 @@ export default function BlogPost({ slug }: { slug: string }) {
           }
           const updatedPostsArr =
             locale === "es" ? useStorePost.getState().allPosts : useStorePost.getState().allPostsEN
-          const currentPost = updatedPostsArr.find((p: BlogPost) => p.slug === slug)
+          const currentPost = updatedPostsArr.find((p: BlogPostType) => p.slug === slug)
           setPost(currentPost || null)
         })
         .catch((error) => {
@@ -98,21 +90,52 @@ export default function BlogPost({ slug }: { slug: string }) {
             {post.description}
           </p>
         </header>
-        <section className="relative">
-          {/* Texto antes de la imagen */}
-          <div className="prose max-w-none">
-            <MarkdownRenderer content={beforeImg} />
+        <section className="flex flex-col items-center w-full max-w-screen-xl gap-8">
+          <div className="w-full max-w-[1280px] aspect-[1280/720] relative">
+            <Image
+              src={post.url_img}
+              alt={post.title}
+              fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover object-center"
+            />
           </div>
-          <div className="my-2 flow-root">
-            <div className="w-full md:w-[350px] md:float-left md:shrink-0 md:mr-4 mb-2 md:mb-0">
-              <Image src={post.url_img} alt={post.title} width={350} height={200} className="w-full h-auto" />
-            </div>
-            {/* Texto después de la imagen */}
-            <div className="prose max-w-none">
-              <MarkdownRenderer content={afterImg} />
-            </div>
+          {post.author && (
+            <p className="w-full max-w-3xl uppercase">
+              {t("writtenBy")} <span className="font-semibold">{post.author}</span>
+            </p>
+          )}
+          <div className="prose max-w-3xl">
+            <MarkdownRenderer content={post?.markdownContent || ""} />
           </div>
         </section>
+        {post.tags && (
+          <div className="flex gap-1 flex-wrap mt-10 w-full max-w-3xl">
+            {post.tags.map((tag) => (
+              <span key={tag} className="bg-black text-white text-sm px-[2px] py-[1px] uppercase flex-shrink-0">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+        {post.tintasur && (
+          <footer className="flex flex-row justify-start w-full max-w-3xl h-10 mt-10">
+            <div className="w-[18px] laptop:w-[20px] desktop:w-[22px] h-auto self-start fill-primary">
+              <ArrowCardSVG />
+            </div>
+            <p className="text-sm uppercase font-semibold self-end pl-2">
+              {t("tintasurCredit")}{" "}
+              <a
+                href="https://tintasur.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Tinta Sur
+              </a>
+            </p>
+          </footer>
+        )}
       </article>
     </main>
   )

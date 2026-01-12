@@ -1,4 +1,5 @@
 import BlogPost from "@/components/layout/Blog/BlogPost"
+import BlogReadMore from "@/components/layout/Blog/BlogReadMore"
 import FoundThisHelpful from "@/components/layout/Blog/FoundThisHelpful"
 import Footer from "@/components/layout/Footer"
 import HeadersContainer from "@/components/layout/Header/HeadersContainer"
@@ -30,6 +31,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       />
       <BlogPost slug={slug} />
       <FoundThisHelpful />
+      <BlogReadMore />
       <Footer />
     </>
   )

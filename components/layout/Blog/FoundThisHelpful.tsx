@@ -19,7 +19,7 @@ export default function FoundThisHelpful() {
           >
             {t("title")}
           </h2>
-          <p className="w-full max-w-[250px] tablet:max-w-[250px] laptop:max-w-[450px] desktop:max-w-[650px] laptop:w-auto text-xl laptop:text-4xl desktop:text-5xl text-white font-light mt-12 text-pretty z-10">
+          <p className="w-full max-w-[250px] tablet:max-w-[250px] laptop:max-w-[450px] desktop:max-w-[750px] laptop:w-auto text-xl laptop:text-4xl desktop:text-5xl text-white font-light mt-12 text-pretty z-10">
             {t("description")}
           </p>
           <UniqueButton href={`/${locale}/contact`} buttonStyle="secondary" className="mt-20">

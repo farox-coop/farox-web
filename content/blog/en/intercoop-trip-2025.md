@@ -1,11 +1,12 @@
 ---
 title: "Cooperation Beyond Borders"
 description: "About six years ago, we began an international cooperative journey that, without us fully realizing it at the time, would change the way we see the world. It showed us that technological cooperativism is alive in many corners of the planet."
-url_img: "/images/blog/intercoop-trip-2025-cover.jpg"
+url_img: "/images/blog/intercoop-trip-2025-cover.webp"
 date: "2025-12-18"
+author: "Nicolás Dimarco"
+tags: ["Cooperativism", "Open Government", "Patio"]
+tintasur: true
 ---
-
-<!-- IMAGE_BREAK -->
 
 About six years ago, we began an international cooperative journey that, without us fully realizing it at the time, would change the way we see the world. It showed us that technological cooperativism is alive (and beating strongly) in many corners of the planet.
 

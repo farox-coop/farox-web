@@ -36,29 +36,45 @@ Cada blog debe tener su propio archivo `.md` (Markdown). Los nombres de los arch
 El contenido del archivo Markdown debe estar estructurado de la siguiente manera:
 Metadatos Obligatorios
 Los metadatos son obligatorios y deben estar siempre presentes en cada archivo Markdown. Estos se utilizan para generar tarjetas de vista previa y ordenar los posts por fecha.
-title : El título del blog. Se mostrará en las tarjetas y en la página del blog.
+**title** : El título del blog. Se mostrará en las tarjetas y en la página del blog.
 description : Una breve descripción del contenido del blog. Se usará en las tarjetas de vista previa.
-url_img : La URL de la imagen principal del blog. Esta imagen será la primera imagen del post y debe estar rodeada por el comentario <!-- IMAGE_BREAK -->. Las imágenes deben cargarse en la carpeta public/images/blog/ y referenciarse con una ruta relativa.
-date : Fecha de publicación del blog en formato YYYY-MM-DD. Esta fecha se usa para ordenar los posts, mostrando los más recientes primero.
-Cuerpo del Blog
-El cuerpo del blog debe seguir estas reglas:
+**url_img** : La URL de la imagen principal del blog que será usada en la tarjeta de vista previa y al inicio del blog. Debe ser una ruta relativa a la carpeta `/images/blog/`.
+**date** : Fecha de publicación del blog en formato YYYY-MM-DD. Esta fecha se usa para ordenar los posts, mostrando los más recientes primero.
+**author** : Nombre del autor del blog. (opcional)
+**tags** : Una lista de etiquetas relacionadas con el contenido del blog en formato array. (opcional)
+**tintasur** : Un valor booleano (true/false) que indica si el blog es parte del proyecto TintaSur, si no se coloca, se asume false. (opcional)
 
-Primera Imagen del Post :
-La primera imagen del blog debe estar rodeada por el comentario <!-- IMAGE_BREAK -->. Este comentario indica que la imagen será usada como la imagen principal de la tarjeta.
-Bloques de Código :
-Puedes incluir bloques de código en tu blog utilizando tres comillas invertidas (```) seguidas del lenguaje de programación (opcional).
+#### Bloques de Código:
+Se puede incluir bloques de código en el blog utilizando tres comillas invertidas (```) seguidas del lenguaje de programación y finalizando con tres comillas invertidas. Por ejemplo:
+```javascript
+console.log('Server is running on port 3000');
+```
+
+#### Imágenes:
+Para insertar imágenes dentro del contenido del blog, utilizar la siguiente sintaxis de Markdown:markdown
+![Texto alternativo de la imagen](/images/blog/nombre-de-la-imagen.jpg)
+
+#### Imágenes con crédito:
+Si la imagen requiere un crédito o fuente, se puede agregar un pipe (`|`) seguido del texto del crédito después del texto alternativo. Por ejemplo:
+![Texto alternativo de la imagen | Fuente: Nombre del Autor o Sitio Web](/images/blog/nombre-de-la-imagen.jpg)
+
+#### Videos de YouTube:
+Para insertar videos de YouTube dentro del contenido del blog, simplemente coloca el enlace completo del video.
+[Ver tutorial en YouTube](https://youtu.be/EngW7tLk6R8)
+
 
 ```markdown
 ---
 title: "La toma de decisión colectiva"
 description: "Farox al ser una cooperativa se organiza de manera democrática y horizontal: constantemente debatimos y nos ponemos de acuerdo entre 14 personas, ahora bien, ¿cómo tomamos las decisiones de manera colectiva?"
-url_img: "https://farox.coop/static/f79c27b2cead08cfa4bbabd49093debb/14b42/experiencia-de-intercooperacion-header.jpg "
+url_img: "/images/blog/the-modern-beam.webp"
 date: "2025-05-14"
+author: "Equipo Farox"
+tags: ["Cooperativas", "Organización", "Toma de Decisiones"]
+tintasur: false
 ---
 
 ¿Cómo resolvimos este problema? Hace tres años en una Show&Tell organizada por la Federación de Cooperativa de Trabajo, Tecnología, Innovación y Conocimiento FACTTIC conocimos la plataforma cooperativa Loomio una plataforma web que sirve para tomar decisiones colectivas. Mediante diferentes opciones, se pueden crear encuestas y facilitar el proceso de toma de decisiones. A su vez, genera transparencia, ya que todas las decisiones están en un mismo lugar, con los argumentos y **resultados abiertos** a todas las personas de la organización.
-
-<!-- IMAGE_BREAK -->
 
 Comenzamos a probar Loomio entendiendo que es una herramienta que facilita el proceso, pero no reemplaza el debate. Es decir, *hay ocasiones en las que hace falta seguir debatiendo o generando procedimientos que guíen la dinámica de la toma de decisiones* y Loomio será solo una herramienta durante esas discusiones. Un ejemplo, para que se entienda, supongamos que hacemos una votación que genera mucha polémica dentro de la organización. Somos 11 personas y la votación, luego de un debate acalorado, **sale 6 a 5**. Tal vez no sea una buena idea mantener las mismas condiciones de la votación si casi el 50% del colectivo no está conforme con la decisión. En su lugar, se puede optar por cambiar algunos detalles o condiciones de la decisión a tomar para lograr un punto intermedio. Esto queda sujeto a la decisión de cada organización.
 
@@ -86,24 +102,17 @@ const port = 3000;
 const fs = require('fs');
 ```
 
+#### Se puede ver un ejemplo completo de un blog en el siguiente enlace:
+En el archivo de ejemplo se incluyen todos los elementos mencionados anteriormente, incluyendo metadatos, imágenes, videos y bloques de código.  Todo esta comentado para facilitar su comprensión.
+- [Ejemplo en Español](BLOG-MODEL.md)
+
 ---
 
 ## 3. Cargar Imágenes
 
 Para cargar imágenes, sigue estos pasos:
 
-1. Coloca la imagen en la carpeta `public/images/blog/`.
-2. Usa la ruta relativa en el campo `url_img` del archivo Markdown. Por ejemplo:
-
-```markdown
-url_img: "/images/blog/nombre-de-la-imagen.jpg"
-```
-Asegúrate de que el nombre del archivo de la imagen coincida exactamente con el archivo cargado.
-
-4. Guardar el Archivo
-Guarda el archivo .md en la carpeta correspondiente (en/ o es/) dentro de content/blog/.
-
-5. Verificar el Blog
-Una vez que hayas guardado el archivo, verifica que el blog aparezca correctamente en el sitio. Si algo no funciona como esperabas, revisa la estructura del archivo Markdown y asegúrate de que todos los campos obligatorios estén completos.
-
-¡Listo! Ahora has subido un nuevo blog al sitio. Si tienes preguntas o necesitas ayuda, no dudes en contactarnos.
+1. Colocar las imágenes en la carpeta `public/images/blog/`.
+2. Usar la ruta relativa en el campo `url_img` del archivo Markdown.
+3. Guarda el archivo .md en la carpeta correspondiente (`en/` o `es/`) dentro de `content/blog/`.
+4. Una vez que se haya guardado el archivo, verificar que el blog aparezca correctamente en el sitio. Si algo no funciona como se esperaba, revisar la estructura del archivo Markdown y asegúrate de que todos los campos obligatorios estén completos.

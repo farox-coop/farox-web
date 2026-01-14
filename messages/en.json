@@ -256,7 +256,11 @@
       "postNotFound": "Blog post not found.",
       "backToBlog": "Back",
       "button": "Back to Case Studies",
-      "error_message": "The page you are looking for does not exist or the link is incorrect."
+      "error_message": "The page you are looking for does not exist or the link is incorrect.",
+      "writtenBy": "By",
+      "tintasurCredit": "WRITTEN IN COLLABORATION WITH",
+      "title_2": "Read",
+      "title_3": "More"
     },
     "FoundThisHelpful": {
       "title": "Found this helpful?",

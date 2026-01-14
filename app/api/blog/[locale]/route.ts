@@ -9,6 +9,9 @@ interface MarkdownContent {
   url_img: string
   markdownContent: string
   date: string
+  author?: string
+  tags?: string[]
+  tintasur?: boolean
 }
 
 async function parseMarkdownContent(fileContents: string): Promise<MarkdownContent> {
@@ -20,6 +23,9 @@ async function parseMarkdownContent(fileContents: string): Promise<MarkdownConte
       url_img: frontmatter.url_img || "",
       markdownContent: content,
       date: frontmatter.date || "",
+      author: frontmatter.author || "",
+      tags: frontmatter.tags || [],
+      tintasur: frontmatter.tintasur || false,
     }
   } catch (error) {
     return {
@@ -28,6 +34,9 @@ async function parseMarkdownContent(fileContents: string): Promise<MarkdownConte
       url_img: "",
       markdownContent: "",
       date: "",
+      author: "",
+      tags: [],
+      tintasur: false,
     }
   }
 }

@@ -5,4 +5,8 @@ export interface BlogPostType {
   url_img: string
   content: string
   markdownContent: string
+  date: string
+  author?: string
+  tags?: string[]
+  tintasur?: boolean
 }

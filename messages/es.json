@@ -252,7 +252,11 @@
       "postNotFound": "No se encontró la entrada de blog.",
       "backToBlog": "Volver",
       "button": "Volver a Casos de Estudio",
-      "error_message": "La página que buscas no existe o el enlace es incorrecto."
+      "error_message": "La página que buscas no existe o el enlace es incorrecto.",
+      "writtenBy": "Por",
+      "tintasurCredit": "ESCRITO EN COLABORACIÓN CON",
+      "title_2": "Seguí",
+      "title_3": "Leyendo"
     },
     "FoundThisHelpful": {
       "title": "¿Te resultó útil?",

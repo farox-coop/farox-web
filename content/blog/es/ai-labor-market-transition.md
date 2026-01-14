@@ -1,11 +1,12 @@
 ---
 title: "El impacto transversal de la IA en el mercado laboral: ¿estamos preparados para una transición justa?"
 description: "La adopción acelerada de la IA está reconfigurando oficios, habilidades y trayectorias laborales. El desafío ya no es solo tecnológico: es social. ¿Cómo garantizamos que la transición no deje a nadie atrás?"
-url_img: "/images/blog/ai-labor-market-header.jpg"
+url_img: "/images/blog/ai-labor-market-header.webp"
 date: "2025-11-20"
+author: "Agustin Recouso"
+tags: ["IA", "Empleo", "Transición"]
+tintasur: true
 ---
-
-<!-- IMAGE_BREAK -->
 
 El desarrollo acelerado de la inteligencia artificial (IA) y de la automatización está transformando el mercado laboral a un ritmo que muchos trabajadores, organizaciones y sistemas aún no pueden acompañar.
 

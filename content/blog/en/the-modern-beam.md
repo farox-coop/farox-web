@@ -46,7 +46,7 @@ A. Erlang code is still compiled to bytecode (`.beam`).
 \
 B. At execution time, BEAM translates that bytecode **directly into native machine code** (x86-64) in memory, just before running it.
 
-#### Architectural Impact of JIT**
+#### Architectural Impact of JIT
 
 JIT drastically improves performance in CPU-intensive tasks (computation and data manipulation). While Erlang has always excelled at concurrency (I/O), it now performs significantly better in raw computation speed, bringing it closer to statically compiled languages for certain workloads.
 

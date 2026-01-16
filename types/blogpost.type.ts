@@ -8,5 +8,6 @@ export interface BlogPostType {
   date: string
   author?: string
   tags?: string[]
+  aliases?: string[]
   tintasur?: boolean
 }

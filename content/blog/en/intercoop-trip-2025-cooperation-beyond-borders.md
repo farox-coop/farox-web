@@ -5,6 +5,7 @@ url_img: "/images/blog/intercoop-trip-2025-cover.webp"
 date: "2025-12-18"
 author: "Nicolás Dimarco"
 tags: ["Cooperativism", "Open Government", "Patio"]
+aliases: ["intercoop-trip-2025"]
 tintasur: true
 ---
 

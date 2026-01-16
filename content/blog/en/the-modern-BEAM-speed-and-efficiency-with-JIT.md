@@ -5,6 +5,7 @@ url_img: "/images/blog/the-modern-beam.webp"
 date: "2025-12-09"
 author: "Pablo Brudnick"
 tags: ["Software", "Erlang", "Beam"]
+aliases: ["the-modern-beam"]
 tintasur: true
 ---
 

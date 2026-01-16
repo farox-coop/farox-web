@@ -11,6 +11,7 @@ interface MarkdownContent {
   date: string
   author?: string
   tags?: string[]
+  aliases?: string[]
   tintasur?: boolean
 }
 
@@ -25,6 +26,7 @@ async function parseMarkdownContent(fileContents: string): Promise<MarkdownConte
       date: frontmatter.date || "",
       author: frontmatter.author || "",
       tags: frontmatter.tags || [],
+      aliases: frontmatter.aliases || [],
       tintasur: frontmatter.tintasur || false,
     }
   } catch (error) {
@@ -36,6 +38,7 @@ async function parseMarkdownContent(fileContents: string): Promise<MarkdownConte
       date: "",
       author: "",
       tags: [],
+      aliases: [],
       tintasur: false,
     }
   }

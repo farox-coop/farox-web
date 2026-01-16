@@ -5,6 +5,7 @@ url_img: "/images/blog/ai-labor-market-header.webp"
 date: "2025-11-20"
 author: "Agustin Recouso"
 tags: ["IA", "Empleo", "Transición"]
+aliases: ["ai-labor-market-transition"]
 tintasur: true
 ---
 

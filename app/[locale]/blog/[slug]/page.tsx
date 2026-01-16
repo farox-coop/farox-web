@@ -10,6 +10,7 @@ import { notFound } from "next/navigation"
 
 type PostMetadata = {
   slug: string
+  aliases?: string[]
   title?: string
   description?: string
   url_img?: string
@@ -52,7 +53,7 @@ export async function generateMetadata({
     }
 
     const posts = (await res.json()) as PostMetadata[]
-    const post = (posts || []).find((p) => p.slug === slug)
+    const post = (posts || []).find((p) => p.slug === slug || p.aliases?.includes(slug))
     if (!post) {
       return notFound()
     }

@@ -22,7 +22,7 @@ export default function BlogPost({ slug }: { slug: string }) {
     let isMounted = true
     const postsArr = locale === "es" ? allPosts : allPostsEN
     if (postsArr.length > 0) {
-      const currentPost = postsArr.find((p: BlogPostType) => p.slug === slug)
+      const currentPost = postsArr.find((p: BlogPostType) => p.slug === slug || p.aliases?.includes(slug))
       setPost(currentPost || null)
       setLoading(false)
     } else {
@@ -33,7 +33,7 @@ export default function BlogPost({ slug }: { slug: string }) {
           }
           const updatedPostsArr =
             locale === "es" ? useStorePost.getState().allPosts : useStorePost.getState().allPostsEN
-          const currentPost = updatedPostsArr.find((p: BlogPostType) => p.slug === slug)
+          const currentPost = updatedPostsArr.find((p: BlogPostType) => p.slug === slug || p.aliases?.includes(slug))
           setPost(currentPost || null)
         })
         .catch((error) => {

@@ -5,6 +5,7 @@ url_img: "/images/blog/ai-and-consumption-cover.png"
 date: "2026-01-14"
 author: "Farox"
 tags: ["IA", "Consumo", "Desarrollo Sostenible"]
+aliases: ["ai-and-consumption"]
 tintasur: true
 ---
 

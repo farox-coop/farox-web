@@ -1,11 +1,11 @@
 ---
-title: "Cooperación que no entiende de fronteras"
+title: "Cooperación Que No Entiende de Fronteras"
 description: "Hace ya unos seis años empezamos un viaje cooperativo internacional que, sin darnos cuenta, nos iba a cambiar la forma de mirar el mundo: nos mostraría que el cooperativismo tecnológico vive en diferentes rincones del planeta."
 url_img: "/images/blog/intercoop-trip-2025-cover.webp"
 date: "2025-12-18"
 author: "Nicolás Dimarco"
 tags: ["Cooperativismo", "Gobierno Abierto", "Patio"]
-aliases: ["intercoop-trip-2025"]
+aliases: ["intercoop-trip-2025", "intercoop-trip-2025-cooperation-beyond-borders"]
 tintasur: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Remote Work: An Honest Look from the Inside"
+title: "Remote Work: An honest look from the inside"
 description: "Adapting to remote work models is a process many organizations are currently going through. Farox is no exception."
 url_img: "/images/blog/remote-work-cover.png"
 date: "2026-01-20"

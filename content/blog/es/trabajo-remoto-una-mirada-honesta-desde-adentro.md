@@ -1,5 +1,5 @@
 ---
-title: "Trabajo Remoto: Una Mirada Honesta Desde Adentro"
+title: "Trabajo Remoto: Una mirada honesta desde adentro"
 description: "La adaptación a modalidades de trabajo a distancia es un proceso que están atravesando numerosas organizaciones. Farox no es la excepción."
 url_img: "/images/blog/remote-work-cover.png"
 date: "2026-01-20"

@@ -1,11 +1,11 @@
 ---
-title: "El impacto transversal de la IA en el mercado laboral: ¿estamos preparados para una transición justa?"
+title: "El Impacto Transversal de la IA en el Mercado Laboral: ¿Estamos preparados para una transición justa?"
 description: "La adopción acelerada de la IA está reconfigurando oficios, habilidades y trayectorias laborales. El desafío ya no es solo tecnológico: es social. ¿Cómo garantizamos que la transición no deje a nadie atrás?"
 url_img: "/images/blog/ai-labor-market-header.webp"
 date: "2025-11-20"
 author: "Agustin Recouso"
 tags: ["IA", "Empleo", "Transición"]
-aliases: ["ai-labor-market-transition"]
+aliases: ["ai-labor-market-transition", "the-cross-sectoral-impact-of-AI-on-the-labour-market"]
 tintasur: true
 ---
 

@@ -1,11 +1,11 @@
 ---
-title: "The Cross-Sectoral Impact of AI on the Labour Market: Are We Prepared for a Just Transition?"
+title: "The Cross-Sectoral Impact of AI on the Labour Market: Are we prepared for a fair transition?"
 description: "The accelerated adoption of AI is reshaping occupations, skills, and career paths. The challenge is no longer just technological—it is social. How do we ensure that this transition leaves no one behind?"
 url_img: "/images/blog/ai-labor-market-header.webp"
 date: "2025-11-20"
 author: "Agustin Recouso"
 tags: ["AI", "Work", "Transition"]
-aliases: ["ai-labor-market-transition"]
+aliases: ["ai-labor-market-transition", "el-impacto-transversal-de-la-IA-en-el-mercado-laboral"]
 tintasur: true
 ---
 

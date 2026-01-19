@@ -1,11 +1,11 @@
 ---
-title: "The Modern BEAM: speed and efficiency with JIT"
+title: "The Modern BEAM: Speed and efficiency with JIT"
 description: "The latest improvements to the JIT compiler have transformed the architecture of Erlang/OTP into a faster, hybrid, and more efficient virtual machine — a technical leap that redefines performance and the future of the ecosystem."
 url_img: "/images/blog/the-modern-beam.webp"
 date: "2025-12-09"
 author: "Pablo Brudnick"
 tags: ["Software", "Erlang", "Beam"]
-aliases: ["the-modern-beam"]
+aliases: ["the-modern-beam", "la-BEAM-moderna-velocidad-y-eficiencia-con-JIT"]
 tintasur: true
 ---
 

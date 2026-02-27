@@ -13,7 +13,7 @@ export default function CardCase({
   return (
     <LinkView
       href={url}
-      className="flex flex-col justify-center items-center w-full max-w-[300px] tablet:max-w-[497px] laptop:max-w-[310px] desktop:max-w-[410px] desktoplg:max-w-[497px] h-[120px] tablet:h-[385px] laptop:h-[260px] desktop:h-[330px] desktoplg:h-[385px] bg-black bg-opacity-85 text-white relative fill-primary hover:fill-secondary px-8 p-4 box-content transition-colors duration-300 group"
+      className="flex flex-col justify-center items-center w-full max-w-[300px] tablet:max-w-[497px] laptop:max-w-[310px] desktop:max-w-[410px] desktoplg:max-w-[497px] h-[120px] tablet:h-[385px] laptop:h-[260px] desktop:h-[330px] desktoplg:h-[385px] bg-black/85 text-white relative fill-primary hover:fill-secondary px-8 p-4 box-content transition-colors duration-300 group"
     >
       <div className="absolute h-[2px] w-[89%] tablet:h-[5px] laptop:w-[89%] bg-primary  group-hover:bg-secondary transition-colors duration-300 -top-[1px] tablet:-top-[5px] left-0 right-0 mx-auto" />
       <div className="absolute h-[2px] w-[89%] tablet:h-[5px] laptop:w-[89%] bg-primary  group-hover:bg-secondary transition-colors duration-300 -bottom-[1px] tablet:-bottom-[5px] left-0 right-0 mx-auto" />

@@ -17,7 +17,7 @@ export default function CardService({
   return (
     <LinkView
       href={slug}
-      className="flex flex-col justify-evenly items-center max-w-[300px] tablet:max-w-[493px] laptop:max-w-[310px] desktop:max-w-[413px] desktoplg:max-w-[493px] w-full h-[230px] tablet:h-[529px] laptop:h-[480px] desktop:h-[540px] desktoplg:h-[590px] bg-black bg-opacity-85 text-white fill-primary hover:fill-secondary duration-300 relative px-9 tablet:px-14 laptop:px-12 desktop:px-14 group"
+      className="flex flex-col justify-evenly items-center max-w-[300px] tablet:max-w-[493px] laptop:max-w-[310px] desktop:max-w-[413px] desktoplg:max-w-[493px] w-full h-[230px] tablet:h-[529px] laptop:h-[480px] desktop:h-[540px] desktoplg:h-[590px] bg-black/85 text-white fill-primary hover:fill-secondary duration-300 relative px-9 tablet:px-14 laptop:px-12 desktop:px-14 group"
     >
       <div className="absolute h-1 w-[91%] laptop:w-[89%] bg-primary group-hover:bg-secondary transition-colors duration-300 -top-1 left-0 right-0 mx-auto" />
       <div className="absolute h-1 w-[91%] laptop:w-[89%] bg-primary group-hover:bg-secondary transition-colors duration-300 -bottom-1 left-0 right-0 mx-auto" />

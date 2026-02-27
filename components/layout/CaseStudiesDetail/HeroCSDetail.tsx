@@ -193,7 +193,7 @@ export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
               ) : null}
             </div>
           </article>
-          <article className="laptop:flex-1 bg-black laptop:bg-opacity-84  relative z-30 " style={{ flex: "0 0 60%" }}>
+          <article className="laptop:flex-1 bg-black laptop:bg-black/84  relative z-30 " style={{ flex: "0 0 60%" }}>
             <div className="absolute h-[2px] w-[70%] tablet:h-[5px] laptop:w-[60%] bg-secondary  group-hover:bg-secondary transition-colors duration-300 -top-[1px] tablet:-top-[5px] left-[-5px] right-0  hidden-mobile" />
             <div className="absolute h-[90%] tablet:h-[10%] w-[2px] tablet:w-[5px] bg-secondary  group-hover:bg-secondary transition-colors duration-300 -left-[1px] tablet:-left-[5px] bottom-0 top-[-5px]  hidden-mobile" />
             {/* Contenido */}

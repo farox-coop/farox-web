@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div
         className={`relative w-full bg-custom-gradient pt-[110px] mobtab:pb-[50px] mobtab:pt-[130px] tablet:pb-[80px] tablet:pt-[200px] laptop:pb-[110px] desktop:pb-[210px] desktoplg:pb-[260px] desktoplg:pt-[310] desktopxl:pb-[280px] ${locale === "es" ? "laptop:pt-[130px] desktop:pt-[260px] desktopxl:pt-[310px]" : "laptop:pt-[170px] desktop:pt-[300px] desktopxl:pt-[360px]"} px-8`}
       >
-        <div className="absolute z-1 top-0 left-0 right-0 mx-auto max-w-[2034px]">
+        <div className="absolute top-0 left-0 right-0 mx-auto max-w-[2034px]">
           <AHeroSVG />
         </div>
         <article className="flex mt-20 tablet:mt-0 max-w-screen-desktoplg mx-auto justify-center items-center relative bg-transparent">

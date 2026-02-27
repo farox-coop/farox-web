@@ -22,7 +22,7 @@ function BlogPage() {
         languajeTextColor="#333"
       />
       <main className="flex flex-col justify-center items-center w-full h-full mb-20 relative bg-white tablet:bg-custom-gradient-blog">
-        <div className="absolute z-1 top-0 left-0 right-0 mx-auto max-w-[2034px] hidden tablet:block">
+        <div className="absolute top-0 left-0 right-0 mx-auto max-w-[2034px] hidden tablet:block">
           <AHeroSVG />
         </div>
         <div className="w-full laptop:flex laptop:flex-row justify-center items-center mx-auto mt-[150px] tablet:mt-[200px] relative max-w-screen-desktoplg">

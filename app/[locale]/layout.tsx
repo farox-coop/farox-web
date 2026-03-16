@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@/components/GoogleAnalytics"
 import { routing } from "@/i18n/routing"
 import { getBaseURL, getLocale } from "@/utils/helpers"
 import type { Metadata } from "next"
@@ -59,6 +60,7 @@ export default async function LocaleLayout({
     <ViewTransitions>
       <html lang={locale}>
         <body className={`${ibmPlexSans.className}`}>
+          <GoogleAnalytics />
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </body>
       </html>

@@ -35,8 +35,11 @@ make update
 ```bash
 sudo su
 certbot certificates
+## FORMA MANUAL, DEPRECADA:
 certbot certonly --agree-tos --manual --preferred-challenges dns --email infra@farox.coop -i nginx -d farox.coop -d *.farox.coop -d farox.com.ar -d *.farox.com.ar
 service nginx restart
+## FORMA ACTUAL: (requiere definir todos los subdominios)
+certbot --nginx -d farox.coop -d www.farox.coop -d blog.farox.coop -d farox.com.ar -d www.farox.com.ar -d blog.farox.com.ar
 ```
 
 ### Cambiar el contenido de la página

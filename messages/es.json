@@ -1,7 +1,12 @@
 {
   "Common": {
     "site_title": "Cooperativa de Software",
-    "site_description": "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo."
+    "site_description": "Somos un Estudio Cooperativo de Software conformado por un equipo de profesionales en IA, Ciencia de Datos y Desarrollo Full-Stack. Desde Argentina, creando redes por el mundo.",
+    "Captcha": {
+      "title": "Verificación de seguridad",
+      "loading": "Cargando captcha...",
+      "close": "Cerrar captcha"
+    }
   },
   "HomeSection": {
     "Hero": {

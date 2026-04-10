@@ -30,7 +30,33 @@ jobs:
         run: |
           echo "$SSH_PRIVATE_KEY" > farox-website.pem
           chmod 600 farox-website.pem
-          ssh -i farox-website.pem -o ServerAliveInterval=30 -o ServerAliveCountMax=5 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@farox.coop 'bash -lc "export TERM=xterm-256color; source ~/.nvm/nvm.sh; cd /var/www/farox-web && make update && git checkout ."'
+          ssh -i farox-website.pem -o ServerAliveInterval=30 -o ServerAliveCountMax=5 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@farox.coop 'bash -s' <<'EOF'
+          set -euo pipefail
+          export TERM=xterm-256color
+          source ~/.nvm/nvm.sh
+
+          cd /var/www/missing-captcha
+          git fetch origin main
+          git checkout main
+          git pull --ff-only origin main
+
+          if [ ! -f /var/www/missing-captcha/.env ]; then
+            echo "/var/www/missing-captcha/.env does not exist" >&2
+            exit 1
+          fi
+
+          make up
+          make migrate
+          make widget-build
+
+          cp /var/www/missing-captcha/packages/widget/dist/widget.js /var/www/farox-web/public/missing-captcha/widget.js
+          cp /var/www/missing-captcha/packages/widget/dist/widget.css /var/www/farox-web/public/missing-captcha/widget.css
+
+          cd /var/www/farox-web
+          make update
+          git checkout .
+          EOF
+
           rm farox-website.pem
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}

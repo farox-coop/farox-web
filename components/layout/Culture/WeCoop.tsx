@@ -1,44 +1,22 @@
 "use client"
+import MissingCaptchaModal from "@/components/MissingCaptchaModal"
 import AllCircleGraySVG from "@/components/SVG/AllCircleGraySVG"
 import TriangleDown from "@/components/SVG/TriangleDown"
+import { useOptionalCaptchaForm } from "@/lib/forms/submitWithOptionalCaptcha"
 import { useTranslations } from "next-intl"
-import { useState } from "react"
-
-const formspreeId = "xjkaabab"
 
 function WeeCoop() {
   const t = useTranslations("CulturePage.WeCoop")
-  const [formError, setFormError] = useState(false)
-  const [formSuccess, setFormSuccess] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const form = e.currentTarget
-    const formData = new FormData(form)
-    const requestOptions = {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    }
-
-    setFormSuccess(false)
-    setFormError(false)
-
-    fetch(`https://formspree.io/f/${formspreeId}`, requestOptions)
-      .then((response) => {
-        if (!response?.ok) {
-          throw new Error("Something went wrong")
-        }
-        form.reset()
-        setFormSuccess(true)
-      })
-      .catch((error) => {
-        console.error(error)
-        setFormError(true)
-      })
-  }
+  const {
+    formError,
+    formSuccess,
+    handleCaptchaClose,
+    handleCaptchaSuccess,
+    handleCaptchaUnavailable,
+    handleSubmit,
+    isCaptchaOpen,
+    isSubmitting,
+  } = useOptionalCaptchaForm({ endpoint: "/api/forms/wecoop" })
 
   if (formSuccess) {
     return (
@@ -113,10 +91,18 @@ function WeeCoop() {
 
           <button
             type="submit"
-            className="flex items-center justify-center mt-14 mx-auto rounded-full font-medium text-secondary bg-black text-[20px] laptop:text-xl desktop:text-[27px] px-[18px] py-[6px] border desktop:px-8 desktop:py-3 transition-all duration-300 ease-in-out hover:text-black hover:border-secondary hover:bg-transparent"
+            disabled={isSubmitting}
+            className="flex items-center justify-center mt-14 mx-auto rounded-full font-medium text-secondary bg-black text-[20px] laptop:text-xl desktop:text-[27px] px-[18px] py-[6px] border desktop:px-8 desktop:py-3 transition-all duration-300 ease-in-out hover:text-black hover:border-secondary hover:bg-transparent disabled:cursor-not-allowed disabled:opacity-70"
           >
             {t("submit_button")}
           </button>
+
+          <MissingCaptchaModal
+            isOpen={isCaptchaOpen}
+            onClose={handleCaptchaClose}
+            onSuccess={handleCaptchaSuccess}
+            onUnavailable={handleCaptchaUnavailable}
+          />
         </form>
       </section>
     </article>

@@ -10,8 +10,12 @@ type VerifyCaptchaResult =
       status: number
     }
 
-export const verifyCaptchaToken = async (verifiedToken: string, requestUrl: string): Promise<VerifyCaptchaResult> => {
-  const apiBase = getMissingCaptchaApiBase(requestUrl)
+export const verifyCaptchaToken = async (
+  verifiedToken: string,
+  requestUrl: string,
+  requestHeaders?: Headers,
+): Promise<VerifyCaptchaResult> => {
+  const apiBase = getMissingCaptchaApiBase(requestUrl, requestHeaders)
   const siteKey = MISSING_CAPTCHA_CONFIG.publicSiteKey
 
   try {

@@ -26,6 +26,14 @@ const MISSING_CAPTCHA_API_BASE = ""
 
 const stripTrailingSlashes = (value: string) => value.replace(/\/+$/g, "")
 
+const stripTrailingColon = (value: string) => value.replace(/:$/, "")
+
+const isLoopbackHost = (value: string) => {
+  const hostname = value.replace(/:\d+$/, "")
+
+  return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1" || hostname === "[::1]"
+}
+
 const resolveMissingCaptchaApiBase = (origin: string) => {
   if (!MISSING_CAPTCHA_API_BASE) {
     return stripTrailingSlashes(origin)
@@ -34,7 +42,25 @@ const resolveMissingCaptchaApiBase = (origin: string) => {
   return stripTrailingSlashes(new URL(MISSING_CAPTCHA_API_BASE, origin).toString())
 }
 
-export const getMissingCaptchaApiBase = (requestUrl?: string) => {
+const getServerOrigin = (requestUrl: string, requestHeaders?: Headers) => {
+  const currentUrl = new URL(requestUrl)
+  const forwardedHost = requestHeaders?.get("x-forwarded-host") ?? requestHeaders?.get("host")
+
+  if (!forwardedHost) {
+    return currentUrl.origin
+  }
+
+  const forwardedProto = requestHeaders?.get("x-forwarded-proto")
+  const protocol = forwardedProto
+    ? stripTrailingColon(forwardedProto)
+    : isLoopbackHost(currentUrl.host)
+      ? "https"
+      : stripTrailingColon(currentUrl.protocol)
+
+  return `${protocol}://${forwardedHost}`
+}
+
+export const getMissingCaptchaApiBase = (requestUrl?: string, requestHeaders?: Headers) => {
   if (process.env.NODE_ENV !== "production") {
     return "http://127.0.0.1:8000"
   }
@@ -47,7 +73,7 @@ export const getMissingCaptchaApiBase = (requestUrl?: string) => {
     throw new Error("requestUrl is required on the server when resolving MissingCaptcha apiBase")
   }
 
-  return resolveMissingCaptchaApiBase(new URL(requestUrl).origin)
+  return resolveMissingCaptchaApiBase(getServerOrigin(requestUrl, requestHeaders))
 }
 
 declare module "next-intl" {

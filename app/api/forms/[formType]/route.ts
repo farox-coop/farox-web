@@ -70,7 +70,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ for
       return NextResponse.json({ ok: false, error: "CAPTCHA_REQUIRED" }, { status: 400 })
     }
 
-    const verificationResult = await verifyCaptchaToken(verifiedToken, request.url)
+    const verificationResult = await verifyCaptchaToken(verifiedToken, request.url, request.headers)
 
     if (!verificationResult.ok) {
       return NextResponse.json(

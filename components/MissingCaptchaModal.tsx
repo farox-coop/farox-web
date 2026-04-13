@@ -275,13 +275,13 @@ export default function MissingCaptchaModal({ isOpen, onClose, onSuccess, onUnav
   }
 
   return createPortal(
-    <div
-      className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/70 px-4 py-6"
-      onMouseDown={onClose}
-    >
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center px-4 py-6">
+      <button type="button" aria-label={t("close")} className="absolute inset-0 bg-black/70" onMouseDown={onClose} />
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="missing-captcha-modal-title"
         className="relative w-full max-w-5xl rounded-[36px] bg-white px-5 py-12 tablet:px-8"
-        onMouseDown={(event) => event.stopPropagation()}
       >
         <button
           type="button"
@@ -293,7 +293,9 @@ export default function MissingCaptchaModal({ isOpen, onClose, onSuccess, onUnav
         </button>
 
         <div className="mb-6 text-center">
-          <p className="text-2xl font-medium tablet:text-3xl">{t("title")}</p>
+          <p id="missing-captcha-modal-title" className="text-2xl font-medium tablet:text-3xl">
+            {t("title")}
+          </p>
         </div>
 
         {isLoading && <p className="mb-4 text-center text-sm text-black/70">{t("loading")}</p>}

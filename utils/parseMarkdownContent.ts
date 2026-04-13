@@ -1,6 +1,6 @@
 function extractMarkdownSection(content: string, section: string): string {
   // Permitir mayúsculas/minúsculas y guion bajo o espacios
-  const regex = new RegExp(`^\s*${section.replace(/_/g, "[_ ]")}\s*:\s*(.+)$`, "im")
+  const regex = new RegExp(`^\\s*${section.replace(/_/g, "[_ ]")}\\s*:\\s*(.+)$`, "im")
   const match = content.match(regex)
   return match ? match[1].trim() : ""
 }
@@ -65,7 +65,7 @@ export function parseMarkdownContent(content: string): MarkdownContent {
       technologies: extractMarkdownSection(content, "Technologies").split(", "),
       url_gh: extractMarkdownSection(content, "GitHub"),
       url_web: extractMarkdownSection(content, "Website"),
-      order: Number.parseInt(extractMarkdownSection(content, "Order")) || Number.POSITIVE_INFINITY,
+      order: Number.parseInt(extractMarkdownSection(content, "Order"), 10) || Number.POSITIVE_INFINITY,
     }
   } catch (error) {
     console.error("Error parsing markdown content:", error)

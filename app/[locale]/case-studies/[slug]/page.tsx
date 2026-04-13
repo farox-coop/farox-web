@@ -4,11 +4,7 @@ import Footer from "@/components/layout/Footer"
 import HeadersContainer from "@/components/layout/Header/HeadersContainer"
 import ReadyToStartSection from "@/components/layout/Home/ReadyToStart"
 
-export default async function CaseStudiesPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+export default async function CaseStudiesPage({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug
 
   return (

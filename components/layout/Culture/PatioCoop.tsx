@@ -24,13 +24,13 @@ function PatioCoop() {
         {/* Contenedor de imágenes */}
         <div className="relative w-full max-w-[1300px] h-[850px] tablet:h-[565px] laptop:h-[680px] mx-auto">
           {/* Imagen del mapa (fondo) */}
-          <div className="absolute laptop:mt-0 inset-0 w-[600px] h-[700px]  mobtab:w-full mobtab:h-[500px] laptop:w-full laptop:h-full z-40">
+          <div className="absolute laptop:mt-0 inset-0 w-[600px] h-[700px] mobtab:w-full mobtab:h-[500px] laptop:w-full laptop:h-full z-40">
             <Image
               src="/images/culture/mapamundi.webp"
-              width={1300}
-              height={665}
               alt="Mapa Mundi"
-              className="w-full h-[400px] mobtab:w-full mobtab:h-full tablet:w-full tablet:h-full object-cover"
+              fill
+              sizes="(max-width: 619px) 600px, 100vw"
+              className="object-cover"
             />
           </div>
 

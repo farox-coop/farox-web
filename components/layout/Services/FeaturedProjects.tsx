@@ -5,7 +5,7 @@ import { useCaseStudiesStore } from "@/store/useCaseStudiesStore"
 import { fetchCaseStudies } from "@/utils/fetchCaseStudies"
 import { nanoid } from "nanoid"
 import { useLocale, useTranslations } from "next-intl"
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import FeatProjectCard from "./FeatProjectCard"
 
 function FeaturedProjects() {

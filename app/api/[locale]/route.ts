@@ -5,7 +5,7 @@ import { parseMarkdownContent } from "@/utils/parseMarkdownContent"
 import matter from "gray-matter"
 import { NextResponse } from "next/server"
 
-export async function GET(request: Request, { params }: { params: Promise<{ locale: string }> }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ locale: string }> }) {
   try {
     const locale = (await params).locale
     const caseStudiesDir = path.join(process.cwd(), "content", locale)

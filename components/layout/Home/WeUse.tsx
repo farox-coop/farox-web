@@ -1,7 +1,6 @@
 import { ReactSVG, RustSVG, VueSVG } from "@/components/SVG/TechnologyIconSVG"
 import {
   ChatGPTSVG,
-  ClaudeSVG,
   DjangoSVG,
   ElixirSVG,
   ErlangSVG,

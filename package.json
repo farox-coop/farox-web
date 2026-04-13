@@ -12,32 +12,32 @@
   },
   "dependencies": {
     "@types/react-syntax-highlighter": "^15.5.13",
-    "framer-motion": "^12.34.3",
+    "framer-motion": "^12.38.0",
     "gray-matter": "^4.0.3",
-    "motion": "^12.34.3",
-    "nanoid": "^5.1.6",
-    "next": "16.1.6",
-    "next-intl": "4.8.3",
+    "motion": "^12.38.0",
+    "nanoid": "^5.1.7",
+    "next": "16.2.3",
+    "next-intl": "4.9.1",
     "next-view-transitions": "^0.3.5",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "react-markdown": "^10.1.0",
     "react-responsive": "^10.0.1",
-    "react-syntax-highlighter": "^16.1.0",
+    "react-syntax-highlighter": "^16.1.1",
     "remark-gfm": "^4.0.1",
     "rehype-raw": "^7.0.0",
     "tailwind-merge": "^3.5.0",
     "tailwindcss-animate": "^1.0.7",
-    "zustand": "^5.0.11"
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.4.11",
     "@types/node": "24.7.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@tailwindcss/postcss": "4.2.1",
-    "tailwindcss": "4.2.1",
-    "globals": "17.3.0",
-    "typescript": "5.9.3"
+    "@tailwindcss/postcss": "4.2.2",
+    "tailwindcss": "4.2.2",
+    "globals": "17.5.0",
+    "typescript": "6.0.2"
   }
 }

@@ -2,11 +2,7 @@ import HeroCSDetail from "@/components/layout/CaseStudiesDetail/HeroCSDetail"
 import Footer from "@/components/layout/Footer"
 import HeadersContainer from "@/components/layout/Header/HeadersContainer"
 
-async function DetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string; locale: string }>
-}) {
+async function DetailPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { locale } = await params
 
   return (

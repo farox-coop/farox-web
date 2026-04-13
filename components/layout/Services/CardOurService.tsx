@@ -1,15 +1,7 @@
 import ArrowCardSVG from "@/components/SVG/ArrowCardSVG"
 import { Link as LinkView } from "next-view-transitions"
 
-export default function CardCase({
-  title,
-  url,
-  children,
-}: {
-  title: string
-  url: string
-  children?: React.ReactNode
-}) {
+export default function CardCase({ title, url, children }: { title: string; url: string; children?: React.ReactNode }) {
   return (
     <LinkView
       href={url}

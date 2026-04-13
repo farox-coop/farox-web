@@ -1,5 +1,3 @@
-import React from "react"
-
 function MapaMundiSVG() {
   return (
     <svg width={947} height={947} viewBox="0 0 947 947" fill="none" xmlns="http://www.w3.org/2000/svg">

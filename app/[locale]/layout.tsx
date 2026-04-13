@@ -3,7 +3,7 @@ import { routing } from "@/i18n/routing"
 import { getBaseURL, getLocale } from "@/utils/helpers"
 import type { Metadata } from "next"
 import { NextIntlClientProvider } from "next-intl"
-import { getMessages, getTranslations } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
 import { ViewTransitions } from "next-view-transitions"
 import { IBM_Plex_Sans } from "next/font/google"
 import { notFound } from "next/navigation"
@@ -54,11 +54,10 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound()
   }
-  const messages = await getMessages()
 
   return (
     <ViewTransitions>
-      <html lang={locale}>
+      <html lang={locale} data-scroll-behavior="smooth">
         <body className={`${ibmPlexSans.className}`}>
           <GoogleAnalytics />
           <NextIntlClientProvider>{children}</NextIntlClientProvider>

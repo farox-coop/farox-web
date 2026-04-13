@@ -29,7 +29,7 @@ async function parseMarkdownContent(fileContents: string): Promise<MarkdownConte
       aliases: frontmatter.aliases || [],
       tintasur: frontmatter.tintasur || false,
     }
-  } catch (error) {
+  } catch {
     return {
       title: "",
       description: "",
@@ -44,7 +44,7 @@ async function parseMarkdownContent(fileContents: string): Promise<MarkdownConte
   }
 }
 
-export async function GET(request: Request, { params }: { params: Promise<{ locale: string }> }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ locale: string }> }) {
   try {
     const locale = (await params).locale
     const blogDir = path.join(process.cwd(), "content", "blog", locale)

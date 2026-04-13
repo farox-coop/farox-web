@@ -2,13 +2,7 @@
 import { useEffect, useState } from "react"
 import { useMediaQuery } from "react-responsive"
 
-export default function TrinagleComponent({
-  color,
-  className,
-}: {
-  color: string
-  className?: string
-}) {
+export default function TrinagleComponent({ color, className }: { color: string; className?: string }) {
   const referenceWidth = 1630 // Ancho de referencia en px
   const leftHeight = 117 // Altura del lado izquierdo en px
   const rightHeight = 800 // Altura del lado derecho en px

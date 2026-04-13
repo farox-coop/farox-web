@@ -16,7 +16,7 @@ interface HeroCSDetailProps {
   locale: string
 }
 
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: This page component handles loading, not-found, and content rendering for CMS-driven case study details.
 export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
   const t = useTranslations("Blog.BlogPage")
   const [imgError, setImgError] = useState(false)
@@ -132,16 +132,20 @@ export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
                   </span>
                 )
               }
+
+              return null
             })}
           </div>
           <div className="flex justify-center items-center laptop:hidden w-full">
             {logo && !imgError ? (
-              <img
-                src={logo}
-                alt={`Una imagen que muestra el logo de ${client || "el cliente"}`}
-                className="object-contain max-h-[50px] max-w-[200px]"
-                onError={() => setImgError(true)}
-              />
+              <picture>
+                <img
+                  src={logo}
+                  alt={`Una imagen que muestra el logo de ${client || "el cliente"}`}
+                  className="object-contain max-h-[50px] max-w-[200px]"
+                  onError={() => setImgError(true)}
+                />
+              </picture>
             ) : null}
           </div>
         </div>
@@ -208,20 +212,24 @@ export default function HeroCSDetail({ locale }: HeroCSDetailProps) {
                         rel="noopener noreferrer"
                         className="w-full h-full flex items-center justify-center"
                       >
+                        <picture>
+                          <img
+                            src={logo}
+                            alt={`Una imagen que muestra el logo de ${client || "el cliente"}`}
+                            className="object-contain max-h-[50px] max-w-[275px]"
+                            onError={() => setImgError(true)}
+                          />
+                        </picture>
+                      </a>
+                    ) : (
+                      <picture>
                         <img
                           src={logo}
                           alt={`Una imagen que muestra el logo de ${client || "el cliente"}`}
                           className="object-contain max-h-[50px] max-w-[275px]"
                           onError={() => setImgError(true)}
                         />
-                      </a>
-                    ) : (
-                      <img
-                        src={logo}
-                        alt={`Una imagen que muestra el logo de ${client || "el cliente"}`}
-                        className="object-contain max-h-[50px] max-w-[275px]"
-                        onError={() => setImgError(true)}
-                      />
+                      </picture>
                     )
                   ) : null}
                 </div>

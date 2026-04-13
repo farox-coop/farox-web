@@ -1,4 +1,12 @@
 {
+  "assist": {
+    "enabled": false
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -35,6 +43,15 @@
     "globals": ["browser", "node"]
   },
   "files": {
-    "ignore": ["node_modules", ".next", "out", "coverage", ".idea", "next-env.d.ts", "public/missing-captcha"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!out",
+      "!coverage",
+      "!.idea",
+      "!next-env.d.ts",
+      "!public/missing-captcha"
+    ]
   }
 }

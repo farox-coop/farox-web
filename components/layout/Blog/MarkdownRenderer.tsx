@@ -23,8 +23,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
           code: ({ inline, className, children, ...props }: CodeProps) => {
             const match = /language-(\w+)/.exec(className || "")
             return !inline && match ? (
-              // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-              <SyntaxHighlighter style={xonokai as any} language={match[1]} PreTag="div" className="mb-2" {...props}>
+              <SyntaxHighlighter style={xonokai} language={match[1]} PreTag="div" className="mb-2" {...props}>
                 {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
             ) : (
@@ -75,7 +74,9 @@ export default function MarkdownRenderer({ content }: { content: string }) {
             const [altText, source] = props.alt?.split("|") ?? []
             return (
               <span className="my-8 flex flex-col items-start">
-                <img {...props} alt={altText?.trim()} className="my-0 mx-auto rounded-lg shadow-sm" />
+                <picture>
+                  <img {...props} alt={altText?.trim()} className="my-0 mx-auto rounded-lg shadow-sm" />
+                </picture>
                 <span className="text-sm text-gray-500 italic text-left mt-2">{source}</span>
               </span>
             )
@@ -90,7 +91,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
           h6: ({ node, ...props }) => <h6 className="text-xs font-semibold my-4" {...props} />,
           strong: ({ node, ...props }) => <strong className="font-semibold text-primary" {...props} />,
           // Etiqueta personalizada para texto destacado Ej. <callout>Este es un texto destacado...</callout>
-          callout: ({ node, children, ...props }: { node: unknown; children?: ReactNode; [key: string]: unknown }) => {
+          callout: ({ children }: { children?: ReactNode }) => {
             return (
               <span className="relative mt-10 block">
                 <span className="absolute -top-4 bg-primary text-white flex items-center justify-center">

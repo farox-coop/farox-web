@@ -145,7 +145,13 @@ export default function BlogList() {
             <article className="bg-[#f1f1f1] overflow-hidden hover:shadow-lg transition-shadow duration-300 w-[344px] desktop:w-[454px] flex flex-col justify-between relative fill-primary hover:fill-secondary">
               {post.url_img && (
                 <header className="relative h-[270px] mx-4 desktop:mx-5 mt-4 desktop:mt-5">
-                  <Image src={post.url_img} alt={post.title} fill className="object-cover" />
+                  <Image
+                    src={post.url_img}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 767px) 344px, (max-width: 1365px) 344px, 454px"
+                    className="object-cover"
+                  />
                 </header>
               )}
               <section className="px-4 desktop:px-5 pt-3 desktop:pt-6 pb-1 laptop:pb-5 desktop:pb-10 flex-1">

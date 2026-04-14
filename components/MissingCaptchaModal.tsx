@@ -198,6 +198,29 @@ export default function MissingCaptchaModal({ isOpen, onClose, onSuccess, onUnav
 
   useEffect(() => {
     if (!isOpen) {
+      return
+    }
+
+    const previousBodyOverflow = document.body.style.overflow
+    const previousBodyOverscrollBehavior = document.body.style.overscrollBehavior
+    const previousHtmlOverflow = document.documentElement.style.overflow
+    const previousHtmlOverscrollBehavior = document.documentElement.style.overscrollBehavior
+
+    document.body.style.overflow = "hidden"
+    document.body.style.overscrollBehavior = "contain"
+    document.documentElement.style.overflow = "hidden"
+    document.documentElement.style.overscrollBehavior = "contain"
+
+    return () => {
+      document.body.style.overflow = previousBodyOverflow
+      document.body.style.overscrollBehavior = previousBodyOverscrollBehavior
+      document.documentElement.style.overflow = previousHtmlOverflow
+      document.documentElement.style.overscrollBehavior = previousHtmlOverscrollBehavior
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    if (!isOpen) {
       setIsLoading(false)
       return
     }
@@ -275,32 +298,35 @@ export default function MissingCaptchaModal({ isOpen, onClose, onSuccess, onUnav
   }
 
   return createPortal(
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center px-4 py-6">
-      <button type="button" aria-label={t("close")} className="absolute inset-0 bg-black/70" onMouseDown={onClose} />
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="missing-captcha-modal-title"
-        className="relative w-full max-w-5xl rounded-[36px] bg-white px-5 py-12 tablet:px-8"
-      >
-        <button
-          type="button"
-          aria-label={t("close")}
-          className="absolute right-5 top-5 rounded-full border border-black px-3 py-1 text-sm font-medium text-black transition-colors duration-200 hover:bg-black hover:text-white"
-          onClick={onClose}
+    <div className="fixed inset-0 z-1000 overflow-y-auto overscroll-contain">
+      <button type="button" aria-label={t("close")} className="fixed inset-0 bg-black/70" onMouseDown={onClose} />
+
+      <div className="relative flex min-h-full items-start justify-center px-4 py-4 tablet:items-center tablet:py-6">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="missing-captcha-modal-title"
+          className="relative mx-auto flex w-fit max-w-[calc(100vw-2rem)] max-h-[calc(100dvh-2rem)] flex-col overflow-y-auto rounded-[36px] bg-white px-5 py-12 overscroll-contain tablet:max-h-[calc(100dvh-3rem)] tablet:px-8"
         >
-          ×
-        </button>
+          <button
+            type="button"
+            aria-label={t("close")}
+            className="absolute right-5 top-5 cursor-pointer rounded-full border border-black px-3 py-1 text-sm font-medium text-black transition-colors duration-200 hover:bg-black hover:text-white"
+            onClick={onClose}
+          >
+            ×
+          </button>
 
-        <div className="mb-6 text-center">
-          <p id="missing-captcha-modal-title" className="text-2xl font-medium tablet:text-3xl">
-            {t("title")}
-          </p>
+          <div className="mb-6 text-center">
+            <p id="missing-captcha-modal-title" className="text-2xl font-medium tablet:text-3xl">
+              {t("title")}
+            </p>
+          </div>
+
+          {isLoading && <p className="mb-4 text-center text-sm text-black/70">{t("loading")}</p>}
+
+          <div ref={widgetContainerRef} className="mx-auto min-h-80 max-w-full" />
         </div>
-
-        {isLoading && <p className="mb-4 text-center text-sm text-black/70">{t("loading")}</p>}
-
-        <div ref={widgetContainerRef} className="min-h-[320px]" />
       </div>
     </div>,
     document.body,

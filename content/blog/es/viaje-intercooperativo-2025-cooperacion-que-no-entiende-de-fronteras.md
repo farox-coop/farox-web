@@ -65,7 +65,7 @@ En un mundo donde lo distinto suele separar, ese gesto es un mensaje **tan rotun
 
 ## Barcelona: eventos, comunidad y un lugar que nos inspiró
 
-De Bulgaria viajamos a **Barcelona**, donde participamos de dos eventos increíbles. Pero no fuimos solos: se sumaron compañerxs de **Camplight** y **Nayra**. Y ahí pasó algo que nos encanta: el viaje dejó de ser “nuestro” y se volvió, otra vez, un trayecto compartido.
+De Bulgaria viajamos a **Barcelona**, donde participamos de dos eventos increíbles. Pero no fuimos solos: se sumaron compañerxs de **Camplight** y **Nayra**. Y ahí pasó algo que nos encanta: el viaje dejó de ser "nuestro" y se volvió, otra vez, un trayecto compartido.
 
 
 ### MozFest
@@ -83,9 +83,9 @@ Durante nuestro paso por bloc4 debatimos temas clave relacionados a Patio. Desde
 Ese tipo de conversaciones te dejan electrizado: por la complejidad, por la responsabilidad, pero sobre todo por la evidencia de que algo está creciendo de verdad.
 
 
-## “Coop&Travel”, algo que empezó como un juego de palabras
+## "Coop&Travel", algo que empezó como un juego de palabras
 
-Nos fuimos de Barcelona con muchísimo entusiasmo. Hace varios años empezamos a jugar con un concepto al que llamamos **“Coop&Travel”**, en contraposición al “Work&Travel”. Empezó como un chiste, un juego de palabras… pero nunca imaginamos que seguiríamos viajando, siendo alojados por cooperativistas de distintas partes del mundo; que luego nos haríamos amigxs; y que trabajaríamos en una red que se multiplica, llevando el estandarte de la colaboración a nivel mundial, en un mundo que no es neutral.
+Nos fuimos de Barcelona con muchísimo entusiasmo. Hace varios años empezamos a jugar con un concepto al que llamamos **"Coop&Travel"**, en contraposición al "Work&Travel". Empezó como un chiste, un juego de palabras… pero nunca imaginamos que seguiríamos viajando, siendo alojados por cooperativistas de distintas partes del mundo; que luego nos haríamos amigxs; y que trabajaríamos en una red que se multiplica, llevando el estandarte de la colaboración a nivel mundial, en un mundo que no es neutral.
 
 Y acá quiero hacer una pausa: **el mundo está en problemas**. Capitalismo extractivista en su versión extrema, guerras, competencia entre potencias, manejos geopolíticos que radicalizan pensamientos y nos polarizan. Movimientos de derecha haciendo fuerza para implementar sus recetas que ya sabemos que no funcionan, al menos no para la mayoría.
 Y en el medio, nosotrxs. Cooperando y soñando con otro tipo de construcción.
@@ -103,7 +103,7 @@ A que nos encontremos.
 
 A que armemos redes. 
 
-A que cooperemos incluso cuando parece más “fácil” encerrarse. 
+A que cooperemos incluso cuando parece más "fácil" encerrarse. 
 
 A que construyamos tecnología (y futuro) con valores.
 

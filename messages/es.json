@@ -108,7 +108,7 @@
     "culture": "Cultura"
   },
   "FooterSection": {
-    "line_1": "©2024_ Farox todos los derechos reservados."
+    "line_1": "©{CURRENT_YEAR}_ Farox todos los derechos reservados."
   },
   "ContactPage": {
     "title_1": "HABLEMOS",

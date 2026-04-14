@@ -112,7 +112,7 @@
     "culture": "Culture"
   },
   "FooterSection": {
-    "line_1": "© 2025_ Farox all rights reserved."
+    "line_1": "© {CURRENT_YEAR}_ Farox all rights reserved."
   },
   "ContactPage": {
     "title_1": "LET'S",

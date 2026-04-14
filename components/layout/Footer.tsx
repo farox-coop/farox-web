@@ -78,7 +78,9 @@ export default function Footer() {
       </div>
 
       <div className="flex py-7 w-full flex-col items-center justify-center space-y-4 bg-black px-4 text-white">
-        <div className="text-sm laptop:text-xl desktop:text-[22.19px] text-gray-400">{t("line_1")}</div>
+        <div className="text-sm laptop:text-xl desktop:text-[22.19px] text-gray-400">
+          {t("line_1", { CURRENT_YEAR: String(new Date().getFullYear()) })}
+        </div>
       </div>
     </footer>
   )

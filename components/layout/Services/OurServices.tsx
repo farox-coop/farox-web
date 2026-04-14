@@ -29,7 +29,7 @@ function OurServices() {
           <LogoFaroxBackground color="#000000" strokeW="0.5" />
         </div>
         <div className="hidden-mobile flex flex-col justify-center items-center absolute desktop:top-10 left-[-1.5%] desktop:left-[-1%] gap-10 max-h-6">
-          <div className="-rotate-90 text-black text-xl leading-3 font-medium">&#169; 2025</div>
+          <div className="-rotate-90 text-black text-xl leading-3 font-medium">&#169; {new Date().getFullYear()}</div>
           <div className="max-h-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -67,7 +67,7 @@ Beyond JIT, the compiler has received important upgrades in how it handles Erlan
 
 #### B. The Compiler and Gradual Typing
 
-While Erlang remains a dynamic language, its commitment to static-like typing (“soft typing”) has grown through tooling and compiler improvements:
+While Erlang remains a dynamic language, its commitment to static-like typing ("soft typing") has grown through tooling and compiler improvements:
 \
 \
 **Type Hints and Patterns:** the compiler interprets **type hints** introduced through comments (`-spec` and `-type`) more intelligently. This allows tools like **Dialyzer** (Erlang's static analyzer) to provide more accurate diagnostics about potential type issues even before execution.

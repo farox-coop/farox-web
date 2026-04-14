@@ -68,7 +68,7 @@ In a world where difference so often divides, that is a message as deeply politi
 
 From Bulgaria we traveled to **Barcelona**, where we took part in two incredible events. But we didn’t go alone: colleagues from **Camplight** and **Nayra** joined us.
 
-And something we love happened: the trip stopped being “ours” and became, once again, a shared journey.
+And something we love happened: the trip stopped being "ours" and became, once again, a shared journey.
 
 ### MozFest
 
@@ -88,9 +88,9 @@ We also **reviewed progress on the new visual identity and landing page**, and h
 
 These kinds of conversations leave you electrified — by their complexity, by the responsibility they imply, but above all by the clear sense that **something real is growing**.
 
-## “Coop & Travel”: something that started as a play on words
+## "Coop & Travel": something that started as a play on words
 
-We left Barcelona full of enthusiasm. Several years ago, we started playing with a concept we called **“Coop & Travel”**, as a counterpoint to *“Work & Travel”*.
+We left Barcelona full of enthusiasm. Several years ago, we started playing with a concept we called **"Coop & Travel"**, as a counterpoint to *"Work & Travel"*.
 
 It began as a joke, a wordplay… but we never imagined we’d still be traveling, being hosted by cooperativists in different parts of the world; that we’d become friends; and that we’d be working within a growing network, carrying the banner of collaboration worldwide, in a world that is far from neutral.
 
@@ -110,7 +110,7 @@ To meet.
 
 To build networks.
 
-To cooperate even when it seems “easier” to retreat inward.
+To cooperate even when it seems "easier" to retreat inward.
 
 To build technology (and a future) with values.
 

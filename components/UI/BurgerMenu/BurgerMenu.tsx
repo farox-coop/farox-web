@@ -44,27 +44,30 @@ function BurgerMenu() {
       >
         <ul className="flex flex-col h-full text-center py-0">
           <li className="first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
-            <Link href={`/${locale}/services`} className="text-lg hover:text-[#5033AD]">
+            <Link href={`/${locale}/services`} className="flex h-full w-full items-center justify-center text-lg">
               {t("services")}
             </Link>
           </li>
           <li className=" first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
-            <Link href={`/${locale}/case-studies/all`} className="text-lg hover:text-[#5033AD]">
+            <Link
+              href={`/${locale}/case-studies/all`}
+              className="flex h-full w-full items-center justify-center text-lg"
+            >
               {t("case studies")}
             </Link>
           </li>
           <li className="first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
-            <Link href={`/${locale}/culture`} className="text-lg hover:text-[#5033AD]">
+            <Link href={`/${locale}/culture`} className="flex h-full w-full items-center justify-center text-lg">
               {t("culture")}
             </Link>
           </li>
           <li className="first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
-            <Link href={`/${locale}/blog`} className="text-lg hover:text-[#5033AD]">
+            <Link href={`/${locale}/blog`} className="flex h-full w-full items-center justify-center text-lg">
               Blog
             </Link>
           </li>
           <li className="first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out                      ">
-            <Link href={`/${locale}/contact`} className="text-lg hover:text-[#5033AD]">
+            <Link href={`/${locale}/contact`} className="flex h-full w-full items-center justify-center text-lg">
               {t("contact")}
             </Link>
           </li>

@@ -152,9 +152,9 @@ export default function BlogReadMore() {
                 </header>
               )}
               <section className="px-4 desktop:px-5 pt-3 desktop:pt-6 pb-1 laptop:pb-5 desktop:pb-10 flex-1">
-                <h2 className="text-base laptop:text-lg desktop:text-xl font-bold mb-2 text-gray-800 uppercase line-clamp-2 leading-[1.2] min-h-[2.4rem] laptop:min-h-[3.5rem]">
-                  {post.title}
-                </h2>
+                <div className="text-base laptop:text-lg desktop:text-xl leading-[1.2] h-[2.4em] mb-2 overflow-hidden">
+                  <h2 className="font-bold text-gray-800 uppercase line-clamp-2">{post.title}</h2>
+                </div>
                 <p className="text-gray-600 line-clamp-3 text-sm laptop:text-base">{post.description}</p>
               </section>
               <footer className="px-4 desktop:px-5 pt-3 desktop:pt-4 pb-4 desktop:pb-6 flex items-start justify-between">

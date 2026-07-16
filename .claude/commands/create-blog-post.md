@@ -38,14 +38,13 @@ Received arguments: `$ARGUMENTS`
 3. Always replace:
    - `"` and `"` with `"`
    - `'` with `'`
-4. Enforce paragraph spacing with exactly two lines containing `\` between paragraphs, like this:
-   - `End of paragraph.`
-   - `\`
-   - `\`
-   - `New paragraph.`
-   * Not needed in these cases:
-     * before/above titles like `## Some title`
-     * before/above and after/below lists like `- Some list item`
+4. Preserve paragraph spacing and line breaks exactly as they appear in the source file.
+   - **First**, read each source file with `cat -A` to reveal exact whitespace characters.
+   - The source will use one of these patterns (or a mix of both):
+     * `  ` (two trailing spaces at end of line, visible as `  $` in `cat -A`) = soft line break within the same paragraph. Replicate it as `  ` (two spaces) at end of line.
+     * Empty line (visible as `$` on its own in `cat -A`) = actual paragraph separation. Replicate it as an empty line.
+   - Do **not** blindly insert `\` lines between paragraphs. Follow what the source does.
+   - Exception: before/above titles like `## Some title` and before/after lists, no extra spacing is needed (source typically has none).
 5. If you make any text change beyond the required quote normalization or an obvious typo/accent fix, mention it briefly at the end.
 
 ## Frontmatter requirements
@@ -93,7 +92,7 @@ Try to download all the images and put them into `public/images/blog/` and name 
    - smart quotes
    - apostrophes
    - obvious typo/accent fixes if truly needed
-   - paragraph spacing with `\` lines
+   - paragraph spacing and line breaks (soft breaks with `  `, paragraph separation with empty lines) to match the source
 5. Download and save the cover image.
 6. Create the new Spanish and English blog post files.
 7. Do a quick verification pass to confirm:
@@ -101,7 +100,7 @@ Try to download all the images and put them into `public/images/blog/` and name 
    - frontmatter is complete
    - aliases point to the other language slug
    - both posts use the same `url_img`
-   - paragraph spacing uses the required `\` lines
+   - paragraph spacing and line breaks match the source files (verify with `cat -A` if needed)
 
 ## Final response
 

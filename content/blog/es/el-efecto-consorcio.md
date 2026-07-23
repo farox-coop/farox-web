@@ -3,7 +3,7 @@ title: "Efecto consorcio: cuando algo es de todos, ¿de quién es la responsabil
 description: "¿Qué pasa cuando nadie da órdenes, pero igual hay que hacer que las cosas sucedan? Una reflexión sobre cooperativas, ownership y la forma en que aparecen los roles en los equipos."
 url_img: "/images/blog/the-condo-effect.webp"
 date: "2026-07-16"
-author: "Jonathan Cavia"
+author: "Nicolás Dimarco y Jonathan Cavia"
 tags: ["Cooperativas", "Ownership", "Equipos"]
 aliases: ["the-condo-effect"]
 tintasur: true

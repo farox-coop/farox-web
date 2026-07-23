@@ -3,7 +3,7 @@ title: "The Condo Effect: When Something Belongs to Everyone, Who Owns the Respo
 description: "What happens when nobody gives orders, but things still need to get done? A reflection on cooperatives, ownership, and how roles emerge within teams."
 url_img: "/images/blog/the-condo-effect.webp"
 date: "2026-07-16"
-author: "Jonathan Cavia"
+author: "Nicolás Dimarco and Jonathan Cavia"
 tags: ["Cooperatives", "Ownership", "Teams"]
 aliases: ["el-efecto-consorcio"]
 tintasur: true

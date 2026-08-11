@@ -109,7 +109,17 @@
     "contact": "Contact",
     "services": "Services",
     "case studies": "Case Studies",
-    "culture": "Culture"
+    "culture": "Culture",
+    "services_menu": {
+      "product_development": "Product Development",
+      "product_development_description": "Technical planning and execution of your project",
+      "software_consultancy": "Software Consultancy",
+      "software_consultancy_description": "Identify opportunities for tailored solutions",
+      "team_extension": "Team Extension",
+      "team_extension_description": "We enhance your team with top specialists",
+      "genia": "GenIA",
+      "genia_description": "Organize, govern, and scale the use of AI"
+    }
   },
   "FooterSection": {
     "line_1": "© {CURRENT_YEAR}_ Farox all rights reserved."

@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import LogoFaroxSVG from "../../SVG/LogoFaroxNavbar"
 import NavItem from "../../UI/Buttons/NavItem"
+import ServicesDropdown from "./ServicesDropdown"
 
 interface StickyHeaderProps {
   setShowStickyHeader: (value: boolean) => void
@@ -31,17 +32,7 @@ function StickyHeader({ setShowStickyHeader }: StickyHeaderProps) {
         </div>
         <nav className="w-full">
           <ul className="flex items-center justify-between uppercase font-medium desktop:text-xl tracking-widest">
-            <li>
-              <NavItem
-                hoverItemsColor="hover:text-secondary"
-                itemsColor="text-white"
-                href={`/${locale}/services`}
-                isActive={pathname === `/${locale}/services`}
-                activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
-              >
-                {t("services")}
-              </NavItem>
-            </li>
+            <ServicesDropdown hoverItemsColor="hover:text-secondary" itemsColor="text-white" activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"} />
             <li>
               <NavItem
                 hoverItemsColor="hover:text-secondary"

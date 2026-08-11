@@ -23,9 +23,17 @@ function NavItem({
 }: NavItemProps) {
   const handleClick = useCallback(
     (e: React.MouseEvent) => {
-      if (href.includes("#")) {
+      if (!href.includes("#")) {
+        return
+      }
+
+      const [targetPath, targetHash] = href.split("#")
+      const sectionId = targetHash || ""
+      const currentPath = window.location.pathname
+      const normalizedTargetPath = targetPath || currentPath
+
+      if (sectionId && normalizedTargetPath === currentPath) {
         e.preventDefault()
-        const sectionId = href.split("#")[1]
         const section = document.getElementById(sectionId)
         const stickyHeaderHeight = 135
 
@@ -52,7 +60,7 @@ function NavItem({
       {children}
       {isActive && (
         <span
-          className={`${activeLineColor} absolute left-1/2 top-[-24px] block w-[2px] h-5 -translate-x-1/2 `}
+          className={`${activeLineColor} absolute left-1/2 -top-6 block w-0.5 h-5 -translate-x-1/2`}
           aria-hidden="true"
         />
       )}

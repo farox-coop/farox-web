@@ -30,6 +30,11 @@
       "card_3": {
         "title": "Team Extension",
         "description": "We integrate specialists into client teams, ensuring a perfect cultural fit and fast scalability without sacrificing the quality and speed of technology solutions."
+      },
+      "card_4": {
+        "title": "GenIA",
+        "description": "We implement self-hosted Artificial Intelligence strategies using open-source technology. <bold>No</bold> <boldBreak>vendor lock-in, no data leaks, and infrastructure 100% under your control.</boldBreak>",
+        "description_2": "No monthly per-user subscriptions. No per-token costs."
       }
     },
     "WeUse": {

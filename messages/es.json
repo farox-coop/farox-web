@@ -30,6 +30,11 @@
       "card_3": {
         "title": "Ampliación de equipo",
         "description": "Incorporamos especialistas a tu equipo para trabajar en sintonía con las dinámicas de tu organización y garantizar una integración con altos estándares de calidad y eficiencia en las soluciones tecnológicas."
+      },
+      "card_4": {
+        "title": "GenIA",
+        "description": "Implementamos estrategias de Inteligencia Artificial autoalojada utilizando tecnología open-source. <bold>Sin</bold> <boldBreak>dependencia de proveedores, sin fugas de datos, e infraestructura 100% bajo tu control.</boldBreak>",
+        "description_2": "Sin suscripciones mensuales por usuario. Sin costos por token."
       }
     },
     "WeUse": {

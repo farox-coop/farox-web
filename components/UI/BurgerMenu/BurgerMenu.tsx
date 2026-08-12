@@ -85,17 +85,31 @@ function BurgerMenu() {
               }`}
             >
               <ul>
-                {servicesItems.map((item) => (
-                  <li key={item.key} className="border-t border-gray-400/40 first:border-none">
-                    <Link
-                      href={`${baseServicesPath}${item.href}`}
-                      onClick={handleLinkClick}
-                      className="flex h-11.75 w-full items-center justify-center text-base font-normal normal-case tracking-normal text-white/80 hover:text-secondary transition duration-300 ease-in-out"
-                    >
-                      {t(item.label)}
-                    </Link>
-                  </li>
-                ))}
+                {servicesItems.map((item) =>
+                  item.key === "genia" ? (
+                    <li key={item.key} className="border-t border-gray-400/40 first:border-none">
+                      <a
+                        href="https://www.genia.coop"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={handleLinkClick}
+                        className="flex h-11.75 w-full items-center justify-center text-base font-normal normal-case tracking-normal text-white/80 hover:text-secondary transition duration-300 ease-in-out"
+                      >
+                        {t(item.label)}
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={item.key} className="border-t border-gray-400/40 first:border-none">
+                      <Link
+                        href={`${baseServicesPath}${item.href}`}
+                        onClick={handleLinkClick}
+                        className="flex h-11.75 w-full items-center justify-center text-base font-normal normal-case tracking-normal text-white/80 hover:text-secondary transition duration-300 ease-in-out"
+                      >
+                        {t(item.label)}
+                      </Link>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           </li>

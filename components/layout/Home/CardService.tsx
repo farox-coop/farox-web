@@ -9,6 +9,7 @@ export default function CardService({
   locale,
   scrollDate,
   wide = false,
+  externalHref,
 }: {
   title: string
   description: ReactNode
@@ -16,18 +17,18 @@ export default function CardService({
   locale?: string
   scrollDate: string
   wide?: boolean
+  externalHref?: string
 }) {
   const slug = `/${locale}/services#${scrollDate}`
 
-  return (
-    <LinkView
-      href={slug}
-      className={`flex flex-col justify-evenly items-center max-w-75 tablet:max-w-123.25 w-full h-57.5 tablet:h-132.25 bg-black/85 text-white fill-primary hover:fill-secondary duration-300 relative px-9 tablet:px-14 laptop:px-12 desktop:px-14 group ${
-        wide
-          ? "laptop:max-w-241 desktop:max-w-318 desktoplg:max-w-377.5 laptop:h-80 desktop:h-90 desktoplg:h-97.5"
-          : "laptop:max-w-77.5 desktop:max-w-103.25 desktoplg:max-w-123.25 laptop:h-120 desktop:h-135 desktoplg:h-147.5"
-      }`}
-    >
+  const className = `flex flex-col justify-evenly items-center max-w-75 tablet:max-w-123.25 w-full h-57.5 tablet:h-132.25 bg-black/85 text-white fill-primary hover:fill-secondary duration-300 relative px-9 tablet:px-14 laptop:px-12 desktop:px-14 group ${
+    wide
+      ? "laptop:max-w-241 desktop:max-w-318 desktoplg:max-w-377.5 laptop:h-80 desktop:h-90 desktoplg:h-97.5"
+      : "laptop:max-w-77.5 desktop:max-w-103.25 desktoplg:max-w-123.25 laptop:h-120 desktop:h-135 desktoplg:h-147.5"
+  }`
+
+  const content = (
+    <>
       <div className="absolute h-1 w-[91%] laptop:w-[89%] bg-primary group-hover:bg-secondary transition-colors duration-300 -top-1 left-0 right-0 mx-auto" />
       <div className="absolute h-1 w-[91%] laptop:w-[89%] bg-primary group-hover:bg-secondary transition-colors duration-300 -bottom-1 left-0 right-0 mx-auto" />
       <div className="absolute h-[90%] laptop:h-[93%] w-1 bg-primary group-hover:bg-secondary transition-colors duration-300 -left-1 bottom-0 top-0 my-auto" />
@@ -54,6 +55,20 @@ export default function CardService({
           <ArrowCardSVG />
         </div>
       </div>
+    </>
+  )
+
+  if (externalHref) {
+    return (
+      <a href={externalHref} target="_blank" rel="noopener noreferrer" className={className}>
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <LinkView href={slug} className={className}>
+      {content}
     </LinkView>
   )
 }

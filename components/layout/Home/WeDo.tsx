@@ -58,6 +58,7 @@ export default function WeDo() {
             secondaryDescription={t("card_4.description_2")}
             locale={locale}
             scrollDate=""
+            externalHref="https://www.genia.coop"
             wide
           />
         </div>

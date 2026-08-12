@@ -24,7 +24,7 @@ function StickyHeader({ setShowStickyHeader }: StickyHeaderProps) {
       className="fixed top-0 w-full hidden bg-[#565656]/80
     laptop:block mx-auto z-50 px-8 scroll-smooth"
     >
-      <header className="bg-transparent py-[20px] flex items-center justify-between gap-[170px] max-w-screen-desktoplg mx-auto">
+      <header className="bg-transparent py-5 flex items-center justify-between gap-42.5 max-w-screen-desktoplg mx-auto">
         <div>
           <Link href={`/${locale}#home`} onClick={handleLogoClick}>
             <LogoFaroxSVG className="w-36" textColor="white" charColor="#6843E1" />
@@ -32,7 +32,12 @@ function StickyHeader({ setShowStickyHeader }: StickyHeaderProps) {
         </div>
         <nav className="w-full">
           <ul className="flex items-center justify-between uppercase font-medium desktop:text-xl tracking-widest">
-            <ServicesDropdown hoverItemsColor="hover:text-secondary" itemsColor="text-white" activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"} />
+            <ServicesDropdown
+              hoverItemsColor="hover:text-secondary"
+              itemsColor="text-white"
+              activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
+              isSticky
+            />
             <li>
               <NavItem
                 hoverItemsColor="hover:text-secondary"

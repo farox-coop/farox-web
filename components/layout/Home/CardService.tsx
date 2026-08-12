@@ -33,7 +33,7 @@ export default function CardService({
       <div className="absolute h-[90%] laptop:h-[93%] w-1 bg-primary group-hover:bg-secondary transition-colors duration-300 -left-1 bottom-0 top-0 my-auto" />
       <div className="absolute h-[90%] laptop:h-[93%] w-1 bg-primary group-hover:bg-secondary transition-colors duration-300 -right-1 bottom-0 top-0 my-auto" />
       <div
-        className={`border-white border-0 tablet:border-b pb-4 tablet:pb-10 laptop:pb-8 pt-6 tablet:pt-11 desktop:pb-11 desktop:pt-16 ${wide ? "self-start" : ""}`}
+        className={`border-white border-0 tablet:border-b pb-4 w-full tablet:pb-10 laptop:pb-8 pt-6 tablet:pt-11 desktop:pb-11 desktop:pt-16 ${wide ? "self-start w-full laptop:w-60 desktop:w-64 desktoplg:w-90" : ""}`}
       >
         <span className="text-[32px] tablet:text-5xl laptop:text-[36px] desktop:text-5xl desktoplg:text-6xl leading-8 tablet:leading-12 laptop:leading-9.5 desktop:leading-14 whitespace-break-spaces text-balance block">
           {title}

@@ -6,6 +6,7 @@ export default function CardService({
   title,
   description,
   secondaryDescription,
+  mobileDescription,
   locale,
   scrollDate,
   wide = false,
@@ -14,6 +15,7 @@ export default function CardService({
   title: string
   description: ReactNode
   secondaryDescription?: ReactNode
+  mobileDescription?: ReactNode
   locale?: string
   scrollDate: string
   wide?: boolean
@@ -41,11 +43,16 @@ export default function CardService({
         </span>
       </div>
       <div className={`flex flex-col gap-4 h-full pt-0 tablet:pt-6 laptop:pt-8 ${wide ? "w-full" : ""}`}>
-        <p className="text-sm tablet:text-2xl laptop:text-lg desktoplg:text-2xl leading-5 tablet:leading-9 laptop:leading-7 desktop:leading-9">
+        {mobileDescription && (
+          <p className="laptop:hidden text-sm tablet:text-2xl leading-5 tablet:leading-9">{mobileDescription}</p>
+        )}
+        <p
+          className={`${mobileDescription ? "hidden laptop:block" : ""} text-sm tablet:text-2xl laptop:text-lg desktoplg:text-2xl leading-5 tablet:leading-9 laptop:leading-7 desktop:leading-9`}
+        >
           {description}
         </p>
         {secondaryDescription && (
-          <p className="hidden tablet:block tablet:text-2xl laptop:text-lg desktoplg:text-2xl tablet:leading-9">
+          <p className="hidden laptop:block laptop:text-lg desktoplg:text-2xl tablet:leading-9">
             {secondaryDescription}
           </p>
         )}

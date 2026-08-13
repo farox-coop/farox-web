@@ -21,20 +21,21 @@
       "title_2": "HACEMOS",
       "card_1": {
         "title": "Desarrollo de producto",
-        "description": "Gestionamos todo el proceso de desarrollo de tecnología, tomando  decisiones estratégicas, para alinear las soluciones con los objetivos de negocio de manera de asegurar el éxito del proyecto."
+        "description": "Gestionamos la planificación técnica y ejecución de proyectos, alineando cada etapa con los objetivos de negocio para lograr soluciones de calidad."
       },
       "card_2": {
         "title": "Consultoría de software",
-        "description": "Ofrecemos consultorías técnicas para diagnosticar problemas y diseñar soluciones, además de capacitaciones internas para que el conocimiento quede en la organización que nos contrata."
+        "description": "Ofrecemos soporte de software a medida para diagnosticar problemas, diseñar soluciones efectivas y brindar asesoramiento técnico y capacitación."
       },
       "card_3": {
         "title": "Ampliación de equipo",
-        "description": "Incorporamos especialistas a tu equipo para trabajar en sintonía con las dinámicas de tu organización y garantizar una integración con altos estándares de calidad y eficiencia en las soluciones tecnológicas."
+        "description": "Fortalecemos equipos con especialistas que se integran a la cultura y objetivos de cada proyecto, permitiendo ampliar capacidades de forma ágil sin comprometer la calidad."
       },
       "card_4": {
         "title": "GenIA",
-        "description": "Implementamos estrategias de Inteligencia Artificial autoalojada utilizando tecnología open-source. <bold>Sin</bold> <boldBreak>dependencia de proveedores, sin fugas de datos, e infraestructura 100% bajo tu control.</boldBreak>",
-        "description_2": "Sin suscripciones mensuales por usuario. Sin costos por token."
+        "description": "Implementamos estrategias de Inteligencia Artificial en infraestructura propia utilizando tecnología de código abierto, permitiendo a las organizaciones elegir sus modelos y adaptar la arquitectura a sus necesidades. Sin dependencia de proveedores, sin filtraciones de datos y con una infraestructura 100% bajo tu control.",
+        "description_2": "Sin suscripciones mensuales por usuario. Sin costos por token.",
+        "description_3": "Implementamos estrategias de Inteligencia Artificial autoalojada utilizando tecnología open-source. Sin dependencia de proveedores, sin fugas de datos, e infraestructura 100% bajo tu control."
       }
     },
     "WeUse": {

@@ -33,8 +33,9 @@
       },
       "card_4": {
         "title": "GenIA",
-        "description": "We implement self-hosted Artificial Intelligence strategies using open-source technology. <bold>No</bold> <boldBreak>vendor lock-in, no data leaks, and infrastructure 100% under your control.</boldBreak>",
-        "description_2": "No monthly per-user subscriptions. No per-token costs."
+        "description": "We implement self-hosted Artificial Intelligence strategies using open-source technology, allowing organizations to choose their models and adapt the architecture to their needs. No vendor lock-in, no data leaks, and infrastructure 100% under your control.",
+        "description_2": "No monthly per-user subscriptions. No per-token costs.",
+        "description_3": "We implement self-hosted Artificial Intelligence strategies using open-source technology. No vendor lock-in, no data leaks, and infrastructure 100% under your control."
       }
     },
     "WeUse": {

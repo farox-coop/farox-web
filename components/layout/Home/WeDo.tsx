@@ -49,13 +49,9 @@ export default function WeDo() {
           </div>
           <CardService
             title={t("card_4.title")}
-            description={t.rich("card_4.description", {
-              bold: (chunks) => <strong className="font-normal laptop:font-bold">{chunks}</strong>,
-              boldBreak: (chunks) => (
-                <strong className="font-normal laptop:block laptop:font-bold">{chunks}</strong>
-              ),
-            })}
+            description={t("card_4.description")}
             secondaryDescription={t("card_4.description_2")}
+            mobileDescription={t("card_4.description_3")}
             locale={locale}
             scrollDate=""
             externalHref="https://www.genia.coop"

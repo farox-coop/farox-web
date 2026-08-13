@@ -69,7 +69,7 @@ function Header({
               <LogoFaroxSVG className="w-36" textColor={textColor} charColor={charColor} />
             </LinkView>
           </div>
-          <nav className="w-full">
+          <nav className="w-full max-w-180">
             <ul className="flex items-center justify-around uppercase font-medium desktop:text-xl tracking-widest">
               <ServicesDropdown
                 hoverItemsColor={hoverItemsColor}

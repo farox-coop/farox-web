@@ -30,6 +30,12 @@
       "card_3": {
         "title": "Team Extension",
         "description": "We integrate specialists into client teams, ensuring a perfect cultural fit and fast scalability without sacrificing the quality and speed of technology solutions."
+      },
+      "card_4": {
+        "title": "GenIA",
+        "description": "We implement self-hosted Artificial Intelligence strategies using open-source technology, allowing organizations to choose their models and adapt the architecture to their needs. No vendor lock-in, no data leaks, and infrastructure 100% under your control.",
+        "description_2": "No monthly per-user subscriptions. No per-token costs.",
+        "description_3": "We implement self-hosted Artificial Intelligence strategies using open-source technology. No vendor lock-in, no data leaks, and infrastructure 100% under your control."
       }
     },
     "WeUse": {
@@ -109,7 +115,17 @@
     "contact": "Contact",
     "services": "Services",
     "case studies": "Case Studies",
-    "culture": "Culture"
+    "culture": "Culture",
+    "services_menu": {
+      "product_development": "Product Development",
+      "product_development_description": "Technical planning and execution of your project",
+      "software_consultancy": "Software Consultancy",
+      "software_consultancy_description": "Identify opportunities for tailored solutions",
+      "team_extension": "Team Extension",
+      "team_extension_description": "We enhance your team with top specialists",
+      "genia": "GenIA",
+      "genia_description": "Organize, govern, and scale the use of AI"
+    }
   },
   "FooterSection": {
     "line_1": "© {CURRENT_YEAR}_ Farox all rights reserved."

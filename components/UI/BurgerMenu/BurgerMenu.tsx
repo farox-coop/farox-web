@@ -1,16 +1,38 @@
 import { useLocale, useTranslations } from "next-intl"
 import Link from "next/link"
 import { useState } from "react"
+import ChevronDownSVG from "@/components/SVG/ChevronDownSVG"
 import styles from "./BurgerMenu.module.css"
+
+const servicesItems = [
+  { key: "product_development", label: "services_menu.product_development", href: "#product-development" },
+  { key: "software_consultancy", label: "services_menu.software_consultancy", href: "#software-consultancy" },
+  { key: "team_extension", label: "services_menu.team_extension", href: "#team-extension" },
+  { key: "genia", label: "services_menu.genia", href: "#" },
+] as const
 
 function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   const t = useTranslations("Header")
   const locale = useLocale()
+  const baseServicesPath = `/${locale}/services`
 
   const handleToggle = () => {
     setIsOpen(!isOpen)
+    if (isOpen) {
+      setIsServicesOpen(false)
+    }
+  }
+
+  const handleServicesToggle = () => {
+    setIsServicesOpen((prev) => !prev)
+  }
+
+  const handleLinkClick = () => {
+    setIsOpen(false)
+    setIsServicesOpen(false)
   }
 
   return (
@@ -36,38 +58,94 @@ function BurgerMenu() {
       </button>
       <nav
         className={`
-          absolute top-[99%] bg-[#030207] text-white w-[300px] h-[250px]
-          transition-all duration-500 ease-in-out
-          ${isOpen ? "opacity-100 right-0" : "opacity-0 -right-full"}
+          absolute top-[99%] bg-[#030207] text-white w-75
+          transition-all duration-500 ease-in-out overflow-hidden
+          ${isOpen ? "opacity-100 right-0" : "opacity-0 -right-full max-h-0"}
           z-50
         `}
       >
-        <ul className="flex flex-col h-full text-center py-0">
-          <li className="first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
-            <Link href={`/${locale}/services`} className="flex h-full w-full items-center justify-center text-lg">
+        <ul className="flex flex-col text-center py-0">
+          <li className="first:border-none border-t border-gray-400">
+            <button
+              type="button"
+              onClick={handleServicesToggle}
+              aria-expanded={isServicesOpen}
+              className="flex h-12.5 w-full items-center justify-center gap-2 text-lg hover:bg-primary hover:text-secondary transition duration-300 ease-in-out"
+            >
               {t("services")}
-            </Link>
+              <span
+                className={`h-1.5 w-2.5 shrink-0 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+              >
+                <ChevronDownSVG />
+              </span>
+            </button>
+            <div
+              className={`overflow-hidden bg-white/10 transition-all duration-300 ease-in-out ${
+                isServicesOpen ? "max-h-75" : "max-h-0"
+              }`}
+            >
+              <ul>
+                {servicesItems.map((item) =>
+                  item.key === "genia" ? (
+                    <li key={item.key} className="border-t border-gray-400/40 first:border-none">
+                      <a
+                        href="https://www.genia.coop"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={handleLinkClick}
+                        className="flex h-11.75 w-full items-center justify-center text-base font-normal normal-case tracking-normal text-white/80 hover:text-secondary transition duration-300 ease-in-out"
+                      >
+                        {t(item.label)}
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={item.key} className="border-t border-gray-400/40 first:border-none">
+                      <Link
+                        href={`${baseServicesPath}${item.href}`}
+                        onClick={handleLinkClick}
+                        className="flex h-11.75 w-full items-center justify-center text-base font-normal normal-case tracking-normal text-white/80 hover:text-secondary transition duration-300 ease-in-out"
+                      >
+                        {t(item.label)}
+                      </Link>
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
           </li>
-          <li className=" first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
+          <li className="first:border-none border-t border-gray-400 h-12.5 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
             <Link
               href={`/${locale}/case-studies/all`}
+              onClick={handleLinkClick}
               className="flex h-full w-full items-center justify-center text-lg"
             >
               {t("case studies")}
             </Link>
           </li>
-          <li className="first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
-            <Link href={`/${locale}/culture`} className="flex h-full w-full items-center justify-center text-lg">
+          <li className="first:border-none border-t border-gray-400 h-12.5 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
+            <Link
+              href={`/${locale}/culture`}
+              onClick={handleLinkClick}
+              className="flex h-full w-full items-center justify-center text-lg"
+            >
               {t("culture")}
             </Link>
           </li>
-          <li className="first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
-            <Link href={`/${locale}/blog`} className="flex h-full w-full items-center justify-center text-lg">
+          <li className="first:border-none border-t border-gray-400 h-12.5 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
+            <Link
+              href={`/${locale}/blog`}
+              onClick={handleLinkClick}
+              className="flex h-full w-full items-center justify-center text-lg"
+            >
               Blog
             </Link>
           </li>
-          <li className="first:border-none border-t border-gray-400 flex-1 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out                      ">
-            <Link href={`/${locale}/contact`} className="flex h-full w-full items-center justify-center text-lg">
+          <li className="first:border-none border-t border-gray-400 h-12.5 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
+            <Link
+              href={`/${locale}/contact`}
+              onClick={handleLinkClick}
+              className="flex h-full w-full items-center justify-center text-lg"
+            >
               {t("contact")}
             </Link>
           </li>

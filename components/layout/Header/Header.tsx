@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import LogoFaroxSVG from "../../SVG/LogoFaroxNavbar"
 import ButtonLanguage from "../../UI/Buttons/ButtonLanguage"
 import NavItem from "../../UI/Buttons/NavItem"
+import ServicesDropdown from "./ServicesDropdown"
 import StickyHeader from "./StickyHeader"
 
 function Header({
@@ -61,26 +62,20 @@ function Header({
   return (
     <>
       {showStickyHeader && <StickyHeader setShowStickyHeader={setShowStickyHeader} />}
-      <div className="absolute w-full hidden laptop:block z-50 " id="home">
+      <div className="absolute w-full hidden laptop:block z-60 " id="home">
         <header className="bg-transparent laptop:px-9 desktop:px-28 py-20 flex h-16 items-center justify-between gap-3 max-w-screen-desktopxl desktopxl:px-40 mx-auto z-50">
           <div>
             <LinkView href={`/${locale}/`} onClick={handleLogoClick}>
               <LogoFaroxSVG className="w-36" textColor={textColor} charColor={charColor} />
             </LinkView>
           </div>
-          <nav className="w-full">
+          <nav className="w-full max-w-180">
             <ul className="flex items-center justify-around uppercase font-medium desktop:text-xl tracking-widest">
-              <li>
-                <NavItem
-                  hoverItemsColor={hoverItemsColor}
-                  itemsColor={itemsColor}
-                  href={`/${locale}/services`}
-                  isActive={pathname === `/${locale}/services`}
-                  activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
-                >
-                  {t("services")}
-                </NavItem>
-              </li>
+              <ServicesDropdown
+                hoverItemsColor={hoverItemsColor}
+                itemsColor={itemsColor}
+                activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
+              />
               <li>
                 <NavItem
                   hoverItemsColor={hoverItemsColor}

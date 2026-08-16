@@ -264,6 +264,24 @@
       "form_error": "Hubo un error al enviar el formulario. Por favor, intenta nuevamente en unos minutos."
     }
   },
+  "LightingProjectsPage": {
+    "ListingPage": {
+      "title": "PROYECTOS DE ILUMINACIÓN",
+      "readMore": "Ver proyecto",
+      "loading": "Cargando...",
+      "noProjectsAvailable": "No hay proyectos de iluminación disponibles.",
+      "showMore": "Ver más",
+      "location": "Ubicación",
+      "client": "Cliente"
+    },
+    "DetailPage": {
+      "projectNotFound": "No se encontró el proyecto.",
+      "backToList": "Volver a proyectos",
+      "location": "Ubicación",
+      "client": "Cliente",
+      "technologies": "Tecnologías"
+    }
+  },
   "Blog": {
     "BlogPage": {
       "title": "Blog",

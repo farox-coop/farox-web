@@ -268,6 +268,24 @@
       "form_error": "There was an error sending the form. Please try again in a few minutes."
     }
   },
+  "LightingProjectsPage": {
+    "ListingPage": {
+      "title": "LIGHTING PROJECTS",
+      "readMore": "View project",
+      "loading": "Loading...",
+      "noProjectsAvailable": "No lighting projects available.",
+      "showMore": "Show more",
+      "location": "Location",
+      "client": "Client"
+    },
+    "DetailPage": {
+      "projectNotFound": "Project not found.",
+      "backToList": "Back to projects",
+      "location": "Location",
+      "client": "Client",
+      "technologies": "Technologies"
+    }
+  },
   "Blog": {
     "BlogPage": {
       "title": "Blog",

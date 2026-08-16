@@ -290,3 +290,14 @@ video {
   will-change: transform;
   background-color: transparent;
 }
+
+.btn-language-active {
+  background-color: var(--active-bg) !important;
+  color: var(--active-text) !important;
+}
+
+@media (min-width: 1024px) {
+  .btn-language-active::before {
+    background-color: var(--active-bg) !important;
+  }
+}

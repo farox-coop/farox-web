@@ -1,5 +1,4 @@
 "use client"
-import CirleMoreSVG from "@/components/SVG/CircleMoreSVG"
 import Spinner from "@/components/SVG/Spinner"
 import { useLightingProjectsStore } from "@/store/useLightingProjectsStore"
 import { fetchLightingProjects } from "@/utils/fetchLightingProjects"
@@ -9,7 +8,6 @@ import LightingProjectCard from "./LightingProjectCard"
 
 export default function LightingProjectList() {
   const [loading, setLoading] = useState(false)
-  const [showAllProjects, setShowAllProjects] = useState(false)
   const locale = useLocale()
   const t = useTranslations("LightingProjectsPage.ListingPage")
   const [error, setError] = useState<string | null>(null)
@@ -38,26 +36,11 @@ export default function LightingProjectList() {
     return <div className="py-10 text-center text-xl text-white">{t("noProjectsAvailable")}</div>
   }
 
-  const projectsToShow = showAllProjects ? projects : projects.slice(0, 4)
-
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 max-w-screen-desktop mx-auto z-40">
-        {projectsToShow.map((project) => (
-          <LightingProjectCard key={project.slug} project={project} />
-        ))}
-      </div>
-      {!showAllProjects && projects.length > 4 && (
-        <button
-          type="button"
-          className="my-4 mx-auto z-20 hover:text-primary transition-colors duration-200"
-          onClick={() => setShowAllProjects(true)}
-        >
-          <span className="w-[52px] h-auto block mt-2">
-            <CirleMoreSVG />
-          </span>
-        </button>
-      )}
-    </>
+    <div className="flex flex-col items-center gap-10 w-full z-40">
+      {projects.slice(0, 4).map((project) => (
+        <LightingProjectCard key={project.slug} project={project} />
+      ))}
+    </div>
   )
 }

@@ -10,4 +10,6 @@ export interface LightingProject {
   tags?: string[]
   technologies?: string[]
   aliases?: string[]
+  url_gh?: string
+  url_web?: string
 }

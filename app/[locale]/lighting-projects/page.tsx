@@ -1,4 +1,5 @@
 import LightingProjectsNavbar from "@/components/layout/LightingProjects/LightingProjectsNavbar"
+import LightingProjectList from "@/components/layout/LightingProjects/LightingProjectList"
 import LogoPSVG from "@/components/SVG/LogoPSVG"
 
 function LightingProjectsPage() {
@@ -24,6 +25,7 @@ function LightingProjectsPage() {
               improve them.
             </p>
           </section>
+          <LightingProjectList />
         </div>
       </main>
     </>

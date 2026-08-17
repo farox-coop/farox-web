@@ -18,6 +18,8 @@ function parseMarkdownContent(fileContents: string): Omit<LightingProject, "slug
       tags: frontmatter.tags || [],
       technologies: frontmatter.technologies || [],
       aliases: frontmatter.aliases || [],
+      url_gh: frontmatter.url_gh || "",
+      url_web: frontmatter.url_web || "",
     }
   } catch {
     return {
@@ -31,6 +33,8 @@ function parseMarkdownContent(fileContents: string): Omit<LightingProject, "slug
       tags: [],
       technologies: [],
       aliases: [],
+      url_gh: "",
+      url_web: "",
     }
   }
 }

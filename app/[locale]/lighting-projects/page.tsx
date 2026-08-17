@@ -8,10 +8,10 @@ function LightingProjectsPage() {
       <main className="flex flex-col justify-center items-center w-full h-full relative">
         <div className="flex flex-col items-center justify-start w-full min-h-screen mt-37.5 tablet:mt-50">
           <section className="text-center mb-17.5 tablet:mb-22.5 z-40">
-            <h1 className="flex items-center justify-center gap-16 text-[#ffffff] text-[58px] font-bold uppercase tracking-[0.2em]">
+            <h1 className="flex items-center justify-center gap-16 text-[#ffffff] text-[78px] font-bold uppercase tracking-[0.2em]">
               <span>LIGHT</span>
               <span className="flex items-center gap-1">
-                <LogoPSVG className="w-8 h-20 pt-0.5 mr-2.5" />
+                <LogoPSVG className="w-10.75 h-25 pt-0.5 mr-3.25 mt-0.5" />
                 ROJECTS
               </span>
             </h1>

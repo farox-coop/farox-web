@@ -9,8 +9,8 @@ export default function LightingProjectsNavbar() {
   const locale = useLocale()
 
   return (
-    <div className="w-full sticky top-0 z-50 bg-transparent">
-      <nav className="flex items-center justify-between py-[80px] h-16">
+    <div className="w-full sticky top-0 z-50 bg-transparent -mx-auto" style={{ width: "100vw", marginLeft: "calc(50% - 50vw)" }}>
+      <nav className="flex items-center justify-between py-[80px] h-16 max-w-[1432px] mx-auto px-[80px]">
         <LinkView href={`/${locale}/`}>
           <LogoFaroxSVG className="w-36" textColor="white" charColor="#28FFE3" />
         </LinkView>

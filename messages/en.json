@@ -276,7 +276,9 @@
       "noProjectsAvailable": "No lighting projects available.",
       "showMore": "Show more",
       "location": "Location",
-      "client": "Client"
+      "client": "Client",
+      "more": "More",
+      "less": "Less"
     },
     "DetailPage": {
       "projectNotFound": "Project not found.",

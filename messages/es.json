@@ -272,7 +272,9 @@
       "noProjectsAvailable": "No hay proyectos de iluminación disponibles.",
       "showMore": "Ver más",
       "location": "Ubicación",
-      "client": "Cliente"
+      "client": "Cliente",
+      "more": "Más",
+      "less": "Menos"
     },
     "DetailPage": {
       "projectNotFound": "No se encontró el proyecto.",

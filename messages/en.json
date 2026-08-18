@@ -286,6 +286,11 @@
       "location": "Location",
       "client": "Client",
       "technologies": "Technologies"
+    },
+    "NotSoLight": {
+      "title": "NOT SO LIGHT",
+      "subtitle": "Some projects are too big to be built alone.",
+      "description": "Open-source initiatives where we contribute as part of a broader ecosystem, helping create technology that stays open and available for others to build upon."
     }
   },
   "Blog": {

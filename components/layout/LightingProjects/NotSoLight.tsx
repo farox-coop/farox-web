@@ -1,14 +1,17 @@
 "use client"
 import { useTranslations } from "next-intl"
+import Image from "next/image"
 
 export default function NotSoLight() {
   const t = useTranslations("LightingProjectsPage.NotSoLight")
 
   return (
     <section className="relative flex flex-col items-center justify-center w-full py-20 laptop:py-30 desktop:py-40 px-4 laptop:px-8">
-      <img
+      <Image
         src="/images/lighting/sphere-not-light.svg"
         alt=""
+        width={840}
+        height={820}
         className="absolute -top-10 laptop:-top-16 desktop:-top-20 -left-20 laptop:-left-16 desktop:-left-10 w-[300px] h-[292px] laptop:w-[500px] laptop:h-[488px] desktop:w-[840px] desktop:h-[820px] pointer-events-none opacity-60"
       />
       <h2 className="relative z-10 text-[#ffffff] text-[36px] laptop:text-[44px] desktop:text-[52px] font-bold uppercase text-center tracking-widest mb-20">

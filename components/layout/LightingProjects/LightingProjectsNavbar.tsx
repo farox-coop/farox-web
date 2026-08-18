@@ -10,14 +10,14 @@ export default function LightingProjectsNavbar() {
 
   return (
     <div className="w-full sticky top-0 z-50 bg-transparent -mx-auto" style={{ width: "100vw", marginLeft: "calc(50% - 50vw)" }}>
-      <nav className="flex items-center justify-between py-[80px] h-16 max-w-[1432px] mx-auto px-[80px]">
+      <nav className="flex items-center justify-between py-5 laptop:py-6 desktop:py-[80px] h-16 max-w-[1432px] mx-auto px-4 laptop:px-10 desktop:px-[80px]">
         <LinkView href={`/${locale}/`}>
-          <LogoFaroxSVG className="w-36" textColor="white" charColor="#28FFE3" />
+          <LogoFaroxSVG className="w-24 laptop:w-30 desktop:w-36" textColor="white" charColor="#28FFE3" />
         </LinkView>
 
-        <LogoPSVG className="w-7 h-auto" />
+        <LogoPSVG className="w-5 laptop:w-6 desktop:w-7 h-auto" />
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 laptop:gap-1.5 desktop:gap-2">
           <ButtonLanguage
             hoverItemsColor="hover:text-secondary"
             languajeTextColor="text-white"

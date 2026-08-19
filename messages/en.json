@@ -291,6 +291,11 @@
       "title": "NOT SO LIGHT",
       "subtitle": "Some projects are too big to be built alone.",
       "description": "Open-source initiatives where we contribute as part of a broader ecosystem, helping create technology that stays open and available for others to build upon."
+    },
+    "Contact": {
+      "title": "GET IN TOUCH",
+      "emailLabel": "Your email",
+      "ideaLabel": "Your idea"
     }
   },
   "Blog": {

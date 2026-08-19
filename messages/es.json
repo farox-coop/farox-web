@@ -287,6 +287,11 @@
       "title": "NOT SO LIGHT",
       "subtitle": "Algunos proyectos son demasiado grandes para ser construidos solos.",
       "description": "Iniciativas de código abierto donde contribuimos como parte de un ecosistema más amplio, ayudando a crear tecnología que permanece abierta y disponible para que otros puedan construir sobre ella."
+    },
+    "Contact": {
+      "title": "GET IN TOUCH",
+      "emailLabel": "Your email",
+      "ideaLabel": "Your idea"
     }
   },
   "Blog": {

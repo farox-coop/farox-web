@@ -1,6 +1,7 @@
 import LightingProjectsNavbar from "@/components/layout/LightingProjects/LightingProjectsNavbar"
 import LightingProjectList from "@/components/layout/LightingProjects/LightingProjectList"
 import NotSoLight from "@/components/layout/LightingProjects/NotSoLight"
+import ContactSection from "@/components/layout/LightingProjects/ContactSection"
 import LogoPSVG from "@/components/SVG/LogoPSVG"
 
 function LightingProjectsPage() {
@@ -31,6 +32,7 @@ function LightingProjectsPage() {
           <LightingProjectList />
         </div>
         <NotSoLight />
+        <ContactSection />
       </main>
     </>
   )

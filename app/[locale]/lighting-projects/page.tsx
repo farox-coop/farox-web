@@ -2,6 +2,7 @@ import LightingProjectsNavbar from "@/components/layout/LightingProjects/Lightin
 import LightingProjectList from "@/components/layout/LightingProjects/LightingProjectList"
 import NotSoLight from "@/components/layout/LightingProjects/NotSoLight"
 import ContactSection from "@/components/layout/LightingProjects/ContactSection"
+import LightingProjectsFooter from "@/components/layout/LightingProjects/LightingProjectsFooter"
 import LogoPSVG from "@/components/SVG/LogoPSVG"
 
 function LightingProjectsPage() {
@@ -9,7 +10,7 @@ function LightingProjectsPage() {
     <>
       <LightingProjectsNavbar />
       <main className="flex flex-col justify-center items-center w-full h-full relative">
-        <div className="flex flex-col items-center justify-start w-full min-h-screen mt-20 laptop:mt-30 desktop:mt-37.5">
+        <div className="flex flex-col items-center justify-start w-full mt-20 laptop:mt-30 desktop:mt-37.5">
           <section className="text-center mb-10 laptop:mb-15 desktop:mb-17.5 z-40 px-4 laptop:px-8">
             <h1 className="flex items-center justify-center gap-8 laptop:gap-12 desktop:gap-16 text-[#ffffff] text-[40px] laptop:text-[58px] desktop:text-[78px] font-bold uppercase tracking-[0.2em]">
               <span>LIGHT</span>
@@ -34,6 +35,7 @@ function LightingProjectsPage() {
         <NotSoLight />
         <ContactSection />
       </main>
+      <LightingProjectsFooter />
     </>
   )
 }

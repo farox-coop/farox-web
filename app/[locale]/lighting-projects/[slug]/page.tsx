@@ -12,7 +12,7 @@ type ProjectMetadata = {
   aliases?: string[]
   title?: string
   description?: string
-  url_img?: string
+  url_img?: string | string[]
 }
 
 export default async function LightingProjectDetailPage({
@@ -56,7 +56,7 @@ export async function generateMetadata({
 
     const title = `FAROX | ${project.title || t("site_title")}`
     const description = project.description || ""
-    const postUrlImg = project.url_img || ""
+    const postUrlImg = Array.isArray(project.url_img) ? project.url_img[0] || "" : project.url_img || ""
     const ogImages = [
       ...(postUrlImg
         ? [

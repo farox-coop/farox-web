@@ -97,15 +97,29 @@ export default function LightingProjectDetail({ slug }: { slug: string }) {
           </div>
         </header>
         <section className="flex flex-col items-center w-full max-w-screen-xl gap-8">
-          <div className="w-full max-w-[1280px] aspect-[1280/720] relative">
-            <Image
-              src={project.url_img}
-              alt={project.title}
-              fill
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover object-center"
-            />
-          </div>
+          {Array.isArray(project.url_img) ? (
+            project.url_img.filter(Boolean).map((img, i) => (
+              <div key={i} className="w-full max-w-[1280px] aspect-[1280/720] relative">
+                <Image
+                  src={img}
+                  alt={`${project.title} ${i + 1}`}
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  className="object-cover object-center"
+                />
+              </div>
+            ))
+          ) : project.url_img ? (
+            <div className="w-full max-w-[1280px] aspect-[1280/720] relative">
+              <Image
+                src={project.url_img}
+                alt={project.title}
+                fill
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="object-cover object-center"
+              />
+            </div>
+          ) : null}
           <div className="prose max-w-3xl">
             <MarkdownRenderer content={project.markdownContent || ""} />
           </div>

@@ -2,7 +2,7 @@ export interface LightingProject {
   slug: string
   title: string
   description: string
-  url_img: string
+  url_img: string | string[]
   markdownContent: string
   date: string
   location?: string

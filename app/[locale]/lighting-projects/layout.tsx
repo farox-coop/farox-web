@@ -11,7 +11,7 @@ export default function LightingProjectsLayout({ children }: { children: React.R
         }}
       />
       <div
-        className="absolute -bottom-100 -right-100 pointer-events-none opacity-10 bg-no-repeat"
+        className="absolute -bottom-100 -right-175 pointer-events-none opacity-10 bg-no-repeat"
         style={{
           width: "1200px",
           height: "900px",

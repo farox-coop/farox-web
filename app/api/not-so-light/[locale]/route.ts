@@ -62,9 +62,9 @@ export async function GET(_request: Request, { params }: { params: Promise<{ loc
     })
 
     projects.sort((a, b) => {
-      const dateA = new Date(a.date)
-      const dateB = new Date(b.date)
-      return dateB.getTime() - dateA.getTime()
+      const numA = parseInt(a.slug.split("-").pop() || "0", 10)
+      const numB = parseInt(b.slug.split("-").pop() || "0", 10)
+      return numA - numB
     })
 
     return NextResponse.json(projects)

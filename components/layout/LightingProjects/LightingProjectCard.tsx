@@ -26,18 +26,7 @@ export default function LightingProjectCard({ project }: { project: LightingProj
       </div>
 
       <div className="flex flex-col laptop:flex-row gap-2 laptop:gap-3">
-        {project.url_gh && (
-          <a
-            href={project.url_gh}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-[140px] laptop:w-[170px] desktop:w-[196px] h-[40px] laptop:h-[48px] desktop:h-[55px] flex items-center justify-center text-white text-[12px] laptop:text-[14px] desktop:text-[16px] font-medium capitalize tracking-wider hover:opacity-80 transition-opacity"
-            style={{ background: "linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.79) 48%, #000000 100%)" }}
-          >
-            Access GitHub
-          </a>
-        )}
-        {project.url_web && (
+        {project.url_web ? (
           <a
             href={project.url_web}
             target="_blank"
@@ -47,7 +36,17 @@ export default function LightingProjectCard({ project }: { project: LightingProj
           >
             Access {project.title}
           </a>
-        )}
+        ) : project.url_gh ? (
+          <a
+            href={project.url_gh}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-[140px] laptop:w-[170px] desktop:w-[196px] h-[40px] laptop:h-[48px] desktop:h-[55px] flex items-center justify-center text-white text-[12px] laptop:text-[14px] desktop:text-[16px] font-medium capitalize tracking-wider hover:opacity-80 transition-opacity"
+            style={{ background: "linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.79) 48%, #000000 100%)" }}
+          >
+            Access GitHub
+          </a>
+        ) : null}
         <Link
           href={`/${locale}/lighting-projects/${project.slug}`}
           className="w-[140px] laptop:w-[170px] desktop:w-[196px] h-[40px] laptop:h-[48px] desktop:h-[55px] flex items-center justify-center text-white text-[12px] laptop:text-[14px] desktop:text-[16px] font-medium capitalize tracking-wider hover:opacity-80 transition-opacity"

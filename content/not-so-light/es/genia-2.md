@@ -1,9 +1,10 @@
 ---
-title: "GenIA"
-description: "Una forma simple, abierta y sin anuncios de coordinar reuniones entre personas, equipos y diferentes zonas horarias."
-url_img: ""
-date: "2026-07-20"
-url_web: "https://genia.farox.coop"
+title: "IA² 2"
+description: "Una plataforma de código abierto que utiliza Inteligencia Artificial para automatizar la anonimización de datos personales en documentos públicos. 2"
+url_img: ["/images/not-so-light/1-NSL.webp","/images/not-so-light/2-NSL.webp","/images/not-so-light/3-NSL.webp.webp"]
+date: "2026-02-01"
+url_gh: "https://github.com/instituciones-abiertas"
+url_web: "https://www.ia2.coop/"
 ---
 
 ## Acerca de

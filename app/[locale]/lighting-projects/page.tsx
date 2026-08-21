@@ -25,7 +25,7 @@ function LightingProjectsPage() {
             <p className="text-[#ffffff] text-[20px] laptop:text-[26px] desktop:text-[30px] font-bold text-center mt-20 laptop:mt-30 desktop:mt-40">
               Open-source initiatives built around everyday problems.
             </p>
-            <p className="text-[#ffffff] text-[18px] laptop:text-[24px] desktop:text-[30px] font-medium text-center mt-6 laptop:mt-8 desktop:mt-10 max-w-[600px] laptop:max-w-[700px] desktop:max-w-155 mx-auto">
+            <p className="text-[#ffffff] text-[18px] laptop:text-[24px] desktop:text-[30px] font-medium text-center mt-6 laptop:mt-8 desktop:mt-10 max-w-150 laptop:max-w-175 desktop:max-w-155 mx-auto">
               We create them to solve real needs we face or identify, then open them so others can use, adapt, and
               improve them.
             </p>

@@ -278,10 +278,10 @@
       "line_2": "Las creamos para resolver problemas reales y las abrimos para que otrxs puedan usarlas, adaptarlas y mejorarlas."
     },
     "ListingPage": {
-      "title": "PROYECTOS DE ILUMINACIÓN",
+      "title": "LIGHTING PROJECTS",
       "readMore": "Ver proyecto",
       "loading": "Cargando...",
-      "noProjectsAvailable": "No hay proyectos de iluminación disponibles.",
+      "noProjectsAvailable": "No hay proyectos disponibles.",
       "showMore": "Ver más",
       "location": "Ubicación",
       "client": "Cliente",

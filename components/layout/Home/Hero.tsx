@@ -12,15 +12,15 @@ const HeroSection = () => {
   return (
     <section className="relative w-full">
       <div
-        className={`relative w-full bg-custom-gradient pt-[110px] mobtab:pb-[50px] mobtab:pt-[130px] tablet:pb-[80px] tablet:pt-[200px] laptop:pb-[110px] desktop:pb-[210px] desktoplg:pb-[260px] desktoplg:pt-[310] desktopxl:pb-[280px] ${locale === "es" ? "laptop:pt-[130px] desktop:pt-[260px] desktopxl:pt-[310px]" : "laptop:pt-[170px] desktop:pt-[300px] desktopxl:pt-[360px]"} px-8`}
+        className={`relative w-full bg-custom-gradient pt-27.5 mobtab:pb-12.5 mobtab:pt-32.5 tablet:pb-20 tablet:pt-50 laptop:pb-27.5 desktop:pb-52.5 desktoplg:pb-65 desktoplg:pt-77.5 desktopxl:pb-70 ${locale === "es" ? "laptop:pt-32.5 desktop:pt-65 desktopxl:pt-77.5" : "laptop:pt-42.5 desktop:pt-75 desktopxl:pt-90"} px-8`}
       >
-        <div className="absolute top-0 left-0 right-0 mx-auto max-w-[2034px]">
+        <div className="absolute top-0 left-0 right-0 mx-auto max-w-508.5">
           <AHeroSVG />
         </div>
         <article className="flex mt-20 tablet:mt-0 max-w-screen-desktoplg mx-auto justify-center items-center relative bg-transparent">
           <LinkView
             href={`/${locale}/contact`}
-            className={`hidden-mobile absolute tablet:top-[28.4%] tablet:right-[2%] laptop:top-[23%] ${locale === "es" ? "laptop:top-[28.5%] desktop:top-[13.5%] desktoplg:top-[13.5%] desktopxl:top-[13%]" : "laptop:top-[23%] desktop:top-[14%] desktopxl:top-[13%] desktoplg:top-[14%]"} laptop:right-[2%] desktop:right-[1%] transform translate-x-1/2 rotate-90 text-white ${locale === "es" ? "laptop:text-sm desktop:text-xl" : "laptop:text-base desktop:text-xl"} font-medium uppercase transition-colors hover:text-secondary z-10`}
+            className={`hidden-mobile absolute tablet:top-[28.4%] tablet:right-[2%] ${locale === "es" ? "laptop:top-[28.5%] desktop:top-[13.5%] desktoplg:top-[13.5%] desktopxl:top-[13%]" : "laptop:top-[23%] desktop:top-[14%] desktopxl:top-[13%] desktoplg:top-[14%]"} laptop:right-[2%] desktop:right-[1%] transform translate-x-1/2 rotate-90 text-white ${locale === "es" ? "laptop:text-sm desktop:text-xl" : "laptop:text-base desktop:text-xl"} font-medium uppercase transition-colors hover:text-secondary z-10`}
           >
             {t("contact")}
           </LinkView>
@@ -47,20 +47,20 @@ const HeroSection = () => {
           <div
             className={`flex flex-row justify-center items-center tablet:mt-9 laptop:mt-20 ${locale === "es" ? "desktop:-mt-12" : "desktop:mt-0"} w-full max-w-screen-desktoplg`}
           >
-            <div className="hidden-mobile mb-[180px] laptop:mb-[100px] desktop:mb-[160px]">
+            <div className="hidden-mobile mb-45 laptop:mb-25 desktop:mb-40">
               <TriangleDown />
             </div>
             <section className="flex flex-col w-full justify-center items-center">
               <CodeCoop />
               <h1
-                className={`text-center ${locale === "es" ? "mt-2 laptop:mt-[10px]" : "mt-2 laptop:mt-[28px]"} text-black leading-[30px] laptop:leading-[30px] desktop:leading-[55px] z-20`}
+                className={`text-center ${locale === "es" ? "mt-2 laptop:mt-2.5" : "mt-2 laptop:mt-7"} text-black leading-7.5 laptop:leading-7.5 desktop:leading-13.75 z-20`}
               >
-                <span className="text-[40px] tablet:text-[50px] laptop:text-[60px] desktop:text-[115px] font-bold">
+                <span className="text-[40px] tablet:text-[50px] laptop:text-6xl desktop:text-[115px] font-bold">
                   {t("title_1")}
                 </span>{" "}
                 <br />
                 <span
-                  className={`${locale === "es" ? "text-[22px] tablet:text-[28px] laptop:text-[33px] desktop:text-[65px] mt-0 laptop:mt-2 desktop:mt-0" : "text-[30px] tablet:text-[38px] laptop:text-[46px] desktop:text-[85px]"} font-normal inline-flex items-center justify-center gap-2`}
+                  className={`${locale === "es" ? "text-[22px] tablet:text-[28px] laptop:text-[33px] desktop:text-[65px] mt-0 laptop:mt-2 desktop:mt-0" : "text-3xl tablet:text-[38px] laptop:text-[46px] desktop:text-[85px]"} font-normal inline-flex items-center justify-center gap-2`}
                 >
                   {t("title_2")}
                   <svg
@@ -68,7 +68,7 @@ const HeroSection = () => {
                     data-name="Capa 1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 36.27 39.91"
-                    className={`${locale === "es" ? "mt-[7px] tablet:mt-1 laptop:mt-2 desktop:mt-4 desktopxl:mt-4" : "mt-[11px] tablet:mt-3 laptop:mt-2 desktop:mt-10 desktopxl:mt-8"} w-[13px] h-[15px] mobtab:w-[12px] mobtab:h-[12px] tablet:w-[16px] tablet:h-[16px] laptop:w-[18px] laptop:h-[18px] desktop:w-[35px] desktop:h-[35px]`}
+                    className={`${locale === "es" ? "mt-1.75 tablet:mt-1 laptop:mt-2 desktop:mt-4 desktopxl:mt-4" : "mt-2.75 tablet:mt-3 laptop:mt-2 desktop:mt-10 desktopxl:mt-8"} w-3.25 h-3.75 mobtab:w-3 mobtab:h-3 tablet:w-4 tablet:h-4 laptop:w-4.5 laptop:h-4.5 desktop:w-8.75 desktop:h-8.75`}
                   >
                     <path
                       className="cls-1"
@@ -82,7 +82,7 @@ const HeroSection = () => {
                 </span>
               </h1>
               <p
-                className={`${locale === "es" ? "max-w-[270px] laptop:max-w-[500px] desktop:max-w-[550px]" : "max-w-[270px] laptop:max-w-[430px] desktop:max-w-[550px] tablet:px-0"} text-wrap text-center font-normal text-[18px] py-[52px] tablet:py-5 laptop:py-[65px] tablet:text-lg laptop:text-2xl desktop:text-3xl z-20`}
+                className={`${locale === "es" ? "max-w-67.5 laptop:max-w-125 desktop:max-w-137.5" : "max-w-67.5 laptop:max-w-107.5 desktop:max-w-137.5 tablet:px-0"} text-wrap text-center font-normal text-lg py-13 tablet:py-5 laptop:py-16.25 tablet:text-lg laptop:text-2xl desktop:text-3xl z-20`}
               >
                 {t("line_1")}
               </p>
@@ -92,7 +92,7 @@ const HeroSection = () => {
                 </UniqueButton>
               </div>
             </section>
-            <div className="hidden-mobile mb-[180px] laptop:mb-[100px] desktop:mb-[160px]">
+            <div className="hidden-mobile mb-45 laptop:mb-25 desktop:mb-40">
               <TriangleDown />
             </div>
           </div>

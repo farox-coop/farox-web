@@ -30,6 +30,12 @@
       "card_3": {
         "title": "Team Extension",
         "description": "We integrate specialists into client teams, ensuring a perfect cultural fit and fast scalability without sacrificing the quality and speed of technology solutions."
+      },
+      "card_4": {
+        "title": "GenIA",
+        "description": "We implement self-hosted Artificial Intelligence strategies using open-source technology, allowing organizations to choose their models and adapt the architecture to their needs. No vendor lock-in, no data leaks, and infrastructure 100% under your control.",
+        "description_2": "No monthly per-user subscriptions. No per-token costs.",
+        "description_3": "We implement self-hosted Artificial Intelligence strategies using open-source technology. No vendor lock-in, no data leaks, and infrastructure 100% under your control."
       }
     },
     "WeUse": {
@@ -109,7 +115,24 @@
     "contact": "Contact",
     "services": "Services",
     "case studies": "Case Studies",
-    "culture": "Culture"
+    "culture": "Culture",
+    "projects": "Projects",
+    "services_menu": {
+      "product_development": "Product Development",
+      "product_development_description": "Technical planning and execution of your project",
+      "software_consultancy": "Software Consultancy",
+      "software_consultancy_description": "Identify opportunities for tailored solutions",
+      "team_extension": "Team Extension",
+      "team_extension_description": "We enhance your team with top specialists",
+      "genia": "GenIA",
+      "genia_description": "Organize, govern, and scale the use of AI"
+    },
+    "projects_menu": {
+      "case_studies": "Case Studies",
+      "case_studies_description": "Technical planning and execution of your project",
+      "light_projects": "Light Projects",
+      "light_projects_description": "Guiding innovation with results"
+    }
   },
   "FooterSection": {
     "line_1": "© {CURRENT_YEAR}_ Farox all rights reserved."
@@ -248,6 +271,53 @@
       "placeholder_email": "Your email",
       "placeholder_message": "Write your message",
       "submit_button": "Send",
+      "form_success": "Thank you for reaching out! We'll get back to you soon.",
+      "form_error": "There was an error sending the form. Please try again in a few minutes."
+    }
+  },
+  "LightProjectsPage": {
+    "HeroSection": {
+      "subtitle": "Open by default.",
+      "line_1": "Open-source initiatives built around everyday problems.",
+      "line_2": "We create them to solve real needs we face or identify, then open them so others can use, adapt, and improve them."
+    },
+    "ListingPage": {
+      "title": "LIGHTING PROJECTS",
+      "readMore": "View project",
+      "loading": "Loading...",
+      "noProjectsAvailable": "No lighting projects available.",
+      "showMore": "Show more",
+      "location": "Location",
+      "client": "Client",
+      "more": "More",
+      "less": "Less",
+      "eyebrowMeeting": "SCHEDULE YOUR MEETING",
+      "eyebrowAi": "TAKE CONTROL OF YOUR AI",
+      "learnMore": "Learn More",
+      "accessWeb": "Access {title}",
+      "accessGithub": "Access GitHub"
+    },
+    "DetailPage": {
+      "projectNotFound": "Project not found.",
+      "backToList": "Back to projects",
+      "location": "Location",
+      "client": "Client",
+      "technologies": "Technologies",
+      "accessWeb": "Access {title}",
+      "accessGithub": "Access GitHub",
+      "discoverProject": "Discover {title}"
+    },
+    "NotSoLight": {
+      "title": "NOT SO LIGHT",
+      "subtitle": "Some projects are too big to be built alone.",
+      "description": "Open-source initiatives where we contribute as part of a broader ecosystem, helping create technology that stays open and available for others to build upon."
+    },
+    "Contact": {
+      "title": "GET IN TOUCH",
+      "emailLabel": "Your email",
+      "ideaLabel": "Your idea",
+      "send": "Send",
+      "sending": "Sending...",
       "form_success": "Thank you for reaching out! We'll get back to you soon.",
       "form_error": "There was an error sending the form. Please try again in a few minutes."
     }

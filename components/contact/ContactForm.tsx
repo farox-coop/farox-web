@@ -18,7 +18,7 @@ function ContactForm() {
 
   if (formSuccess) {
     return (
-      <div className="w-full mx-auto px-[20px] tablet:px-[40px] laptop:px-[250px] text-[18px] tablet:text-[20px] text-center">
+      <div className="w-full mx-auto px-5] tablet:px-10 laptop:px-62.5 text-[18px] tablet:text-[20px] text-center">
         <p className="text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-medium">{t("form_success")}</p>
       </div>
     )
@@ -29,9 +29,9 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full mx-auto px-[20px] tablet:px-[40px] laptop:px-[250px] text-[18px] tablet:text-[20px]"
+      className="w-full mx-auto px-5 tablet:px-10 laptop:px-62.5 text-[18px] tablet:text-[20px]"
     >
-      <div className="flex flex-col lg:flex-row laptop:gap-[50px] desktop:gap-[50px] desktoplg:gap-[106px] mb-6">
+      <div className="flex flex-col lg:flex-row laptop:gap-12.5 desktoplg:gap-26.5 mb-6">
         <label className="flex-1 mb-7 lg:mb-0 block">
           <span className="block mb-2 pl-9 tablet:pl-11">{t("label_firstname")}</span>
           <input
@@ -56,7 +56,7 @@ function ContactForm() {
         </label>
       </div>
       <label className="mb-6 block">
-        <span className="block mb-2 pl-9 tablet:pl-6 desktop:pl-[44px]">{t("label_email")}</span>
+        <span className="block mb-2 pl-9 tablet:pl-6 desktop:pl-11">{t("label_email")}</span>
         <input
           type="email"
           id="email"
@@ -73,7 +73,7 @@ function ContactForm() {
           id="message"
           name="message"
           placeholder={t("placeholder_message")}
-          className="w-full tablet:text-[20px] px-9 tablet:px-14 py-[25px] rounded-[40px] bg-[#eeeeee] placeholder:italic placeholder:text-[20px] placeholder:font-light min-h-[205px] resize-y"
+          className="w-full tablet:text-[20px] px-9 tablet:px-14 py-6.25 rounded-[40px] bg-[#eeeeee] placeholder:italic placeholder:text-[20px] placeholder:font-light min-h-51.25 resize-y"
           required
         />
       </label>
@@ -86,7 +86,7 @@ function ContactForm() {
         className="flex items-center justify-center mt-14 mx-auto
         rounded-full font-medium text-secondary bg-black
         text-[20px] laptop:text-xl desktop:text-[27px] 
-        px-[18px] py-[6px] border desktop:px-8 desktop:py-3 disabled:cursor-not-allowed disabled:opacity-70
+        px-4.5 py-1.5 border desktop:px-8 desktop:py-3 disabled:cursor-not-allowed disabled:opacity-70
         transition-all duration-300 ease-in-out hover:text-black hover:bg-transparent hover:border-secondary"
       >
         {t("submit_button")}

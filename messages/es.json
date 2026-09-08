@@ -21,15 +21,21 @@
       "title_2": "HACEMOS",
       "card_1": {
         "title": "Desarrollo de producto",
-        "description": "Gestionamos todo el proceso de desarrollo de tecnología, tomando  decisiones estratégicas, para alinear las soluciones con los objetivos de negocio de manera de asegurar el éxito del proyecto."
+        "description": "Gestionamos la planificación técnica y ejecución de proyectos, alineando cada etapa con los objetivos de negocio para lograr soluciones de calidad."
       },
       "card_2": {
         "title": "Consultoría de software",
-        "description": "Ofrecemos consultorías técnicas para diagnosticar problemas y diseñar soluciones, además de capacitaciones internas para que el conocimiento quede en la organización que nos contrata."
+        "description": "Ofrecemos soporte de software a medida para diagnosticar problemas, diseñar soluciones efectivas y brindar asesoramiento técnico y capacitación."
       },
       "card_3": {
         "title": "Ampliación de equipo",
-        "description": "Incorporamos especialistas a tu equipo para trabajar en sintonía con las dinámicas de tu organización y garantizar una integración con altos estándares de calidad y eficiencia en las soluciones tecnológicas."
+        "description": "Fortalecemos equipos con especialistas que se integran a la cultura y objetivos de cada proyecto, permitiendo ampliar capacidades de forma ágil sin comprometer la calidad."
+      },
+      "card_4": {
+        "title": "GenIA",
+        "description": "Implementamos estrategias de Inteligencia Artificial en infraestructura propia utilizando tecnología de código abierto, permitiendo a las organizaciones elegir sus modelos y adaptar la arquitectura a sus necesidades. Sin dependencia de proveedores, sin filtraciones de datos y con una infraestructura 100% bajo tu control.",
+        "description_2": "Sin suscripciones mensuales por usuario. Sin costos por token.",
+        "description_3": "Implementamos estrategias de Inteligencia Artificial autoalojada utilizando tecnología open-source. Sin dependencia de proveedores, sin fugas de datos, e infraestructura 100% bajo tu control."
       }
     },
     "WeUse": {
@@ -105,7 +111,24 @@
     "contact": "Contacto",
     "services": "Servicios",
     "case studies": "Casos de Estudios",
-    "culture": "Cultura"
+    "culture": "Cultura",
+    "projects": "Projects",
+    "services_menu": {
+      "product_development": "Desarrollo de Producto",
+      "product_development_description": "Planificación y ejecución técnica de tu proyecto",
+      "software_consultancy": "Consultoría de Software",
+      "software_consultancy_description": "Identificamos oportunidades para soluciones a medida",
+      "team_extension": "Ampliación de Equipo",
+      "team_extension_description": "Potenciamos tu equipo con especialistas de primer nivel",
+      "genia": "GenIA",
+      "genia_description": "Organiza, gobierna y escala el uso de la IA"
+    },
+    "projects_menu": {
+      "case_studies": "Case Studies",
+      "case_studies_description": "Technical planning and execution of your project",
+      "light_projects": "Light Projects",
+      "light_projects_description": "Guiding innovation with results"
+    }
   },
   "FooterSection": {
     "line_1": "©{CURRENT_YEAR}_ Farox todos los derechos reservados."
@@ -244,6 +267,53 @@
       "placeholder_email": "Tu email",
       "placeholder_message": "Escribe tu mensaje",
       "submit_button": "Enviar",
+      "form_success": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto.",
+      "form_error": "Hubo un error al enviar el formulario. Por favor, intenta nuevamente en unos minutos."
+    }
+  },
+  "LightProjectsPage": {
+    "HeroSection": {
+      "subtitle": "Abierto por defecto.",
+      "line_1": "Iniciativas de código abierto para problemas cotidianos.",
+      "line_2": "Las creamos para resolver problemas reales y las abrimos para que otrxs puedan usarlas, adaptarlas y mejorarlas."
+    },
+    "ListingPage": {
+      "title": "PROYECTOS DE ILUMINACIÓN",
+      "readMore": "Ver proyecto",
+      "loading": "Cargando...",
+      "noProjectsAvailable": "No hay proyectos de iluminación disponibles.",
+      "showMore": "Ver más",
+      "location": "Ubicación",
+      "client": "Cliente",
+      "more": "Más",
+      "less": "Menos",
+      "eyebrowMeeting": "AGENDA TU REUNIÓN",
+      "eyebrowAi": "TOMA EL CONTROL DE TU IA",
+      "learnMore": "Ver más",
+      "accessWeb": "Acceder a {title}",
+      "accessGithub": "Acceder a GitHub"
+    },
+    "DetailPage": {
+      "projectNotFound": "No se encontró el proyecto.",
+      "backToList": "Volver a proyectos",
+      "location": "Ubicación",
+      "client": "Cliente",
+      "technologies": "Tecnologías",
+      "accessWeb": "Acceder a {title}",
+      "accessGithub": "Acceder a GitHub",
+      "discoverProject": "Descubre {title}"
+    },
+    "NotSoLight": {
+      "title": "NO TAN LIGERO",
+      "subtitle": "Algunos proyectos son demasiado grandes para ser construidos solos.",
+      "description": "Iniciativas de código abierto donde contribuimos como parte de un ecosistema más amplio. Ayudamos a crear tecnología que permanece abierta y disponible para todxs."
+    },
+    "Contact": {
+      "title": "PONTE EN CONTACTO",
+      "emailLabel": "Tu correo",
+      "ideaLabel": "Tu idea",
+      "send": "Enviar",
+      "sending": "Enviando...",
       "form_success": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto.",
       "form_error": "Hubo un error al enviar el formulario. Por favor, intenta nuevamente en unos minutos."
     }

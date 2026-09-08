@@ -32,7 +32,7 @@ function CulturePage() {
         hoverItemsColor="hover:text-secondary"
         itemsColor="text-[#fff]"
         textColor="#fff"
-        charColor="#fff"
+        charColor="#28FFE3"
         languajeTextColor="text-[#fff]"
       />
       <main className="flex flex-col justify-center w-full bg-[#f1f1f1] bg-cover">

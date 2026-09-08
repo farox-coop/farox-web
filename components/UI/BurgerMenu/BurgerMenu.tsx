@@ -126,19 +126,6 @@ function BurgerMenu({ lineColor = "black" }: { lineColor?: string }) {
               </ul>
             </div>
           </li>
-          {/*
-            Botón "Casos de estudios" original: comentado a la espera de que el cliente
-            decida activar este bloque en lugar del submenú "Projects".
-            <li className="first:border-none border-t border-gray-400 h-12.5 flex items-center justify-center hover:bg-primary hover:text-secondary transition duration-300 ease-in-out">
-              <Link
-                href={`/${locale}/case-studies/all`}
-                onClick={handleLinkClick}
-                className="flex h-full w-full items-center justify-center text-lg"
-              >
-                {t("case studies")}
-              </Link>
-            </li>
-          */}
           <li className="first:border-none border-t border-gray-400">
             <button
               type="button"

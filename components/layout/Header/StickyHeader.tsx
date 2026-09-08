@@ -49,21 +49,6 @@ function StickyHeader({
               activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
               isSticky
             />
-            {/*
-              Botón "Casos de estudios" original: comentado a la espera de que el cliente
-              decida activar este bloque en lugar del dropdown "Projects".
-              <li>
-                <NavItem
-                  hoverItemsColor="hover:text-secondary"
-                  itemsColor="text-white"
-                  href={`/${locale}/case-studies/all`}
-                  isActive={pathname === `/${locale}/case-studies/all`}
-                  activeLineColor={pathname === `/${locale}/case-studies/all` ? "bg-secondary" : "bg-transparent"}
-                >
-                  {t("case studies")}
-                </NavItem>
-              </li>
-            */}
             <ProjectsDropdown
               hoverItemsColor="hover:text-secondary"
               itemsColor="text-white"

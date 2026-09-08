@@ -77,22 +77,6 @@ function Header({
                 itemsColor={itemsColor}
                 activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
               />
-              {/*
-                Botón "Casos de estudios" original: comentado a la espera de que el cliente
-                decida activar este bloque en lugar del dropdown "Projects".
-                <li>
-                  <NavItem
-                    hoverItemsColor={hoverItemsColor}
-                    itemsColor={itemsColor}
-                    href={`/${locale}/case-studies/all`}
-                    isActive={/^\/[a-z]{2}\/case-studies(\/.*)?$/.test(pathname)}
-                    textActiveColor="text-primary"
-                    activeLineColor={/^\/[a-z]{2}\/case-studies(\/.*)?$/.test(pathname) ? "bg-primary" : "bg-transparent"}
-                  >
-                    {t("case studies")}
-                  </NavItem>
-                </li>
-              */}
               <ProjectsDropdown
                 hoverItemsColor={hoverItemsColor}
                 itemsColor={itemsColor}

@@ -110,11 +110,12 @@
   },
   "Header": {
     "home": "Inicio test",
+    "main_menu": "Menú principal",
     "contact": "Contacto",
     "services": "Servicios",
     "case studies": "Casos de Estudios",
     "culture": "Cultura",
-    "projects": "Projects",
+    "projects": "Proyectos",
     "services_menu": {
       "product_development": "Desarrollo de Producto",
       "product_development_description": "Planificación y ejecución técnica de tu proyecto",
@@ -126,14 +127,14 @@
       "genia_description": "Organiza, gobierna y escala el uso de la IA"
     },
     "projects_menu": {
-      "case_studies": "Case Studies",
-      "case_studies_description": "Technical planning and execution of your project",
+      "case_studies": "Casos de Estudio",
+      "case_studies_description": "Planificación y ejecución técnica de tu proyecto",
       "light_projects": "Light Projects",
-      "light_projects_description": "Guiding innovation with results"
+      "light_projects_description": "Guiando la innovación con resultados"
     }
   },
   "FooterSection": {
-    "line_1": "©{CURRENT_YEAR}_ Farox todos los derechos reservados."
+    "line_1": "© {CURRENT_YEAR} Farox todos los derechos reservados."
   },
   "ContactPage": {
     "title_1": "HABLEMOS",
@@ -199,7 +200,7 @@
     "WeThrive": {
       "title_1": "QUÉ",
       "title_2": "CREAMOS",
-      "description_1": "Farox proudly contributes to Open Source projects, fostering innovation and collaboration. We believe in sharing knowledge to empower communities and create impactful solutions for everyone.",
+      "description_1": "Farox contribuye con orgullo a proyectos de código abierto, fomentando la innovación y la colaboración. Creemos en compartir conocimiento para empoderar a las comunidades y crear soluciones de impacto para todxs.",
       "button_filter_1": "SOFTWARE LIBRE"
     }
   },
@@ -280,7 +281,7 @@
       "line_2": "Las creamos para resolver problemas reales y las abrimos para que otrxs puedan usarlas, adaptarlas y mejorarlas."
     },
     "ListingPage": {
-      "title": "LIGHTING PROJECTS",
+      "title": "LIGHT PROJECTS",
       "readMore": "Ver proyecto",
       "loading": "Cargando...",
       "noProjectsAvailable": "No hay proyectos disponibles.",
@@ -296,6 +297,7 @@
       "accessGithub": "Acceder a GitHub"
     },
     "DetailPage": {
+      "loading": "Cargando...",
       "projectNotFound": "No se encontró el proyecto.",
       "backToList": "Volver a proyectos",
       "location": "Ubicación",

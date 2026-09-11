@@ -44,13 +44,11 @@ function StickyHeader({
         <nav>
           <ul className="flex items-center gap-10 uppercase font-medium desktop:text-xl tracking-widest">
             <ServicesDropdown
-              hoverItemsColor="hover:text-secondary"
               itemsColor="text-white"
               activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
               isSticky
             />
             <ProjectsDropdown
-              hoverItemsColor="hover:text-secondary"
               itemsColor="text-white"
               activeLineColor={pathname === `/${locale}/case-studies/all` ? "bg-secondary" : "bg-transparent"}
               isSticky

@@ -1,17 +1,11 @@
 import ProjectDetail from "@/components/layout/LightProjects/ProjectDetail"
 import LightProjectsNavbar from "@/components/layout/LightProjects/LightProjectsNavbar"
+import LightProjectsFooter from "@/components/layout/LightProjects/LightProjectsFooter"
+import { getLightProjects, LIGHT_PROJECT_CATEGORIES } from "@/lib/lightProjects"
 import { getBaseURL, getLocale } from "@/utils/helpers"
 import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 import { notFound } from "next/navigation"
-import LightProjectsFooter from "@/components/layout/LightProjects/LightProjectsFooter"
-
-type ProjectMetadata = {
-  slug: string
-  title?: string
-  description?: string
-  url_img?: string | string[]
-}
 
 export default async function LightProjectDetailPage({
   params,
@@ -40,14 +34,8 @@ export async function generateMetadata({
     const t = await getTranslations({ locale, namespace: "Common" })
     const metadataBase = await getBaseURL()
 
-    const [lightRes, darkRes] = await Promise.all([
-      fetch(`${metadataBase}/api/projects/light-projects/${locale}`),
-      fetch(`${metadataBase}/api/projects/not-so-light/${locale}`),
-    ])
-
-    const lightProjects = lightRes.ok ? ((await lightRes.json()) as ProjectMetadata[]) : []
-    const darkProjects = darkRes.ok ? ((await darkRes.json()) as ProjectMetadata[]) : []
-    const project = [...lightProjects, ...darkProjects].find((p) => p.slug === slug)
+    const allProjects = LIGHT_PROJECT_CATEGORIES.flatMap((category) => getLightProjects(category, locale) ?? [])
+    const project = allProjects.find((p) => p.slug === slug)
 
     if (!project) {
       return notFound()
@@ -95,7 +83,7 @@ export async function generateMetadata({
       },
     }
   } catch (error) {
-    if (error instanceof Error && (error as { digest?: string }).digest === "NEXT_NOT_FOUND") {
+    if (error instanceof Error && (error as { digest?: string }).digest?.startsWith("NEXT_HTTP_ERROR_FALLBACK")) {
       throw error
     }
     console.error("Error generating metadata for lighting project:", error)

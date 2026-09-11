@@ -108,7 +108,7 @@ export async function generateMetadata({
       },
     }
   } catch (error) {
-    if (error instanceof Error && (error as { digest?: string }).digest === "NEXT_NOT_FOUND") {
+    if (error instanceof Error && (error as { digest?: string }).digest?.startsWith("NEXT_HTTP_ERROR_FALLBACK")) {
       throw error
     }
     console.error("Error generating metadata for post:", error)

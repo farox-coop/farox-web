@@ -1,6 +1,6 @@
 import { useLocale, useTranslations } from "next-intl"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ChevronDownSVG from "@/components/SVG/ChevronDownSVG"
 import styles from "./BurgerMenu.module.css"
 
@@ -47,6 +47,23 @@ function BurgerMenu({ lineColor = "black" }: { lineColor?: string }) {
     setIsProjectsOpen(false)
   }
 
+  useEffect(() => {
+    if (!isOpen) {
+      return
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false)
+        setIsServicesOpen(false)
+        setIsProjectsOpen(false)
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+    return () => document.removeEventListener("keydown", handleKeyDown)
+  }, [isOpen])
+
   return (
     <>
       <button
@@ -54,7 +71,7 @@ function BurgerMenu({ lineColor = "black" }: { lineColor?: string }) {
         className={`${styles.menu} ${isOpen ? styles.opened : ""}`}
         onClick={handleToggle}
         aria-expanded={isOpen}
-        aria-label="Main Menu"
+        aria-label={t("main_menu")}
         style={{ "--menu-line-color": lineColor } as React.CSSProperties}
       >
         <svg width={50} height={40} viewBox="0 0 100 100">
@@ -70,6 +87,8 @@ function BurgerMenu({ lineColor = "black" }: { lineColor?: string }) {
         </svg>
       </button>
       <nav
+        aria-hidden={!isOpen}
+        inert={!isOpen}
         className={`
           absolute top-[99%] bg-[#030207] text-white w-75
           transition-all duration-500 ease-in-out overflow-hidden

@@ -33,7 +33,7 @@ function WeeCoop() {
   return (
     <article className="w-full bg-white relative px-8" id="we-coop" data-scroll-section>
       <section className="max-w-screen-desktoplg relative mx-auto my-[95px] flex w-full flex-col items-center">
-        <div className="absolute w-[230px] laptop:w-[383px] right-0 top-0] hidden tablet:block">
+        <div className="absolute w-[230px] laptop:w-[383px] right-0 top-0 hidden tablet:block">
           <AllCircleGraySVG />
         </div>
         <h2 className="text-[28px] tablet:text-[55px] laptop:text-[75px] font-bold mb-4 z-20">{t("title_1")}</h2>

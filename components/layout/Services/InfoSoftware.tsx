@@ -9,7 +9,7 @@ export default function InfoSoftware() {
 
   return (
     <article className="w-full bg-white relative px-8 tablet:scroll-mt-5" id="software-consultancy">
-      <section className="max-w-screen-desktoplg relative mx-auto mt-1.6 laptop:mt-48 flex w-full flex-col items-center pb-57.5 tablet:pb-64">
+      <section className="max-w-screen-desktoplg relative mx-auto mt-1.5 laptop:mt-48 flex w-full flex-col items-center pb-57.5 tablet:pb-64">
         <div className="flex flex-col-reverse laptop:flex-row w-full justify-between">
           <h2 className="text-[28px] text-center laptop:text-left laptop:text-[65px] desktop:text-[75px] font-bold leading-none text-black">
             <span className="block">{t("title_1")}</span>

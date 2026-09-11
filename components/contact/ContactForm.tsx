@@ -18,7 +18,7 @@ function ContactForm() {
 
   if (formSuccess) {
     return (
-      <div className="w-full mx-auto px-5] tablet:px-10 laptop:px-62.5 text-[18px] tablet:text-[20px] text-center">
+      <div className="w-full mx-auto px-5 tablet:px-10 laptop:px-62.5 text-[18px] tablet:text-[20px] text-center">
         <p className="text-2xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-medium">{t("form_success")}</p>
       </div>
     )

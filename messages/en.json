@@ -83,8 +83,6 @@
     "OwnCode": {
       "title_1": "OWN",
       "title_2": "CODE",
-      "subtitle_desktop_1": "We are developers, we are coders,",
-      "subtitle_desktop_2": " we are a cooperative family.",
       "title_3": "We are developers, we are coders, we are a cooperative family.",
       "line_1": "Founded 13 years ago, we built a horizontal, high-quality workspace, evolving to become a tech leader",
       "line_2": "in the cooperative sector. Guided by collaboration, we believe cooperatives offer an alternative to traditional business models.",
@@ -112,6 +110,7 @@
   },
   "Header": {
     "home": "Home",
+    "main_menu": "Main Menu",
     "contact": "Contact",
     "services": "Services",
     "case studies": "Case Studies",
@@ -135,7 +134,7 @@
     }
   },
   "FooterSection": {
-    "line_1": "© {CURRENT_YEAR}_ Farox all rights reserved."
+    "line_1": "© {CURRENT_YEAR} Farox all rights reserved."
   },
   "ContactPage": {
     "title_1": "LET'S",
@@ -282,7 +281,7 @@
       "line_2": "We create them to solve real needs we face or identify, then open them so others can use, adapt, and improve them."
     },
     "ListingPage": {
-      "title": "LIGHTING PROJECTS",
+      "title": "LIGHT PROJECTS",
       "readMore": "View project",
       "loading": "Loading...",
       "noProjectsAvailable": "No projects available.",
@@ -298,6 +297,7 @@
       "accessGithub": "Access GitHub"
     },
     "DetailPage": {
+      "loading": "Loading...",
       "projectNotFound": "Project not found.",
       "backToList": "Back to projects",
       "location": "Location",

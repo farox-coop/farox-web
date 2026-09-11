@@ -21,6 +21,7 @@ export default function LightProjectsFooter() {
             href="https://linkedin.com/company/farox-coop"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="hover:opacity-70 transition-opacity"
           >
             <LinkedinIconSVG className="h-9.25 w-auto" />
@@ -29,6 +30,7 @@ export default function LightProjectsFooter() {
             href="https://github.com/farox-coop"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             className="hover:opacity-70 transition-opacity"
           >
             <GithubIconSVG className="h-9.25 w-auto" />
@@ -37,6 +39,7 @@ export default function LightProjectsFooter() {
             href="https://instagram.com/farox.coop"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Instagram"
             className="hover:opacity-70 transition-opacity"
           >
             <InstaIconSVG className="h-9.25 w-auto" />
@@ -45,6 +48,7 @@ export default function LightProjectsFooter() {
             href="https://x.com/faroxcoop"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="X"
             className="hover:opacity-70 transition-opacity"
           >
             <XIconSVG className="h-9.25 w-auto" />

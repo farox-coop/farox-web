@@ -50,9 +50,7 @@ function Header({
     }
 
     return () => {
-      if (contactLink) {
-        observer.unobserve(contactLink)
-      }
+      observer.disconnect()
     }
   }, [])
 
@@ -73,16 +71,10 @@ function Header({
           <nav className="w-full max-w-180">
             <ul className="flex items-center justify-around uppercase font-medium desktop:text-xl tracking-widest">
               <ServicesDropdown
-                hoverItemsColor={hoverItemsColor}
                 itemsColor={itemsColor}
                 activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
               />
-              <ProjectsDropdown
-                hoverItemsColor={hoverItemsColor}
-                itemsColor={itemsColor}
-                textActiveColor="text-primary"
-                activeLineColor="bg-primary"
-              />
+              <ProjectsDropdown itemsColor={itemsColor} textActiveColor="text-primary" activeLineColor="bg-primary" />
               <li>
                 <NavItem
                   hoverItemsColor={hoverItemsColor}

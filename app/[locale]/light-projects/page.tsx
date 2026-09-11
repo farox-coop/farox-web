@@ -19,6 +19,7 @@ function LightProjectsPage() {
               <span>LIGHT</span>
               <span className="flex items-center gap-1">
                 <LogoPSVG className="w-4.5 h-auto laptop:w-12 mr-1 laptop:mr-2.5 desktop:mr-3.25 laptop:pt-0.5 laptop:mt-0.5" />
+                <span className="sr-only">P</span>
                 ROJECTS
               </span>
             </h1>

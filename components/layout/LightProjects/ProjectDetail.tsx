@@ -75,7 +75,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
           <div className="grid w-full place-items-center">
             <Spinner />
           </div>
-          <p className="text-xl text-white">{t("location")}</p>
+          <p className="text-xl text-white">{t("loading")}</p>
         </article>
       </div>
     )

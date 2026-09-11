@@ -9,7 +9,6 @@ import ChevronDownSVG from "../../SVG/ChevronDownSVG"
 import NavItem from "../../UI/Buttons/NavItem"
 
 interface ProjectsDropdownProps {
-  hoverItemsColor: string
   itemsColor: string
   textActiveColor?: string
   activeLineColor: string

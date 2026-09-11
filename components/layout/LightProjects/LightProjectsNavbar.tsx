@@ -44,7 +44,7 @@ export default function LightProjectsNavbar() {
       )}
       <div
         ref={navRef}
-        className="w-full sticky laptop:relative top-0 z-50 bg-transparent -mx-auto"
+        className="w-full sticky laptop:relative top-0 z-50 bg-transparent"
         style={{ width: "100vw", marginLeft: "calc(50% - 50vw)" }}
       >
         <nav className="flex items-center justify-between py-5 tablet:py-6 laptop:py-13 max-w-7xl mx-auto px-4 tablet:px-4 min-[1310px]:px-0">

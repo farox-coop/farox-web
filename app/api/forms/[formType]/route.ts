@@ -1,6 +1,7 @@
 import { getFormConfig } from "@/lib/forms/config"
 import { forwardToFormspree } from "@/lib/forms/forwardToFormspree"
 import { isMissingCaptchaEnabledOnServer } from "@/lib/forms/missingCaptcha.server"
+import { isRateLimited } from "@/lib/forms/rateLimit"
 import { verifyCaptchaToken } from "@/lib/forms/verifyCaptchaToken"
 import { NextResponse } from "next/server"
 
@@ -28,15 +29,38 @@ const getAllowedFields = (body: Record<string, unknown>, allowedFields: readonly
   return values
 }
 
+const getClientIp = (request: Request) => {
+  const forwardedFor = request.headers.get("x-forwarded-for")
+
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0].trim()
+  }
+
+  return request.headers.get("x-real-ip") ?? "unknown"
+}
+
 const getForwardedFormspreeHeaders = (request: Request) => {
   const referer = request.headers.get("referer")
-  const origin = request.headers.get("origin") ?? (referer ? new URL(referer).origin : null)
+  let origin = request.headers.get("origin")
+
+  if (!origin && referer) {
+    try {
+      origin = new URL(referer).origin
+    } catch {
+      origin = null
+    }
+  }
 
   return { origin, referer }
 }
 
 export async function POST(request: Request, { params }: { params: Promise<{ formType: string }> }) {
   const { formType } = await params
+
+  if (isRateLimited(getClientIp(request))) {
+    return NextResponse.json({ ok: false, error: "RATE_LIMITED" }, { status: 429 })
+  }
+
   const formConfig = getFormConfig(formType)
 
   if (!formConfig) {

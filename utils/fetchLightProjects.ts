@@ -1,13 +1,13 @@
 import { useLightProjectsStore } from "@/store/useLightProjectsStore"
 
-let activeLocale: string | null = null
+let latestCallToken = 0
 
 export const fetchLightProjects = async (
   locale: string,
   setLoading: (loading: boolean) => void,
   setError: (error: string | null) => void,
 ) => {
-  activeLocale = locale
+  const callToken = ++latestCallToken
   setLoading(true)
   setError(null)
   try {
@@ -16,15 +16,19 @@ export const fetchLightProjects = async (
       throw new Error(`HTTP error! status: ${response.status}`)
     }
     const data = await response.json()
-    if (activeLocale !== locale) {
+    if (callToken !== latestCallToken) {
       return
     }
     useLightProjectsStore.getState().setProjects(data)
     useLightProjectsStore.getState().setCurrentLocale(locale)
   } catch (error) {
-    console.error("Failed to fetch lighting projects:", error)
-    setError("Failed to load lighting projects.")
+    if (callToken === latestCallToken) {
+      console.error("Failed to fetch lighting projects:", error)
+      setError("Failed to load lighting projects.")
+    }
   } finally {
-    setLoading(false)
+    if (callToken === latestCallToken) {
+      setLoading(false)
+    }
   }
 }

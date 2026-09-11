@@ -8,6 +8,7 @@ export const GOOGLE_ANALYTICS_ID = "G-KBPFLSZVZ2"
 export const FORMSPREE_FORM_IDS = {
   contact: "mgvlpvaz",
   wecoop: "xjkaabab",
+  lightprojects: "mgaeqzoz",
 } as const
 
 export const MISSING_CAPTCHA_CONFIG = {
@@ -23,17 +24,27 @@ export const MISSING_CAPTCHA_WIDGET_STYLESHEET_PATH = `${MISSING_CAPTCHA_CONFIG.
 
 // Can be empty for same-origin root, a relative path (e.g. "/captcha"),
 // or an absolute URL (e.g. "https://captcha.farox.coop").
-const MISSING_CAPTCHA_API_BASE = ""
+// Set MISSING_CAPTCHA_API_BASE (server-only) to a fixed base so the server never
+// derives the captcha host from client-supplied headers.
+const MISSING_CAPTCHA_API_BASE = (process.env.MISSING_CAPTCHA_API_BASE ?? "").trim()
 
 const stripTrailingSlashes = (value: string) => value.replace(/\/+$/g, "")
 
 const stripTrailingColon = (value: string) => value.replace(/:$/, "")
 
-const isLoopbackHost = (value: string) => {
-  const hostname = value.replace(/:\d+$/, "")
+const getAllowedCaptchaHosts = (): string[] | null => {
+  const raw = process.env.MISSING_CAPTCHA_API_HOST_ALLOWLIST
+  if (!raw) {
+    return null
+  }
 
-  return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1" || hostname === "[::1]"
+  return raw
+    .split(",")
+    .map((host) => host.trim().toLowerCase())
+    .filter(Boolean)
 }
+
+const isSafeForwardedHost = (value: string) => /^[a-z0-9.-]+(:\d+)?$/i.test(value)
 
 const resolveMissingCaptchaApiBase = (origin: string) => {
   if (!MISSING_CAPTCHA_API_BASE) {
@@ -45,18 +56,20 @@ const resolveMissingCaptchaApiBase = (origin: string) => {
 
 const getServerOrigin = (requestUrl: string, requestHeaders?: Headers) => {
   const currentUrl = new URL(requestUrl)
-  const forwardedHost = requestHeaders?.get("x-forwarded-host") ?? requestHeaders?.get("host")
+  const forwardedHost =
+    requestHeaders?.get("x-forwarded-host")?.split(",")[0]?.trim() ?? requestHeaders?.get("host")?.trim()
 
-  if (!forwardedHost) {
+  if (!forwardedHost || !isSafeForwardedHost(forwardedHost)) {
     return currentUrl.origin
   }
 
-  const forwardedProto = requestHeaders?.get("x-forwarded-proto")
-  const protocol = forwardedProto
-    ? stripTrailingColon(forwardedProto)
-    : isLoopbackHost(currentUrl.host)
-      ? "https"
-      : stripTrailingColon(currentUrl.protocol)
+  const allowlist = getAllowedCaptchaHosts()
+  if (allowlist && !allowlist.includes(forwardedHost.toLowerCase())) {
+    return currentUrl.origin
+  }
+
+  const forwardedProto = requestHeaders?.get("x-forwarded-proto")?.split(",")[0]?.trim()
+  const protocol = forwardedProto ? stripTrailingColon(forwardedProto) : stripTrailingColon(currentUrl.protocol)
 
   return `${protocol}://${forwardedHost}`
 }

@@ -20,7 +20,7 @@ const FORM_CONFIG_BY_TYPE: Record<FormType, FormConfig> = {
     requiredFields: ["firstName", "email", "message"],
   },
   lightprojects: {
-    formspreeId: FORMSPREE_FORM_IDS.contact,
+    formspreeId: FORMSPREE_FORM_IDS.lightprojects,
     allowedFields: ["email", "idea"],
     requiredFields: ["email", "idea"],
   },

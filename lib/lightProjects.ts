@@ -1,6 +1,7 @@
 import fs from "node:fs"
 import path from "node:path"
 import type { LightProject } from "@/types/light-project.type"
+import { routing } from "@/i18n/routing"
 import matter from "gray-matter"
 
 export const LIGHT_PROJECT_CATEGORIES = ["light-projects", "not-so-light"] as const
@@ -56,7 +57,16 @@ function parseMarkdownContent(fileContents: string): Omit<LightProject, "slug"> 
 }
 
 export function getLightProjects(category: LightProjectCategory, locale: string): LightProject[] | null {
-  const contentDir = path.join(process.cwd(), "content", category, locale)
+  if (!(routing.locales as readonly string[]).includes(locale)) {
+    return null
+  }
+
+  const contentRoot = path.resolve(process.cwd(), "content")
+  const contentDir = path.resolve(contentRoot, category, locale)
+
+  if (!contentDir.startsWith(contentRoot + path.sep)) {
+    return null
+  }
 
   if (!fs.existsSync(contentDir)) {
     return null

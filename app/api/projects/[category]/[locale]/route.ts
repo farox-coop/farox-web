@@ -1,4 +1,5 @@
 import { getLightProjects, isLightProjectCategory } from "@/lib/lightProjects"
+import { routing } from "@/i18n/routing"
 import { NextResponse } from "next/server"
 
 export async function GET(_request: Request, { params }: { params: Promise<{ category: string; locale: string }> }) {
@@ -7,6 +8,10 @@ export async function GET(_request: Request, { params }: { params: Promise<{ cat
 
     if (!isLightProjectCategory(category)) {
       return NextResponse.json({ error: "Unknown project category" }, { status: 404 })
+    }
+
+    if (!(routing.locales as readonly string[]).includes(locale)) {
+      return NextResponse.json({ error: "Unknown locale" }, { status: 404 })
     }
 
     const projects = getLightProjects(category, locale)

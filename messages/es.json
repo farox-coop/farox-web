@@ -48,9 +48,11 @@
       "white_text_1": "CREADORES",
       "white_text_2": "EXPERTXS",
       "white_text_3": "TU PARTNER",
+      "white_text_3_mobile": "TU PARTNER",
       "color_text_1": "DE SOLUCIONES",
       "color_text_2": "EN INNOVACIÓN",
-      "color_text_3": "TECNOLÓGICO"
+      "color_text_3": "TECNOLÓGICO",
+      "color_text_3_mobile": "TECNOLÓGICO"
     },
     "WeBelieveCaseStudies": {
       "title_1": "CREAMOS",

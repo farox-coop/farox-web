@@ -95,6 +95,9 @@ export async function generateMetadata({
       },
     }
   } catch (error) {
+    if (error instanceof Error && (error as { digest?: string }).digest === "NEXT_NOT_FOUND") {
+      throw error
+    }
     console.error("Error generating metadata for lighting project:", error)
     return {}
   }

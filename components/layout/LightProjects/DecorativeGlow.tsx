@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, useReducedMotion } from "framer-motion"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
@@ -18,6 +18,7 @@ export default function DecorativeGlow({ src, width, height, mode, className, st
   const ref = useRef<HTMLDivElement>(null)
   const [idleReady, setIdleReady] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
+  const reduceMotion = useReducedMotion()
   const inView = useInView(ref, { margin: "300px", once: true })
 
   useEffect(() => {
@@ -40,9 +41,9 @@ export default function DecorativeGlow({ src, width, height, mode, className, st
     <div ref={ref} className={className} style={style}>
       {shouldRender && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: imageLoaded ? 1 : 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={reduceMotion ? { opacity: 1 } : { opacity: imageLoaded ? 1 : 0 }}
+          transition={reduceMotion ? undefined : { duration: 0.8, ease: "easeOut" }}
           className="w-full h-full"
         >
           <Image

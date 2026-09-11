@@ -66,7 +66,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
     return () => {
       isMounted = false
     }
-  }, [locale, slug, lightProjects, lightLocale, darkProjects, darkLocale])
+  }, [locale, slug, lightProjects.length, lightLocale, darkProjects.length, darkLocale])
 
   if (loading) {
     return (

@@ -24,13 +24,7 @@ function ButtonLanguage({
 
   const handleClick = () => {
     startTransition(() => {
-      let newPathname = ""
-      if (pathname === "/") {
-        newPathname = `/${language}`
-      } else {
-        newPathname = pathname.replace(`/${locale}`, `/${language}`)
-      }
-      router.replace(newPathname)
+      router.replace(pathname.replace(`/${locale}`, `/${language}`))
     })
   }
 
@@ -44,7 +38,6 @@ function ButtonLanguage({
         {
           "--active-bg": activeBgColor,
           "--active-text": activeTextColor,
-          ...(isActive ? { backgroundColor: activeBgColor, color: activeTextColor } : {}),
         } as React.CSSProperties
       }
       className={`lg:relative cursor-pointer ${languajeTextColor} text-[12px] w-auto laptop:w-14 tablet:h-16 laptop:h-auto uppercase font-semibold laptop:text-base desktop:text-xl px-2 py-3 tablet:px-4 laptop:px-0 ${hoverItemsColor} ${

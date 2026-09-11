@@ -1,5 +1,5 @@
 "use client"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import type { LightProject } from "@/types/light-project.type"
 import { useLocale, useTranslations } from "next-intl"
 import Link from "next/link"
@@ -39,16 +39,17 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, variant, eyebrowText }: ProjectCardProps) {
   const locale = useLocale()
   const t = useTranslations("LightProjectsPage.ListingPage")
+  const reduceMotion = useReducedMotion()
   const styles = VARIANT_STYLES[variant]
   const accessUrl = project.url_web || project.url_gh
   const accessLabel = project.url_web ? t("accessWeb", { title: project.title }) : t("accessGithub")
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={reduceMotion ? undefined : { opacity: 0, y: 80 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={reduceMotion ? undefined : { duration: 0.7, ease: "easeOut" }}
       className="w-full max-w-7xl laptop:h-75 desktop:h-87.75 flex flex-col laptop:flex-row laptop:items-center justify-center laptop:justify-between gap-6 laptop:gap-0 px-6 py-6 laptop:py-0 laptop:px-10 desktop:px-12.5 shrink-0 border border-solid"
       style={{ background: styles.background, borderImage: `${styles.borderImage} 1` }}
     >

@@ -30,7 +30,7 @@ function parseBody(content: string): { intro: string; features: { title: string;
   return { intro: introBlock?.trim() || "", features }
 }
 
-function parseMarkdownContent(fileContents: string): Omit<LightProject, "slug"> {
+function parseMarkdownContent(filename: string, fileContents: string): Omit<LightProject, "slug"> | null {
   try {
     const { data: frontmatter, content } = matter(fileContents)
     const { intro, features } = parseBody(content)
@@ -43,16 +43,9 @@ function parseMarkdownContent(fileContents: string): Omit<LightProject, "slug"> 
       url_gh: frontmatter.url_gh || "",
       url_web: frontmatter.url_web || "",
     }
-  } catch {
-    return {
-      title: "",
-      description: "",
-      intro: "",
-      features: [],
-      url_img: "",
-      url_gh: "",
-      url_web: "",
-    }
+  } catch (error) {
+    console.error(`Error parsing light project markdown (${filename}):`, error)
+    return null
   }
 }
 
@@ -74,20 +67,27 @@ export function getLightProjects(category: LightProjectCategory, locale: string)
 
   const filenames = fs.readdirSync(contentDir).filter((name) => name.endsWith(".md"))
 
-  const projects = filenames.map((filename) => {
-    const filePath = path.join(contentDir, filename)
-    const fileContents = fs.readFileSync(filePath, "utf8")
-    const parsedContent = parseMarkdownContent(fileContents)
-    const slug = filename.replace(".md", "")
-    return {
-      ...parsedContent,
-      slug,
-    }
-  })
+  const projects = filenames
+    .map((filename) => {
+      const filePath = path.join(contentDir, filename)
+      const fileContents = fs.readFileSync(filePath, "utf8")
+      const parsedContent = parseMarkdownContent(filename, fileContents)
+      if (!parsedContent) {
+        return null
+      }
+      const slug = filename.replace(".md", "")
+      return { ...parsedContent, slug }
+    })
+    .filter((project): project is LightProject => project !== null)
 
   projects.sort((a, b) => {
     const numA = parseInt(a.slug.split("-").pop() || "0", 10)
     const numB = parseInt(b.slug.split("-").pop() || "0", 10)
+
+    if (Number.isNaN(numA) || Number.isNaN(numB)) {
+      return a.slug.localeCompare(b.slug)
+    }
+
     return numA - numB
   })
 

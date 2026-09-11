@@ -57,21 +57,6 @@
     "WeBelieveCaseStudies": {
       "title_1": "WE BELIEVE",
       "title_2": "THEY TRUST",
-      "card_1": {
-        "title": "BETTEREZ",
-        "description": "We have built a platform for a Canadian company that allows users to book tickets for travels, packages and events.",
-        "url": "https://www.betterez.com/"
-      },
-      "card_2": {
-        "title": "NIVA",
-        "description": "We automate data collection and validation processes for organisations by applying our Machine Learning skills.",
-        "url": "https://www.niva.co/"
-      },
-      "card_3": {
-        "title": "AdTech",
-        "description": "We built a team of Erlang and data science/machine learning experts to tackle challenges in the marketing industry.",
-        "url": "https://www.nextroll.com/"
-      },
       "button": "Case Studies"
     },
     "WeAreTheTech": {
@@ -109,11 +94,9 @@
     }
   },
   "Header": {
-    "home": "Home",
     "main_menu": "Main Menu",
     "contact": "Contact",
     "services": "Services",
-    "case studies": "Case Studies",
     "culture": "Culture",
     "projects": "Projects",
     "services_menu": {
@@ -282,12 +265,8 @@
     },
     "ListingPage": {
       "title": "LIGHT PROJECTS",
-      "readMore": "View project",
       "loading": "Loading...",
       "noProjectsAvailable": "No projects available.",
-      "showMore": "Show more",
-      "location": "Location",
-      "client": "Client",
       "more": "More",
       "less": "Less",
       "eyebrowMeeting": "SCHEDULE YOUR MEETING",
@@ -300,10 +279,6 @@
       "loading": "Loading...",
       "projectNotFound": "Project not found.",
       "backToList": "Back to projects",
-      "location": "Location",
-      "client": "Client",
-      "technologies": "Technologies",
-      "accessWeb": "Access {title}",
       "accessGithub": "Access GitHub",
       "discoverProject": "Discover {title}"
     },
@@ -324,8 +299,6 @@
   },
   "Blog": {
     "BlogPage": {
-      "title": "Blog",
-      "readMore": "Read more",
       "loading": "Loading...",
       "noPostsAvailable": "No blog posts available.",
       "postNotFound": "Blog post not found.",

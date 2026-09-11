@@ -24,7 +24,7 @@ function ContactForm() {
     )
   }
 
-  const clase = "px-9 tablet:px-11 py-[10px] placeholder:italic placeholder:text-[20px] placeholder:font-light"
+  const clase = "px-9 tablet:px-11 py-2.5 placeholder:italic placeholder:text-[20px] placeholder:font-light"
 
   return (
     <form

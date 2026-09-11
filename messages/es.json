@@ -57,21 +57,6 @@
     "WeBelieveCaseStudies": {
       "title_1": "CREAMOS",
       "title_2": "ELLOS CONFÍAN",
-      "card_1": {
-        "title": "BETTEREZ",
-        "description": "Construimos una plataforma para una empresa canadiense que permite a los usuarios reservar billetes para viajes, paquetes y eventos.",
-        "url": "https://www.betterez.com/"
-      },
-      "card_2": {
-        "title": "NIVA",
-        "description": "Automatizamos procesos de recolección y validación de información de organizaciones aplicando conocimientos de Machine Learning.",
-        "url": "https://www.niva.co/"
-      },
-      "card_3": {
-        "title": "AdTech",
-        "description": "Formamos un equipo de expertos en Erlang y ciencia de datos/aprendizaje automático para enfrentar desafíos en la industria del marketing.",
-        "url": "https://www.nextroll.com/"
-      },
       "button": "Casos de Estudios"
     },
     "WeAreTheTech": {
@@ -109,11 +94,9 @@
     }
   },
   "Header": {
-    "home": "Inicio test",
     "main_menu": "Menú principal",
     "contact": "Contacto",
     "services": "Servicios",
-    "case studies": "Casos de Estudios",
     "culture": "Cultura",
     "projects": "Proyectos",
     "services_menu": {
@@ -282,12 +265,8 @@
     },
     "ListingPage": {
       "title": "LIGHT PROJECTS",
-      "readMore": "Ver proyecto",
       "loading": "Cargando...",
       "noProjectsAvailable": "No hay proyectos disponibles.",
-      "showMore": "Ver más",
-      "location": "Ubicación",
-      "client": "Cliente",
       "more": "Más",
       "less": "Menos",
       "eyebrowMeeting": "AGENDA TU REUNIÓN",
@@ -300,10 +279,6 @@
       "loading": "Cargando...",
       "projectNotFound": "No se encontró el proyecto.",
       "backToList": "Volver a proyectos",
-      "location": "Ubicación",
-      "client": "Cliente",
-      "technologies": "Tecnologías",
-      "accessWeb": "Acceder a {title}",
       "accessGithub": "Acceder a GitHub",
       "discoverProject": "Descubre {title}"
     },
@@ -324,8 +299,6 @@
   },
   "Blog": {
     "BlogPage": {
-      "title": "Blog",
-      "readMore": "Leer más",
       "loading": "Cargando...",
       "noPostsAvailable": "No hay entradas de blog disponibles.",
       "postNotFound": "No se encontró la entrada de blog.",

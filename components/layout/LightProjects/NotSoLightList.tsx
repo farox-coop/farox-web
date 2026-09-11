@@ -16,7 +16,8 @@ export default function NotSoLightList() {
   const locale = useLocale()
   const t = useTranslations("LightProjectsPage.ListingPage")
   const [error, setError] = useState<string | null>(null)
-  const { projects, currentLocale } = useNotSoLightStore()
+  const projects = useNotSoLightStore((s) => s.projects)
+  const currentLocale = useNotSoLightStore((s) => s.currentLocale)
 
   useEffect(() => {
     if (currentLocale !== locale || projects.length === 0) {

@@ -14,6 +14,16 @@ make setup
 make dev
 ```
 
+### Variables de entorno
+
+Las claves de configuración viven en `global.ts` como fuente única de verdad. Para desarrollo local, copiá `.env.example` a `.env.local` y ajustá los valores:
+
+```bash
+cp .env.example .env.local
+```
+
+Por ejemplo, `NEXT_PUBLIC_MISSING_CAPTCHA_SITE_KEY` usa la key de producción por defecto; para desarrollo local seteala con la key de dev en `.env.local`.
+
 ### Iniciar el proyecto en modo producción
 ```bash
 make start
@@ -29,6 +39,18 @@ pm2 status
 ### Actualizar el proyecto en producción
 ```bash
 make update
+```
+
+### Verificar y formatear el código
+```bash
+make test-all     # formatea-check + lint + test
+make format       # aplica el formateo
+make format-check # solo verifica el formateo (falla si hay cambios sin aplicar)
+```
+
+### Reinstalar desde cero
+```bash
+make refresh      # borra node_modules y .next, reinstala, compila y arranca dev
 ```
 
 ### Obtener certificados SSL con certbot

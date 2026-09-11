@@ -18,8 +18,8 @@ export default function ProjectDetail({ slug }: { slug: string }) {
   const t = useTranslations("LightProjectsPage.DetailPage")
   const lightProjects = useLightProjectsStore((s) => s.projects)
   const lightLocale = useLightProjectsStore((s) => s.currentLocale)
-  const darkProjects = useNotSoLightStore((s) => s.projects)
-  const darkLocale = useNotSoLightStore((s) => s.currentLocale)
+  const notSoLightProjects = useNotSoLightStore((s) => s.projects)
+  const notSoLightLocale = useNotSoLightStore((s) => s.currentLocale)
 
   useEffect(() => {
     let isMounted = true
@@ -30,9 +30,9 @@ export default function ProjectDetail({ slug }: { slug: string }) {
     }
 
     const needsLight = lightProjects.length === 0 || lightLocale !== locale
-    const needsDark = darkProjects.length === 0 || darkLocale !== locale
+    const needsNotSoLight = notSoLightProjects.length === 0 || notSoLightLocale !== locale
 
-    if (!needsLight && !needsDark) {
+    if (!needsLight && !needsNotSoLight) {
       setProject(findProject())
       setLoading(false)
       return () => {
@@ -44,7 +44,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
     const noop = () => {}
     Promise.all([
       needsLight ? fetchLightProjects(locale, noop, noop) : Promise.resolve(),
-      needsDark ? fetchNotSoLightProjects(locale, noop, noop) : Promise.resolve(),
+      needsNotSoLight ? fetchNotSoLightProjects(locale, noop, noop) : Promise.resolve(),
     ])
       .then(() => {
         if (isMounted) {
@@ -66,7 +66,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
     return () => {
       isMounted = false
     }
-  }, [locale, slug, lightProjects.length, lightLocale, darkProjects.length, darkLocale])
+  }, [locale, slug, lightProjects.length, lightLocale, notSoLightProjects.length, notSoLightLocale])
 
   if (loading) {
     return (

@@ -1,4 +1,3 @@
-import LightProjectsNavbar from "@/components/layout/LightProjects/LightProjectsNavbar"
 import LightProjectList from "@/components/layout/LightProjects/LightProjectList"
 import NotSoLight from "@/components/layout/LightProjects/NotSoLight"
 import ContactSection from "@/components/layout/LightProjects/ContactSection"
@@ -11,7 +10,6 @@ function LightProjectsPage() {
 
   return (
     <>
-      <LightProjectsNavbar />
       <main className="flex flex-col justify-center items-center w-full h-full relative">
         <div className="flex flex-col items-center justify-start w-full mt-20 laptop:mt-30 desktop:mt-37.5">
           <section className="text-center mb-10 laptop:mb-15 desktop:mb-17.5 z-40 px-4 laptop:px-8 min-[1310px]:px-0">

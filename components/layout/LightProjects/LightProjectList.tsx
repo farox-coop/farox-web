@@ -38,7 +38,11 @@ export default function LightProjectList() {
     )
   }
 
-  if (error || (!loading && projects.length === 0)) {
+  if (error) {
+    return <div className="py-10 text-center text-xl text-[#28FFE3]">{t("errorLoading")}</div>
+  }
+
+  if (!loading && projects.length === 0) {
     return <div className="py-10 text-center text-xl text-[#28FFE3]">{t("noProjectsAvailable")}</div>
   }
 

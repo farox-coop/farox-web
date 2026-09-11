@@ -111,9 +111,9 @@
     },
     "projects_menu": {
       "case_studies": "Case Studies",
-      "case_studies_description": "Technical planning and execution of your project",
+      "case_studies_description": "Guiding innovation with results",
       "light_projects": "Light Projects",
-      "light_projects_description": "Guiding innovation with results"
+      "light_projects_description": "Open-source initiatives for everyday problems"
     }
   },
   "FooterSection": {
@@ -267,6 +267,7 @@
       "title": "LIGHT PROJECTS",
       "loading": "Loading...",
       "noProjectsAvailable": "No projects available.",
+      "errorLoading": "Failed to load projects.",
       "more": "More",
       "less": "Less",
       "eyebrowMeeting": "SCHEDULE YOUR MEETING",

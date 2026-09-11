@@ -38,7 +38,11 @@ export default function NotSoLightList() {
     )
   }
 
-  if (error || (!loading && projects.length === 0)) {
+  if (error) {
+    return <div className="py-10 text-center text-xl text-white">{t("errorLoading")}</div>
+  }
+
+  if (!loading && projects.length === 0) {
     return <div className="py-10 text-center text-xl text-white">{t("noProjectsAvailable")}</div>
   }
 
@@ -56,7 +60,7 @@ export default function NotSoLightList() {
   return (
     <div className="flex flex-col items-center gap-10 w-full z-40 px-4 laptop:px-8 min-[1310px]:px-0 mt-10 laptop:mt-0">
       {projects.slice(0, visibleCount).map((project) => (
-        <ProjectCard key={project.slug} project={project} variant="dark" eyebrowText={t("eyebrowAi")} />
+        <ProjectCard key={project.slug} project={project} variant="notSoLight" eyebrowText={t("eyebrowAi")} />
       ))}
 
       <div className="flex items-center gap-10 mt-4">

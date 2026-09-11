@@ -16,7 +16,7 @@ const VARIANT_STYLES = {
     accessHoverClass: "transition-opacity hover:opacity-80",
     learnMoreHoverClass: "transition-opacity hover:opacity-80",
   },
-  dark: {
+  notSoLight: {
     background:
       "linear-gradient(to right, #000000 0%, #000202 19%, #010c0a 32%, #041b18 43%, #07322c 54%, #0c4f46 64%, #117265 74%, #189c8b 83%, #1fcbb5 92%, #28ffe3 100%)",
     borderImage: "linear-gradient(to right, #28FFE3 0%, #F1F1F1 100%)",

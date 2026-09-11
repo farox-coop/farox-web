@@ -29,7 +29,7 @@ function Header({
   const [showStickyHeader, setShowStickyHeader] = useState(false)
 
   useEffect(() => {
-    const contactLink = document.querySelector("#contact-link")
+    const contactLink = document.querySelector("#home")
 
     const handleIntersection: IntersectionObserverCallback = ([entry]: IntersectionObserverEntry[]) => {
       const isVisible = entry.isIntersecting
@@ -74,7 +74,11 @@ function Header({
                 itemsColor={itemsColor}
                 activeLineColor={pathname === `/${locale}/services` ? "bg-secondary" : "bg-transparent"}
               />
-              <ProjectsDropdown itemsColor={itemsColor} textActiveColor="text-primary" activeLineColor="bg-primary" />
+              <ProjectsDropdown
+                itemsColor={itemsColor}
+                textActiveColor="text-secondary"
+                activeLineColor="bg-secondary"
+              />
               <li>
                 <NavItem
                   hoverItemsColor={hoverItemsColor}
@@ -92,8 +96,8 @@ function Header({
                   itemsColor={itemsColor}
                   href={`/${locale}/blog`}
                   isActive={pathname.startsWith(`/${locale}/blog`)}
-                  textActiveColor="text-primary"
-                  activeLineColor={pathname.startsWith(`/${locale}/blog`) ? "bg-primary" : "bg-transparent"}
+                  textActiveColor="text-secondary"
+                  activeLineColor={pathname.startsWith(`/${locale}/blog`) ? "bg-secondary" : "bg-transparent"}
                 >
                   BLOG
                 </NavItem>

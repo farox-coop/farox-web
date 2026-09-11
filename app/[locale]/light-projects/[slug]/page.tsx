@@ -1,5 +1,4 @@
 import ProjectDetail from "@/components/layout/LightProjects/ProjectDetail"
-import LightProjectsNavbar from "@/components/layout/LightProjects/LightProjectsNavbar"
 import LightProjectsFooter from "@/components/layout/LightProjects/LightProjectsFooter"
 import { getLightProjects, LIGHT_PROJECT_CATEGORIES } from "@/lib/lightProjects"
 import { getBaseURL, getLocale } from "@/utils/helpers"
@@ -16,7 +15,6 @@ export default async function LightProjectDetailPage({
 
   return (
     <>
-      <LightProjectsNavbar />
       <ProjectDetail slug={slug} />
       <LightProjectsFooter />
     </>

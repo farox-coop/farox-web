@@ -1,6 +1,7 @@
 "use client"
 
 import DecorativeGlow from "@/components/layout/LightProjects/DecorativeGlow"
+import HeadersContainer from "@/components/layout/Header/HeadersContainer"
 import { usePathname } from "next/navigation"
 
 export default function LightProjectsLayout({ children }: { children: React.ReactNode }) {
@@ -9,6 +10,14 @@ export default function LightProjectsLayout({ children }: { children: React.Reac
 
   return (
     <div className="w-full bg-[#020202] relative overflow-clip">
+      <HeadersContainer
+        hoverItemsColor="hover:text-secondary"
+        itemsColor="text-white"
+        charColor="#28FFE3"
+        textColor="white"
+        languajeTextColor="text-white"
+        dark
+      />
       {isDetail ? (
         <DecorativeGlow
           src="/images/light-projects/green-light-projects-detail.webp"

@@ -98,19 +98,28 @@ function BurgerMenu({ lineColor = "black" }: { lineColor?: string }) {
       >
         <ul className="flex flex-col text-center py-0">
           <li className="first:border-none border-t border-gray-400">
-            <button
-              type="button"
-              onClick={handleServicesToggle}
-              aria-expanded={isServicesOpen}
-              className="flex h-12.5 w-full items-center justify-center gap-2 text-lg hover:bg-primary hover:text-secondary transition duration-300 ease-in-out"
-            >
-              {t("services")}
-              <span
-                className={`h-1.5 w-2.5 shrink-0 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+            <div className="flex items-center">
+              <Link
+                href={baseServicesPath}
+                onClick={handleLinkClick}
+                className="flex h-12.5 flex-1 items-center justify-center gap-2 text-lg hover:bg-primary hover:text-secondary transition duration-300 ease-in-out"
               >
-                <ChevronDownSVG />
-              </span>
-            </button>
+                {t("services")}
+              </Link>
+              <button
+                type="button"
+                onClick={handleServicesToggle}
+                aria-expanded={isServicesOpen}
+                aria-label={t("services")}
+                className="flex h-12.5 shrink-0 items-center justify-center px-4 text-lg hover:bg-primary hover:text-secondary transition duration-300 ease-in-out"
+              >
+                <span
+                  className={`h-1.5 w-2.5 shrink-0 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+                >
+                  <ChevronDownSVG />
+                </span>
+              </button>
+            </div>
             <div
               className={`overflow-hidden bg-white/10 transition-all duration-300 ease-in-out ${
                 isServicesOpen ? "max-h-75" : "max-h-0"
@@ -146,19 +155,28 @@ function BurgerMenu({ lineColor = "black" }: { lineColor?: string }) {
             </div>
           </li>
           <li className="first:border-none border-t border-gray-400">
-            <button
-              type="button"
-              onClick={handleProjectsToggle}
-              aria-expanded={isProjectsOpen}
-              className="flex h-12.5 w-full items-center justify-center gap-2 text-lg hover:bg-primary hover:text-secondary transition duration-300 ease-in-out"
-            >
-              {t("projects")}
-              <span
-                className={`h-1.5 w-2.5 shrink-0 transition-transform duration-200 ${isProjectsOpen ? "rotate-180" : ""}`}
+            <div className="flex items-center">
+              <Link
+                href={`/${locale}/case-studies/all`}
+                onClick={handleLinkClick}
+                className="flex h-12.5 flex-1 items-center justify-center gap-2 text-lg hover:bg-primary hover:text-secondary transition duration-300 ease-in-out"
               >
-                <ChevronDownSVG />
-              </span>
-            </button>
+                {t("projects")}
+              </Link>
+              <button
+                type="button"
+                onClick={handleProjectsToggle}
+                aria-expanded={isProjectsOpen}
+                aria-label={t("projects")}
+                className="flex h-12.5 shrink-0 items-center justify-center px-4 text-lg hover:bg-primary hover:text-secondary transition duration-300 ease-in-out"
+              >
+                <span
+                  className={`h-1.5 w-2.5 shrink-0 transition-transform duration-200 ${isProjectsOpen ? "rotate-180" : ""}`}
+                >
+                  <ChevronDownSVG />
+                </span>
+              </button>
+            </div>
             <div
               className={`overflow-hidden bg-white/10 transition-all duration-300 ease-in-out ${
                 isProjectsOpen ? "max-h-75" : "max-h-0"

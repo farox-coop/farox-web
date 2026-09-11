@@ -1,10 +1,14 @@
 import { getFormConfig } from "@/lib/forms/config"
 import { forwardToFormspree } from "@/lib/forms/forwardToFormspree"
 import { isMissingCaptchaEnabledOnServer } from "@/lib/forms/missingCaptcha.server"
+import { isRateLimited } from "@/lib/forms/rateLimit"
 import { verifyCaptchaToken } from "@/lib/forms/verifyCaptchaToken"
+import { getBaseURL } from "@/utils/helpers"
 import { NextResponse } from "next/server"
 
 const isCaptchaRequired = () => isMissingCaptchaEnabledOnServer()
+
+const MAX_FIELD_LENGTH = 50_000
 
 const getRequestBody = async (request: Request) => {
   try {
@@ -28,15 +32,23 @@ const getAllowedFields = (body: Record<string, unknown>, allowedFields: readonly
   return values
 }
 
-const getForwardedFormspreeHeaders = (request: Request) => {
-  const referer = request.headers.get("referer")
-  const origin = request.headers.get("origin") ?? (referer ? new URL(referer).origin : null)
+const getClientIp = (request: Request) => {
+  const forwardedFor = request.headers.get("x-forwarded-for")
 
-  return { origin, referer }
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0].trim()
+  }
+
+  return request.headers.get("x-real-ip") ?? "unknown"
 }
 
 export async function POST(request: Request, { params }: { params: Promise<{ formType: string }> }) {
   const { formType } = await params
+
+  if (isRateLimited(getClientIp(request))) {
+    return NextResponse.json({ ok: false, error: "RATE_LIMITED" }, { status: 429 })
+  }
+
   const formConfig = getFormConfig(formType)
 
   if (!formConfig) {
@@ -50,6 +62,13 @@ export async function POST(request: Request, { params }: { params: Promise<{ for
   }
 
   const values = getAllowedFields(body, formConfig.allowedFields)
+
+  for (const [fieldName, value] of Object.entries(values)) {
+    if (value.length > MAX_FIELD_LENGTH) {
+      return NextResponse.json({ ok: false, error: "FIELD_TOO_LONG", fields: [fieldName] }, { status: 400 })
+    }
+  }
+
   const missingFields = formConfig.requiredFields.filter((fieldName) => !values[fieldName])
 
   if (missingFields.length > 0) {
@@ -83,11 +102,11 @@ export async function POST(request: Request, { params }: { params: Promise<{ for
     }
   }
 
-  const formspreeResult = await forwardToFormspree(
-    formConfig.formspreeId,
-    values,
-    getForwardedFormspreeHeaders(request),
-  )
+  const origin = request.headers.get("origin") ?? (await getBaseURL()).origin
+  const formspreeResult = await forwardToFormspree(formConfig.formspreeId, values, {
+    origin,
+    referer: request.headers.get("referer"),
+  })
 
   if (!formspreeResult.ok) {
     return NextResponse.json(

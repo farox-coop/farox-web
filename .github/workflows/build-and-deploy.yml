@@ -53,6 +53,11 @@ jobs:
           cp /var/www/missing-captcha/packages/widget/dist/widget.css /var/www/farox-web/public/missing-captcha/widget.css
 
           cd /var/www/farox-web
+
+          if ! grep -qs '^MISSING_CAPTCHA_API_HOST_ALLOWLIST=' .env 2>/dev/null; then
+            echo 'MISSING_CAPTCHA_API_HOST_ALLOWLIST=farox.coop,www.farox.coop' >> .env
+          fi
+
           make update
           git checkout .
           EOF

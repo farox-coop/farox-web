@@ -1,6 +1,7 @@
 import fs from "node:fs"
 import path from "node:path"
 import matter from "gray-matter"
+import { routing } from "@/i18n/routing"
 import { NextResponse } from "next/server"
 
 interface MarkdownContent {
@@ -47,6 +48,11 @@ async function parseMarkdownContent(fileContents: string): Promise<MarkdownConte
 export async function GET(_request: Request, { params }: { params: Promise<{ locale: string }> }) {
   try {
     const locale = (await params).locale
+
+    if (!(routing.locales as readonly string[]).includes(locale)) {
+      return NextResponse.json({ error: "Unknown locale" }, { status: 404 })
+    }
+
     const blogDir = path.join(process.cwd(), "content", "blog", locale)
 
     if (!fs.existsSync(blogDir)) {

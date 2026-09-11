@@ -13,5 +13,14 @@ export const hasMissingCaptchaAssetsOnServer = () => {
 }
 
 export const isMissingCaptchaEnabledOnServer = () => {
-  return MISSING_CAPTCHA_CONFIG.publicSiteKey.trim().length > 0 && hasMissingCaptchaAssetsOnServer()
+  const hasSiteKey = MISSING_CAPTCHA_CONFIG.publicSiteKey.trim().length > 0
+  const hasAssets = hasMissingCaptchaAssetsOnServer()
+
+  if (hasSiteKey && !hasAssets) {
+    console.warn(
+      "[missing-captcha] site key is set but widget assets are missing — captcha is DISABLED on this server; forms will submit without captcha.",
+    )
+  }
+
+  return hasSiteKey && hasAssets
 }

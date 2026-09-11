@@ -8,7 +8,7 @@
 
 .line {
   fill: none;
-  stroke: black;
+  stroke: var(--menu-line-color, black);
   stroke-width: 4;
   transition:
     stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),

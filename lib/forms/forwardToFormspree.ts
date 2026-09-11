@@ -60,9 +60,11 @@ export const forwardToFormspree = async (
     const payload = await response.json().catch(() => null)
 
     if (!response.ok) {
+      console.error("Formspree rejected submission:", getFormspreeError(payload))
+
       return {
         ok: false,
-        error: getFormspreeError(payload),
+        error: "FORM_FORWARD_FAILED",
         status: response.status || 502,
       }
     }

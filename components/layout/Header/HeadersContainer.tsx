@@ -10,12 +10,14 @@ function HeadersContainer({
   charColor,
   textColor,
   languajeTextColor,
+  dark = false,
 }: {
   hoverItemsColor: string
   itemsColor: string
   charColor: string
   textColor: string
   languajeTextColor: string
+  dark?: boolean
 }) {
   const [isMounted, setIsMounted] = useState(false)
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1024px)" })
@@ -39,7 +41,7 @@ function HeadersContainer({
           languajeTextColor={languajeTextColor}
         />
       ) : (
-        <MobileHeader hoverItemsColor={hoverItemsColor} languajeTextColor={languajeTextColor} />
+        <MobileHeader hoverItemsColor={hoverItemsColor} languajeTextColor={languajeTextColor} dark={dark} />
       )}
     </>
   )

@@ -7,8 +7,9 @@
     "start": "next start",
     "dev": "next dev --turbopack --hostname 0.0.0.0",
     "test": "",
-    "lint": "biome check .",
-    "format": "biome format --write ."
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "format:check": "biome format ."
   },
   "dependencies": {
     "@types/react-syntax-highlighter": "^15.5.13",

@@ -11,8 +11,9 @@ export const FORMSPREE_FORM_IDS = {
 } as const
 
 export const MISSING_CAPTCHA_CONFIG = {
-  // Obtained by running `make sitekey` in the `missing-captcha` project's service
-  publicSiteKey: "rc_pk_6ac55f6e0b887fc76872d9af",
+  // Obtained by running `make sitekey` in the `missing-captcha` project's service.
+  // Production key is the default; local dev overrides it via NEXT_PUBLIC_MISSING_CAPTCHA_SITE_KEY in .env.local.
+  publicSiteKey: process.env.NEXT_PUBLIC_MISSING_CAPTCHA_SITE_KEY?.trim() || "rc_pk_6ac55f6e0b887fc76872d9af",
   // Folder inside public/ where both widget.js and widget.css are expected to be found
   widgetPath: "/missing-captcha",
 } as const

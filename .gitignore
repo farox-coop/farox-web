@@ -19,10 +19,11 @@
 
 # production
 /build
-
-# misc
-.DS_Store
 *.pem
+
+# OS
+.DS_Store
+Thumbs.db
 
 # debug
 npm-debug.log*
@@ -31,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -42,5 +44,9 @@ next-env.d.ts
 # missing-captcha
 /public/missing-captcha
 
-# agents
-.augment/
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

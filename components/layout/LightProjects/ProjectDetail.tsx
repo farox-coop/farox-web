@@ -97,7 +97,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
   return (
     <main className="flex flex-col justify-center items-center w-full relative h-full">
       <article className="flex flex-col justify-center items-center w-full mx-auto rounded-lg px-4 laptop:px-8 min-[1310px]:px-0 z-10 pb-20">
-        <header className="w-full pt-36 tablet:pt-20 text-center">
+        <header className="w-full pt-20 laptop:pt-30 desktop:pt-37.5 text-center">
           <h1 className="text-3xl tablet:text-5xl laptop:text-[93px] font-semibold text-white">{project.title}</h1>
           <p className="text-lg tablet:text-3xl laptop:text-[33px] text-gray-300 text-center mt-10 tablet:mt-16 mb-10 max-w-248.5 mx-auto">
             {project.description}

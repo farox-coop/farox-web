@@ -3,7 +3,7 @@ title: "The Long Tail in the Age of LLMs"
 description: "LLMs can make niche information easier to explore, while their probability-driven answers can concentrate attention on familiar options."
 url_img: "/images/blog/the-long-tail-in-the-age-of-llms.jpeg"
 date: "2026-10-15"
-author: "Farox"
+author: "Martin Vallone"
 tags: ["Long Tail", "LLMs", "Artificial Intelligence", "Discovery"]
 aliases: ["la-long-tail-en-la-era-de-los-llms"]
 tintasur: true

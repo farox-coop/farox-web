@@ -3,7 +3,7 @@ title: "La Long Tail en la era de los LLMs"
 description: "Los LLMs pueden facilitar la exploración de nichos, pero también concentrar la atención en las opciones más probables y conocidas."
 url_img: "/images/blog/the-long-tail-in-the-age-of-llms.jpeg"
 date: "2026-10-15"
-author: "Farox"
+author: "Martin Vallone"
 tags: ["Long Tail", "LLMs", "Inteligencia Artificial", "Descubrimiento"]
 aliases: ["the-long-tail-in-the-age-of-llms"]
 tintasur: true

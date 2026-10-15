@@ -67,6 +67,15 @@ certbot --nginx -d farox.coop -d www.farox.coop -d blog.farox.coop -d farox.com.
 ### Cambiar el contenido de la página
 Se deben modificar los archivos `es.json` y `en.json` en la carpeta `messages`.
 
+### Crear un artículo bilingüe del blog con Codex
+Usá la skill `$create-blog-post` con las rutas completas de los textos fuente en español e inglés y los nombres de salida, en ese orden:
+
+```text
+$create-blog-post /ruta/al/articulo-es.md /ruta/al/article-en.md articulo-es.md article-en.md
+```
+
+La skill crea ambos artículos en `content/blog/` y guarda sus imágenes en `public/images/blog/`.
+
 ### Tecnologías utilizadas
 
 - [React](https://es.reactjs.org/)

@@ -1,7 +1,7 @@
 # Farox Website
 
 Requiere `npm` y `nodejs 24.7` para desarrollo.  
-Requiere `nginx`, `pm2` y `certbot` para producción.
+Producción requiere `nginx`, Docker Compose y `certbot`.
 
 ### Instalar dependencias y compilar el proyecto
 ```bash
@@ -29,17 +29,11 @@ Por ejemplo, `NEXT_PUBLIC_MISSING_CAPTCHA_SITE_KEY` usa la key de producción po
 make start
 ```
 
-### Configurar pm2 en servidor de producción
-```bash
-cd /var/www/farox-web/
-pm2 start "npm start" --name farox
-pm2 status
-```
+### Deploy a producción
 
-### Actualizar el proyecto en producción
-```bash
-make update
-```
+Cada push a `main` ejecuta los checks, compila la aplicación en GitHub Actions, publica una imagen en GitHub Container Registry y despliega esa imagen en Lightsail. Nginx sigue atendiendo el tráfico y la aplicación corre en Docker en `127.0.0.1:3000`.
+
+La instancia conserva la configuración de runtime en `/var/www/farox-web/.env`. El workflow usa un token temporal de GitHub Actions para descargar la imagen privada. Si `NEXT_PUBLIC_MISSING_CAPTCHA_SITE_KEY` difiere del valor por defecto de `global.ts`, configurá ese valor como variable de Actions con el mismo nombre para incluirlo en el build.
 
 ### Verificar y formatear el código
 ```bash

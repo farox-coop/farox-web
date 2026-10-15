@@ -5,40 +5,155 @@ on:
     branches:
       - main
 
+permissions: {}
+
 jobs:
-  build-and-deploy:
-    name: Build and Deploy
+  build:
+    name: Build and Publish
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      captcha_sha: ${{ steps.captcha.outputs.sha }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout website
+        uses: actions/checkout@v4
 
-      - name: Install node
-        uses: actions/setup-node@v3
+      - name: Install Node
+        uses: actions/setup-node@v4
         with:
           node-version: "24.7.0"
+          cache: npm
+          cache-dependency-path: package-lock.json
 
-      - name: Run setup
-        run: make setup
+      - name: Restore Next.js build cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-next-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-next-${{ hashFiles('package-lock.json') }}-
 
-      - name: Run tests
+      - name: Install website dependencies
+        run: npm ci
+
+      - name: Run checks
         run: make test-all
 
-      - name: Deploy website
-        if: success()
+      - name: Checkout Missing Captcha
+        run: git clone --depth 1 --branch main https://github.com/farox-coop/missing-captcha.git "$RUNNER_TEMP/missing-captcha"
+
+      - name: Build Missing Captcha widget
+        working-directory: ${{ runner.temp }}/missing-captcha
         run: |
-          echo "$SSH_PRIVATE_KEY" > farox-website.pem
-          chmod 600 farox-website.pem
-          ssh -i farox-website.pem -o ServerAliveInterval=30 -o ServerAliveCountMax=5 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@farox.coop 'bash -s' <<'EOF'
+          npm ci
+          npm run --workspace=@missing-captcha/widget build
+
+      - name: Copy widget into website assets
+        run: |
+          mkdir -p public/missing-captcha
+          cp "$RUNNER_TEMP/missing-captcha/packages/widget/dist/widget.js" public/missing-captcha/widget.js
+          cp "$RUNNER_TEMP/missing-captcha/packages/widget/dist/widget.css" public/missing-captcha/widget.css
+
+      - name: Record Missing Captcha revision
+        id: captcha
+        working-directory: ${{ runner.temp }}/missing-captcha
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Build Next.js application
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+          NEXT_TELEMETRY_DISABLED: "1"
+          NEXT_PUBLIC_MISSING_CAPTCHA_SITE_KEY: ${{ vars.NEXT_PUBLIC_MISSING_CAPTCHA_SITE_KEY }}
+        run: npm run build
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Prepare image tags
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/farox-coop/farox-web
+          tags: |
+            type=sha,format=long,prefix=sha-
+            type=raw,value=main
+
+      - name: Build and publish website image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    name: Deploy to Lightsail
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      packages: read
+    steps:
+      - name: Deploy to Lightsail
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REGISTRY_TOKEN: ${{ github.token }}
+          REGISTRY_USERNAME: ${{ github.actor }}
+          IMAGE_REF: ghcr.io/farox-coop/farox-web:sha-${{ github.sha }}
+          MISSING_CAPTCHA_SHA: ${{ needs.build.outputs.captcha_sha }}
+          DOCKER_CONFIG_DIR: /tmp/farox-ghcr-${{ github.run_id }}-${{ github.run_attempt }}
+        shell: bash
+        run: |
           set -euo pipefail
-          export TERM=xterm-256color
+
+          key_file="$(mktemp)"
+          trap 'rm -f "$key_file"' EXIT
+          printf '%s' "$SSH_PRIVATE_KEY" > "$key_file"
+          chmod 600 "$key_file"
+
+          ssh_options=(
+            -i "$key_file"
+            -o ServerAliveInterval=30
+            -o ServerAliveCountMax=5
+            -o StrictHostKeyChecking=no
+            -o UserKnownHostsFile=/dev/null
+          )
+
+          printf '%s' "$REGISTRY_TOKEN" | ssh "${ssh_options[@]}" ubuntu@farox.coop \
+            "mkdir -p '$DOCKER_CONFIG_DIR' && chmod 700 '$DOCKER_CONFIG_DIR' && docker --config '$DOCKER_CONFIG_DIR' login ghcr.io --username '$REGISTRY_USERNAME' --password-stdin"
+
+          ssh "${ssh_options[@]}" ubuntu@farox.coop \
+            "DOCKER_CONFIG_DIR='$DOCKER_CONFIG_DIR' IMAGE_REF='$IMAGE_REF' MISSING_CAPTCHA_SHA='$MISSING_CAPTCHA_SHA' bash -s" <<'EOF'
+          set -euo pipefail
+
+          cleanup_registry_auth() {
+            docker --config "$DOCKER_CONFIG_DIR" logout ghcr.io >/dev/null 2>&1 || true
+            rm -f "$DOCKER_CONFIG_DIR/config.json"
+            rmdir "$DOCKER_CONFIG_DIR" 2>/dev/null || true
+          }
+          trap cleanup_registry_auth EXIT
+
+          docker --config "$DOCKER_CONFIG_DIR" pull "$IMAGE_REF"
+          cleanup_registry_auth
+          trap - EXIT
+
           source ~/.nvm/nvm.sh
+          export TERM=xterm-256color
 
           cd /var/www/missing-captcha
-          git fetch origin main
-          git checkout main
-          git pull --ff-only origin main
+          git fetch origin "$MISSING_CAPTCHA_SHA"
+          git checkout --detach "$MISSING_CAPTCHA_SHA"
 
           if [ ! -f /var/www/missing-captcha/.env ]; then
             echo "/var/www/missing-captcha/.env does not exist" >&2
@@ -47,22 +162,65 @@ jobs:
 
           make migrate
           make up
-          make widget-build
-
-          cp /var/www/missing-captcha/packages/widget/dist/widget.js /var/www/farox-web/public/missing-captcha/widget.js
-          cp /var/www/missing-captcha/packages/widget/dist/widget.css /var/www/farox-web/public/missing-captcha/widget.css
 
           cd /var/www/farox-web
 
-          if ! grep -qs '^MISSING_CAPTCHA_API_HOST_ALLOWLIST=' .env 2>/dev/null; then
+          if [ ! -f .env ]; then
+            echo "/var/www/farox-web/.env does not exist" >&2
+            exit 1
+          fi
+
+          if ! grep -qs '^MISSING_CAPTCHA_API_HOST_ALLOWLIST=' .env; then
             echo 'MISSING_CAPTCHA_API_HOST_ALLOWLIST=farox.coop,www.farox.coop' >> .env
           fi
 
-          make update
-          git checkout .
-          EOF
+          previous_image="$(docker inspect farox-web --format '{{.Config.Image}}' 2>/dev/null || true)"
+          had_pm2=0
+          if pm2 describe farox >/dev/null 2>&1; then
+            had_pm2=1
+            pm2 stop farox
+          fi
 
-          rm farox-website.pem
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        shell: bash
+          docker rm -f farox-web >/dev/null 2>&1 || true
+
+          start_web() {
+            docker run -d \
+              --name farox-web \
+              --restart unless-stopped \
+              --env-file /var/www/farox-web/.env \
+              --env NODE_ENV=production \
+              --env HOSTNAME=0.0.0.0 \
+              --env PORT=3000 \
+              --publish 127.0.0.1:3000:3000 \
+              "$1"
+          }
+
+          wait_for_web() {
+            for attempt in $(seq 1 30); do
+              if docker exec farox-web node -e 'fetch("http://127.0.0.1:3000", { signal: AbortSignal.timeout(5000) }).then((response) => process.exit(response.status < 500 ? 0 : 1)).catch(() => process.exit(1))' >/dev/null 2>&1; then
+                return 0
+              fi
+              sleep 2
+            done
+            return 1
+          }
+
+          if ! start_web "$IMAGE_REF" || ! wait_for_web; then
+            docker logs --tail 100 farox-web 2>/dev/null || true
+            docker rm -f farox-web >/dev/null 2>&1 || true
+
+            if [ -n "$previous_image" ]; then
+              start_web "$previous_image"
+              wait_for_web || docker logs --tail 100 farox-web
+            elif [ "$had_pm2" -eq 1 ]; then
+              pm2 restart farox || true
+            fi
+
+            exit 1
+          fi
+
+          if [ "$had_pm2" -eq 1 ]; then
+            pm2 delete farox
+            pm2 save
+          fi
+          EOF

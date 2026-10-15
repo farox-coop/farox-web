@@ -1,10 +1,12 @@
 import createNextIntlPlugin from "next-intl/plugin"
+import type { NextConfig } from "next"
 
 const locales = ["en", "es"]
 const withNextIntl = createNextIntlPlugin()
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
+  output: "standalone",
+
   images: {
     remotePatterns: [new URL("https://farox.coop/**")],
   },

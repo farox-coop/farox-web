@@ -1,4 +1,4 @@
-.PHONY: reset setup dev start refresh update format format-check lint test test-all
+.PHONY: reset setup dev start refresh format format-check lint test test-all
 
 # Disable parallel make: `refresh` chains destructive targets (reset runs rm -rf)
 # that must never race with setup's npm install.
@@ -18,13 +18,6 @@ start:
 	@npm start
 
 refresh: reset setup dev
-
-update:
-	@git fetch origin main
-	@git checkout main
-	@git pull --ff-only origin main
-	@${MAKE} setup
-	@pm2 restart farox
 
 format:
 	@npm run format

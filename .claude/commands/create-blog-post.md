@@ -20,6 +20,19 @@ This command expects 4 positional arguments passed after the command name. If an
 
 Received arguments: `$ARGUMENTS`
 
+## Source archive
+
+Before creating either post, archive exact copies of both source files at:
+
+- `content/blog/sources/{slug_en}/source-es.md`
+- `content/blog/sources/{slug_en}/source-en.md`
+
+Here `{slug_en}` is `filename_en` without `.md`. Archive both inputs even when their original paths are already inside the repository. If the user passes these exact archive paths as the inputs, use the files in place without copying them over themselves.
+
+The input paths may be outside the repository. Read them from the paths provided and copy their contents unchanged into the archive. Use the archived copies as the canonical sources for the rest of the command. Do not edit or normalize the archived copies; allowed text fixes apply only to the generated posts.
+
+Before copying, check that neither archive destination already exists, unless it is exactly the same path as its corresponding input. If either destination exists at a different path, do not overwrite it; ask the user how to proceed. Check both archive destinations before copying either file so the archive pair cannot be left incomplete.
+
 ## Required output
 
 - Create the Spanish post at `content/blog/es/{filename_es}`.
@@ -32,14 +45,15 @@ Received arguments: `$ARGUMENTS`
    - These are full paths.
    - The files may live outside the repo.
    - If needed, read them with shell `cat`.
+   - Archive exact copies at `content/blog/sources/{slug_en}/source-es.md` and `source-en.md`, where `{slug_en}` is `filename_en` without `.md`. If an input already is its corresponding archive file, leave it in place. Use the archived copies as the canonical sources for all later steps.
 2. Respect the original text content.
    - Do **not** rewrite, summarize, or paraphrase.
    - Only make minimal text fixes when clearly necessary (like a typo or a missing accent for spanish like "facil" -> "fácil").
 3. Always replace:
    - `"` and `"` with `"`
    - `'` with `'`
-4. Preserve paragraph spacing and line breaks exactly as they appear in the source file.
-   - **First**, read each source file with `cat -A` to reveal exact whitespace characters.
+4. Preserve paragraph spacing and line breaks exactly as they appear in the archived source file.
+   - **First**, read each archived source file with `cat -A` to reveal exact whitespace characters.
    - The source will use one of these patterns (or a mix of both):
      * `  ` (two trailing spaces at end of line, visible as `  $` in `cat -A`) = soft line break within the same paragraph. Replicate it as `  ` (two spaces) at end of line.
      * Empty line (visible as `$` on its own in `cat -A`) = actual paragraph separation. Replicate it as an empty line.
@@ -85,17 +99,20 @@ Try to download all the images and put them into `public/images/blog/` and name 
 
 ## Execution steps
 
-1. Inspect a few existing blog posts in `content/blog/es` and `content/blog/en`.
-2. Read both source markdown files from the provided full paths.
-3. Extract the metadata and body content.
-4. Normalize only what is allowed:
+1. Validate all four arguments, the source paths, the article output paths, and both archive paths. Do not overwrite existing article outputs or archive files.
+2. Archive exact copies of both sources at `content/blog/sources/{slug_en}/source-es.md` and `source-en.md`, except when an input already is its corresponding archive file. Validate both archive paths before copying either input.
+3. Inspect a few existing blog posts in `content/blog/es` and `content/blog/en`.
+4. Read the archived source markdown files with `cat -A`.
+5. Extract the metadata and body content.
+6. Normalize only what is allowed:
    - smart quotes
    - apostrophes
    - obvious typo/accent fixes if truly needed
-   - paragraph spacing and line breaks (soft breaks with `  `, paragraph separation with empty lines) to match the source
-5. Download and save the cover image.
-6. Create the new Spanish and English blog post files.
-7. Do a quick verification pass to confirm:
+   - paragraph spacing and line breaks (soft breaks with `  `, paragraph separation with empty lines) to match the archived source
+7. Download and save the cover image.
+8. Create the new Spanish and English blog post files.
+9. Do a quick verification pass to confirm:
+   - both archived source files exist
    - both files exist in the correct directories
    - frontmatter is complete
    - aliases point to the other language slug
@@ -105,4 +122,5 @@ Try to download all the images and put them into `public/images/blog/` and name 
 ## Final response
 
 - Briefly report which files were created.
+- Include the paths of the archived source files.
 - If any text was changed beyond the required normalization rules, list those changes in a short summary.

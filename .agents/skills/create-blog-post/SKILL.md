@@ -26,6 +26,16 @@ Si falta algún argumento o está vacío, no leas ni modifiques archivos todaví
 
 Si una ruta fuente no existe, informalo y pedí la ruta correcta. Si alguno de los archivos de salida ya existe, no lo sobrescribas: pedí indicaciones antes de continuar.
 
+## Archivo de fuentes
+
+- Antes de generar los artículos, archivá una copia exacta de cada fuente en `content/blog/sources/{slug_en}/source-es.md` y `content/blog/sources/{slug_en}/source-en.md`, donde `{slug_en}` es `filename_en` sin `.md`.
+- Esto aplica también si las fuentes originales ya están dentro del repo. Si la persona proporciona directamente las rutas de esos dos archivos de archivo, usalos en el lugar y no los copies sobre sí mismos.
+- Las fuentes pueden estar fuera del repo: leelas desde las rutas recibidas y copiá su contenido sin cambios al archivo correspondiente dentro de `content/blog/sources/`. Usá las copias archivadas como fuentes canónicas para el resto del procedimiento.
+- No normalices ni edites las copias archivadas. Las correcciones permitidas se aplican únicamente a los artículos generados.
+- Antes de copiar, comprobá que ninguno de los destinos de archivo exista. Si alguno ya existe y no es la misma ruta que su fuente de entrada, no lo sobrescribas; pedí indicaciones antes de continuar.
+- Validá ambos destinos de archivo antes de copiar cualquiera de las fuentes, para no dejar un par archivado a medias.
+- Conservá las copias de fuentes al lado de los artículos generados para mantener la trazabilidad del contenido original.
+
 ## Destinos y formato
 
 - Artículo en español: `content/blog/es/{filename_es}`.
@@ -65,12 +75,13 @@ Usá el orden y los campos de los artículos existentes. Para los campos estánd
 
 ## Procedimiento
 
-1. Validá los cuatro argumentos y las rutas fuente; comprobá que los destinos no existan.
-2. Revisá varios artículos existentes de `content/blog/es` y `content/blog/en`.
-3. Leé ambas fuentes con `cat -vet`; extraé títulos, descripciones, autores, etiquetas, texto e imágenes.
-4. Descargá la portada y las demás imágenes según las reglas anteriores. Si falla la portada, detenete antes de crear archivos.
-5. Creá los dos artículos con frontmatter completo, aliases cruzados y el contenido fiel a cada fuente.
-6. Verificá que existan ambos artículos, que el frontmatter esté completo, que las aliases apunten al slug del otro idioma, que `url_img` coincida y que los saltos de línea reflejen las fuentes.
+1. Validá los cuatro argumentos y las rutas fuente; comprobá que los destinos de los artículos y del archivo de fuentes no existan, salvo que la entrada ya sea exactamente el archivo de fuente correspondiente.
+2. Archivá una copia exacta de ambas fuentes en `content/blog/sources/{slug_en}/`. Si las fuentes ya son esos archivos, no las copies.
+3. Revisá varios artículos existentes de `content/blog/es` y `content/blog/en`.
+4. Leé las copias archivadas con `cat -vet`; extraé títulos, descripciones, autores, etiquetas, texto e imágenes.
+5. Descargá la portada y las demás imágenes según las reglas anteriores. Si falla la portada, detenete antes de crear los artículos.
+6. Creá los dos artículos con frontmatter completo, aliases cruzados y el contenido fiel a cada fuente archivada.
+7. Verificá que existan ambas fuentes archivadas y ambos artículos, que el frontmatter esté completo, que las aliases apunten al slug del otro idioma, que `url_img` coincida y que los saltos de línea reflejen las fuentes.
 
 ## Respuesta final
 

@@ -1,7 +1,7 @@
 ---
 title: "If Everything Is Available, What Does AI Show Us?"
 description: "The Long Tail theory explained how the internet could dramatically expand the diversity of available content. Today, large language models can help us explore that vast universe, but they can also concentrate our attention on the most probable options. What happens to everything that still exists but is less likely to appear in a response?"
-url_img: "/images/blog/the-long-tail-in-the-age-of-llms.jpeg"
+url_img: "/images/blog/the-long-tail-in-the-age-of-llms.png"
 date: "2026-10-15"
 author: "Martin Vallone and Alejo Ruiz"
 tags: ["Artificial Intelligence", "LLMs", "Digital Culture"]

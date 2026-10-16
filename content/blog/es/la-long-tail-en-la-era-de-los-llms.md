@@ -1,7 +1,7 @@
 ---
-title: "Lo que queda fuera de una respuesta de IA"
+title: "Si todo está disponible, ¿qué nos muestra la IA?"
 description: "La teoría de la Long Tail explicaba cómo Internet podía ampliar enormemente la diversidad de contenidos disponibles. Hoy, los modelos de lenguaje pueden ayudarnos a explorar ese universo, pero también concentrar nuestra atención en las opciones más probables. ¿Qué pasa con todo aquello que sigue existiendo, pero tiene menos posibilidades de aparecer en una respuesta?"
-url_img: "/images/blog/the-long-tail-in-the-age-of-llms.jpeg"
+url_img: "/images/blog/the-long-tail-in-the-age-of-llms.png"
 date: "2026-10-15"
 author: "Martin Vallone y Alejo Ruiz"
 tags: ["Inteligencia Artificial", "LLMs", "Cultura Digital"]

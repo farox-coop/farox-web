@@ -38,7 +38,11 @@ export default function MarkdownRenderer({ content }: { content: string }) {
             if (onlyChildIsCallout) {
               return <>{children}</>
             }
-            return <p {...props}>{children}</p>
+            return (
+              <p {...props} className="mb-4">
+                {children}
+              </p>
+            )
           },
           a: ({ node, ...props }) => {
             const url = props.href || ""

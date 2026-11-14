@@ -175,11 +175,6 @@ jobs:
           fi
 
           previous_image="$(docker inspect farox-web --format '{{.Config.Image}}' 2>/dev/null || true)"
-          had_pm2=0
-          if pm2 describe farox >/dev/null 2>&1; then
-            had_pm2=1
-            pm2 stop farox
-          fi
 
           docker rm -f farox-web >/dev/null 2>&1 || true
 
@@ -212,15 +207,8 @@ jobs:
             if [ -n "$previous_image" ]; then
               start_web "$previous_image"
               wait_for_web || docker logs --tail 100 farox-web
-            elif [ "$had_pm2" -eq 1 ]; then
-              pm2 restart farox || true
             fi
 
             exit 1
-          fi
-
-          if [ "$had_pm2" -eq 1 ]; then
-            pm2 delete farox
-            pm2 save
           fi
           EOF

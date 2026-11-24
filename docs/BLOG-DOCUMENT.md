@@ -26,10 +26,10 @@ La estructura final debe verse así:
 
 ## 2. Crear el Archivo Markdown
 
-Cada blog debe tener su propio archivo `.md` (Markdown). Los nombres de los archivos deben ser **iguales** tanto en la carpeta `en/` como en `es/`. Por ejemplo:
+Cada blog debe tener su propio archivo `.md` (Markdown). Los nombres de los archivos pueden diferir entre idiomas; cada post declara el slug del otro en `aliases`. Por ejemplo:
 
 - `decision-making-organization.md` (en inglés)
-- `decision-making-organization.md` (en español)
+- `la-toma-de-decisiones.md` (en español)
 
 ### Contenido del Archivo
 
@@ -42,6 +42,7 @@ description : Una breve descripción del contenido del blog. Se usará en las ta
 **date** : Fecha de publicación del blog en formato YYYY-MM-DD. Esta fecha se usa para ordenar los posts, mostrando los más recientes primero.
 **author** : Nombre del autor del blog. (opcional)
 **tags** : Una lista de etiquetas relacionadas con el contenido del blog en formato array. (opcional)
+**aliases** : Lista de slugs alternativos del post. El post en español incluye el slug del inglés y viceversa; permite resolver la URL al cambiar de idioma. (opcional)
 **tintasur** : Un valor booleano (true/false) que indica si el blog es parte del proyecto TintaSur, si no se coloca, se asume false. (opcional)
 
 #### Bloques de Código:

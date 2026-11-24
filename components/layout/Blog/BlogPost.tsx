@@ -96,6 +96,7 @@ export default function BlogPost({ slug }: { slug: string }) {
               src={post.url_img}
               alt={post.title}
               fill
+              loading="eager"
               sizes="(max-width: 1280px) 100vw, 1280px"
               className="object-cover object-center"
             />

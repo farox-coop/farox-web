@@ -128,7 +128,9 @@ export default function BlogReadMore() {
   }
 
   const sourcePosts = locale === "es" ? allPosts : allPostsEN
-  const postsToShow = sourcePosts.filter((p) => p.slug !== currentSlug).slice(0, 3)
+  const postsToShow = sourcePosts
+    .filter((p) => p.slug !== currentSlug && !(currentSlug && p.aliases?.includes(currentSlug)))
+    .slice(0, 3)
 
   return (
     <article className="flex flex-col w-full">
